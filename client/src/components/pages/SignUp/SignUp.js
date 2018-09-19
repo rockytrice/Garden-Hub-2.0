@@ -1,8 +1,8 @@
 import React from "react";
-import "./FormsPage.css";
+import "./SignUp.css";
 import { Container, Row, Col, Input, Button, Card, CardBody, } from 'mdbreact';
 
-class FormsPage extends React.Component  {
+class SignUp extends React.Component  {
   render() {
     return(
       <Container >
@@ -42,7 +42,7 @@ class FormsPage extends React.Component  {
   }
 };
 
-export default FormsPage;
+export default SignUp;
 
 
 
