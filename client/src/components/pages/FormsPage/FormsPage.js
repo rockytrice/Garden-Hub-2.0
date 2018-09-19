@@ -5,12 +5,12 @@ import { Container, Row, Col, Input, Button, Card, CardBody, } from 'mdbreact';
 class FormsPage extends React.Component  {
   render() {
     return(
-      <Container style={{marginLeft:'25%'}}>
+      <Container >
         <section className="form-dark">
           <Row>
             <Col md="5">
               <CardBody>
-               <Card className="card-image" style={{}}>
+               <Card className="card-image" style={{backgroundColor: 'transparent'}}>
                  <div className="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
                    <div className="text-center">
                      <h3 className="white-text mb-5 mt-4 font-weight-bold"><strong>SIGN</strong> <a className="green-text font-weight-bold"><strong> UP</strong></a></h3>
@@ -48,3 +48,5 @@ export default FormsPage;
 
 
 // backgroundImage: 'url(https://techcrunch.com/wp-content/uploads/2018/04/flower-garden.jpg?w=730&crop=1)', width: '28rem', backgroundSize :'cover'
+
+// style={{marginLeft:'30%'}}
