@@ -1,11 +1,12 @@
 import React from "react";
 import "./SignUp.css";
-// import LoginPage from "../LoginPage"
 import { Container, Row, Col, Input, Button, Card, CardBody, } from 'mdbreact';
 
 class SignUp extends React.Component  {
   render() {
+
     return(
+      
       <Container >
         <section className="form-dark">
           <Row>
@@ -30,7 +31,7 @@ class SignUp extends React.Component  {
                      </div>
                    </Row>
                    <Col md="12">
-                     <p className="font-small white-text d-flex justify-content-end">Have an account? <a href="/" className="green-text ml-1 font-weight-bold"> Log in</a></p>
+                     <p className="font-small white-text d-flex justify-content-end">Have an account? <a href="/"  className="green-text ml-1 font-weight-bold"> Log in</a></p>
                    </Col>
                   </div>
                </Card>
@@ -39,8 +40,10 @@ class SignUp extends React.Component  {
           </Row>
         </section>
       </Container>
+          
     );
   }
+  
 };
 
 export default SignUp;
