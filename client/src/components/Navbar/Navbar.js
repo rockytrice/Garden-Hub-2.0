@@ -77,8 +77,8 @@ class DoubleNavigationPage extends React.Component {
                 <NavItem>
                     <div onClick={this.handleToggleClickA} key="sideNavToggleA" style={{ lineHeight: '32px', marginRight: '1em', verticalAlign: 'middle' }}><Fa icon="bars" color="white" size="2x"></Fa></div>
                 </NavItem>
-                <NavItem className="d-none d-md-inline" style={{ paddingTop: 5 }}>
-                    Material Design for Bootstrap
+                <NavItem className="d-none d-md-inline" style={{ paddingTop: 5, fontFamily: "PlantsLetters"}}>
+                    GardenHub 2.0
                 </NavItem>
             </NavbarNav>
             </Navbar>
