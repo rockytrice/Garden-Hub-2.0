@@ -1,5 +1,6 @@
 import React from "react";
 import { Jumbotron, Container } from 'reactstrap';
+import "./Dashboard.css";
 const DashBoard= ()=> {
     return(
         <Jumbotron fluid>
