@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import "./App.css";
-import SignUp from "./components/pages/SignUp";
-// import LoginPage from "./components/pages/LoginPage"
+// import SignUp from "./components/pages/SignUp"
+import Dashboard from "./components/pages/DashboardPage"
+import DoubleNavigationPage from "./components/Navbar/Navbar"
+
 class App extends Component {
   render() {
     return (
-      <div className="signup-form">
-      <SignUp />
-     {/* <LoginPage /> */}
-      </div>
+      <div>
+      <DoubleNavigationPage />
+      <Dashboard />
+     </div> 
+
     );
   }
 }
