@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Fa, SideNavItem, SideNavCat, SideNavNav, SideNav, SideNavLink, Container, Row } from 'mdbreact';
+import { Fa, SideNavCat, SideNavNav, SideNav, SideNavLink, Container, Row } from 'mdbreact';
 
 class SideNavPage extends React.Component {
   constructor(props) {
@@ -108,3 +108,5 @@ class SideNavPage extends React.Component {
 }
 
 export default SideNavPage;
+
+
