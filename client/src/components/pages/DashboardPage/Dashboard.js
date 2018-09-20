@@ -2,14 +2,19 @@ import React from "react";
 import { Jumbotron, Container } from 'reactstrap';
 const DashBoard= ()=> {
     return(
-        <div>
-      <Jumbotron fluid>
+        <Jumbotron fluid>
         <Container fluid style={{textAlign:"center"}} >
-          <h5 className="display-3" >Weather Forecast</h5>
-          <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          <h1 className="display-3"style={{fontSize:25}} >Weather Forecast</h1>
+          
         </Container>
-      </Jumbotron>
-    </div> 
+      </Jumbotron> 
+      
+     
+      
     );
 };
 export default DashBoard;
+
+
+
+
