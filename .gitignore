@@ -61,4 +61,4 @@ typings/
 .next
 ./node_modules
 
-./src/utils/config.js
+./config.js
