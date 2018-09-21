@@ -1,56 +1,108 @@
-import React from "react";
-import "./SignUp.css";
-import { Container, Row, Col, Input, Button, Card, CardBody, } from 'mdbreact';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink, NavbarToggler, Collapse, Mask, Row, Col, Fa, Button, View, Container, Card, CardBody, Input,  } from 'mdbreact';
+import './SignUp.css'
 
-class SignUp extends React.Component  {
-  render() {
+class SignUpPage extends React.Component {
+  constructor(props) {
+    // eslint-disable-next-line
+    super(props),
+    this.state = {
+      collapse : false
+    }
+    this.onClick = this.onClick.bind(this);
+    this.handleNavbarClick = this.handleNavbarClick.bind(this);
+  }
 
-    return(
-      
-      <Container >
-        <section className="form-dark">
-          <Row>
-            <Col md="5">
-              <CardBody>
-               <Card className="card-image" style={{backgroundColor: 'transparent'}}>
-                 <div className="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
-                   <div className="text-center">
-                     <h3 className="white-text mb-5 mt-4 font-weight-bold"><strong>SIGN</strong> <a className="green-text font-weight-bold"><strong> UP</strong></a></h3>
-                   </div>
-                   <Input label="Your email" group type="text" validate />
-                   <Input label="Your password" group type="password" validate/>
-                   <div className="md-form pb-3">
-                     <div className="form-check my-4">
-                       {/* <input className="form-check-input" type="checkbox" value="" id="defaultCheck17" />
-                       <label className="form-check-label white-text" htmlFor="defaultCheck17">Accept the<a href="/" className="green-text font-weight-bold"> Terms and   Conditions</a></label> */}
-                     </div>
-                   </div>
-                   <Row className="d-flex align-items-center mb-4">
-                     <div className="text-center mb-3 col-md-12">
-                       <Button color="success" rounded type="button" className="btn-block z-depth-1">Sign Up</Button>
-                     </div>
-                   </Row>
-                   <Col md="12">
-                     <p className="font-small white-text d-flex justify-content-end">Have an account? <a href="/"  className="green-text ml-1 font-weight-bold"> Log in</a></p>
-                   </Col>
-                  </div>
-               </Card>
-              </CardBody>
-            </Col>
-          </Row>
-        </section>
-      </Container>
-          
+  onClick(){
+    this.setState({
+        collapse: !this.state.collapse,
+    });
+  }
+
+  handleNavbarClick(){
+    this.setState({
+      collapse: false
+    });
+  }
+  render(){
+  const overlay = <div id="sidenav-overlay" style={{backgroundColor: 'transparent'}} onClick={this.handleNavbarClick}/>
+    return (
+      <div id="classicformpage">
+        <Router>
+          <div>
+            <Navbar dark expand="md" fixed="top" scrolling>
+              <Container>
+                <NavbarBrand>
+                  <strong className="white-text" style={{fontFamily: "GardenPartySans", fontSize:26}}>Garden Hub</strong>
+                </NavbarBrand>
+                <NavbarToggler onClick = { this.onClick } />
+                <Collapse isOpen = {this.state.collapse} navbar>
+                  <NavbarNav left>
+                    <NavItem active>
+                      <NavLink to="/">Login</NavLink>
+                    </NavItem>
+                  </NavbarNav>
+                  <NavbarNav right >
+                    <NavItem>
+                      
+                    </NavItem>
+                  </NavbarNav>
+                </Collapse>
+              </Container>
+            </Navbar>
+          { this.state.collapse && overlay}
+          </div>
+        </Router>
+
+        <View>
+          <Mask className="d-flex justify-content-center align-items-center gradient">
+            <Container>
+              <Row>
+                <div className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5">
+                  <h1 className="h1-responsive font-weight-bold animated fadeInLeftBig">Sign up right now! </h1>
+                  <hr className="hr-light"/>
+                  <h6 className="mb-4 animated fadeInLeftBig" >Garden Hub is an IOT application that directly controls a user’s home lawn/garden  irrigation system and monitors the immediate soil and climate with wirelessly transmitted sensor data.</h6>
+                  <Button outline color="white" className="animated fadeInLeftBig">Learn More</Button>
+                </div>
+                <Col md="6" xl="5" className="mb-4">
+                  <Card id="classic-card"className="animated zoomInLeft">
+                    <CardBody className="z-depth-2 white-text">
+                      <h3 className="text-center"><Fa icon="user"/> Register:</h3>
+                      <hr className="hr-light"/>
+                      <Input label="Your name" icon="user"/>
+                      <Input label="Your email" icon="envelope"/>
+                      <Input label="Your password" icon="lock" type="password"/>
+                      <div className="text-center mt-4 black-text">
+                        <Button outline color="white">Sign Up</Button>
+                        <hr className="hr-light"/>
+                        <div className="text-center d-flex justify-content-center white-label">
+                          <a className="p-2 m-2">
+                            <Fa icon="twitter" className="white-text"/>
+                          </a>
+                          <a className="p-2 m-2">
+                            <Fa icon="linkedin" className="white-text"/>
+                          </a>
+                          <a className="p-2 m-2">
+                            <Fa icon="instagram" className="white-text"/>
+                          </a>
+                        </div>
+                      </div>
+                    </CardBody>
+                  </Card>
+                </Col>
+              </Row>
+            </Container>
+          </Mask>
+        </View>
+      </div>
     );
   }
-  
 };
 
-export default SignUp;
+
+export default SignUpPage;
 
 
 
 
-// backgroundImage: 'url(https://techcrunch.com/wp-content/uploads/2018/04/flower-garden.jpg?w=730&crop=1)', width: '28rem', backgroundSize :'cover'
-
-// style={{marginLeft:'30%'}}
