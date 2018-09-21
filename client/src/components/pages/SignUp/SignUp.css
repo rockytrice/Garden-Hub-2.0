@@ -26,12 +26,12 @@
     }
     
     .top-nav-collapse {
-      background: #424f95 !important;
+      background: black !important;
     }
     
     @media (max-width: 768px) {
       #classicformpage .navbar:not(.top-nav-collapse) {
-          background: #424f95 !important;
+          background: black !important;
       }
     }
     

@@ -24,9 +24,9 @@
   transition: background .5s ease-in-out,padding .5s ease-in-out;
 }
 
-.top-nav-collapse {
+ .top-nav-collapse {
   background: #424f95 !important;
-}
+} 
 
 @media (max-width: 768px) {
   #classicformpage .navbar:not(.top-nav-collapse) {
@@ -78,3 +78,6 @@
   color: #fff!important;
 }
 
+.row{
+  margin-top: 77px;
+}
