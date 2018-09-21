@@ -60,13 +60,13 @@ class SignUpPage extends React.Component {
             <Container>
               <Row>
                 <div className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5">
-                  <h1 className="h1-responsive font-weight-bold">Sign up right now! </h1>
+                  <h1 className="h1-responsive font-weight-bold animated fadeInLeftBig">Sign up right now! </h1>
                   <hr className="hr-light"/>
-                  <h6 className="mb-4">Garden Hub is an IOT application that directly controls a user’s home lawn/garden  irrigation system and monitors the immediate soil and climate with wirelessly transmitted sensor data.</h6>
-                  <Button outline color="white">Learn More</Button>
+                  <h6 className="mb-4 animated fadeInLeftBig" >Garden Hub is an IOT application that directly controls a user’s home lawn/garden  irrigation system and monitors the immediate soil and climate with wirelessly transmitted sensor data.</h6>
+                  <Button outline color="white" className="animated fadeInLeftBig">Learn More</Button>
                 </div>
                 <Col md="6" xl="5" className="mb-4">
-                  <Card id="classic-card">
+                  <Card id="classic-card"className="animated zoomInLeft">
                     <CardBody className="z-depth-2 white-text">
                       <h3 className="text-center"><Fa icon="user"/> Register:</h3>
                       <hr className="hr-light"/>
