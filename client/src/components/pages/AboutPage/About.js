@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Card, CardBody, Mask, View,} from 'mdbreact';
-
 const InfoPage = () =>  {
   return(
     <Container>
