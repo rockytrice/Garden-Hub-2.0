@@ -1,67 +1,80 @@
-.form-dark .font-small {
-    font-size: 0.8rem; }
-  
-  .form-dark [type="radio"] + label,
-  .form-dark [type="checkbox"] + label {
-    font-size: 0.8rem; }
-  
-  .form-dark [type="checkbox"] + label:before {
-    top: 2px;
-    width: 15px;
-    height: 15px; }
-  
-  .form-dark .md-form label {
-    color: #fff; }
-  
-  .form-dark input[type=text]:focus:not([readonly]) {
-    border-bottom: 1px solid #00C851;
-    -webkit-box-shadow: 0 1px 0 0 #00C851;
-    box-shadow: 0 1px 0 0 #00C851; }
-  
-  .form-dark input[type=text]:focus:not([readonly]) + label {
-    color: #fff; }
-  
-  .form-dark input[type=password]:focus:not([readonly]) {
-    border-bottom: 1px solid #00C851;
-    -webkit-box-shadow: 0 1px 0 0 #00C851;
-    box-shadow: 0 1px 0 0 #00C851; }
-  
-  .form-dark input[type=password]:focus:not([readonly]) + label {
-    color:white; }
-  
-  .form-dark input[type="checkbox"] + label:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 17px;
-    height: 17px;
-    z-index: 0;
-    border: 1.5px solid #fff;
-    border-radius: 1px;
-    margin-top: 2px;
-    -webkit-transition: 0.2s;
-    transition: 0.2s; }
-  
-  .form-dark input[type="checkbox"]:checked + label:before {
-    top: -4px;
-    left: -3px;
-    width: 12px;
-    height: 22px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: transparent #00c851 #00c851 transparent;
-    -webkit-transform: rotate(40deg);
-    -ms-transform: rotate(40deg);
-    transform: rotate(40deg);
-    -webkit-backface-visibility: hidden;
-    -webkit-transform-origin: 100% 100%;
-    -ms-transform-origin: 100% 100%;
-    transform-origin: 100% 100%; }
+#classicformpage .view {
+  background-image: url('https://images.unsplash.com/photo-1521798948753-02f843fd3e5d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7a2059a47213b313bb76f8996273d794&auto=format&fit=crop&w=1350&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
 
-    body{
-        background-image: url('https://images.unsplash.com/photo-1491146179969-d674118945ff?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a322c74c18eb76a9884e03724ddf7a9&auto=format&fit=crop&w=1489&q=80');
-        background-repeat: no-repeat;
-        background-size: cover;
-        
-    }
+#classicformpage .gradient {
+  background: -webkit-linear-gradient(45deg, rgba(0, 255, 0, 0.3), rgba(0, 255, 0, 0.3)  100%);
+  background: -webkit-gradient(linear, 45deg, from(rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%));
+  background: linear-gradient(to 45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
+}
+
+#classicformpage .card {
+  background: -webkit-linear-gradient(45deg, rgba(-17, 94, 45, 0.3), rgba(0, 255, 0, 0.3)  100%);
+}
+
+#classicformpage h6 {
+  line-height: 1.7;
+}
+
+#classicformpage .navbar {
+  transition: background .5s ease-in-out,padding .5s ease-in-out;
+}
+
+.top-nav-collapse {
+  background: #424f95 !important;
+}
+
+@media (max-width: 768px) {
+  #classicformpage .navbar:not(.top-nav-collapse) {
+      background: #424f95 !important;
+  }
+}
+
+#classicformpage label {
+  color: #fff!important;
+}
+
+#classicformpage .view {
+  background-image: url('https://images.unsplash.com/photo-1521798948753-02f843fd3e5d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7a2059a47213b313bb76f8996273d794&auto=format&fit=crop&w=1350&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
+#classicformpage .gradient {
+  background: -webkit-linear-gradient(45deg, rgba(0, 255, 0, 0.3), rgba(0, 255, 0, 0.3)  100%);
+  background: -webkit-gradient(linear, 45deg, from(rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%));
+  background: linear-gradient(to 45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
+}
+
+#classicformpage .card {
+  background: -webkit-linear-gradient(45deg, rgba(-17, 94, 45, 0.3), rgba(0, 255, 0, 0.3)  100%);
+}
+
+#classicformpage h6 {
+  line-height: 1.7;
+}
+
+#classicformpage .navbar {
+  transition: background .5s ease-in-out,padding .5s ease-in-out;
+}
+
+.top-nav-collapse {
+  background: #424f95 !important;
+}
+
+@media (max-width: 768px) {
+  #classicformpage .navbar:not(.top-nav-collapse) {
+      background: #424f95 !important;
+  }
+}
+
+#classicformpage label {
+  color: #fff!important;
+}
+

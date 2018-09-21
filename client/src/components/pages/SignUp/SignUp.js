@@ -74,7 +74,7 @@ class SignUpPage extends React.Component {
                       <Input label="Your email" icon="envelope"/>
                       <Input label="Your password" icon="lock" type="password"/>
                       <div className="text-center mt-4 black-text">
-                        <Button color="brown">Sign Up</Button>
+                        <Button outline color="white">Sign Up</Button>
                         <hr className="hr-light"/>
                         <div className="text-center d-flex justify-content-center white-label">
                           <a className="p-2 m-2">
