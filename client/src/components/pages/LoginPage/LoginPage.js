@@ -58,11 +58,11 @@ class LoginPage extends React.Component {
             <Container>
               <Row>
                 <div className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5">
-                  <h1 className="h1-responsive font-weight-bold">Welcome Back! </h1>
+                  <h1 className="h1-responsive font-weight-bold animated fadeInUpBig ">Welcome Back! </h1>
                   <hr className="hr-light"/>
                 </div>
                 <Col md="6" xl="5" className="mb-4">
-                  <Card id="classic-card">
+                  <Card id="classic-card" className="animated fadeInDown ">
                     <CardBody className="z-depth-2 white-text">
                       <h3 className="text-center"><Fa icon="user"/> Login:</h3>
                       <hr className="hr-light"/>

@@ -40,7 +40,7 @@ class SignUpPage extends React.Component {
                 <Collapse isOpen = {this.state.collapse} navbar>
                   <NavbarNav left>
                     <NavItem active>
-                      <NavLink to="#!">Login</NavLink>
+                      <NavLink to="/">Login</NavLink>
                     </NavItem>
                   </NavbarNav>
                   <NavbarNav right >
