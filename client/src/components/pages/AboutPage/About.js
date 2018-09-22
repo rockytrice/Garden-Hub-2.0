@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Container, Row, Col, Card, CardBody, Mask, View,} from 'mdbreact';
 import TeamPage from "../../TeamCard";
 import FooterPage from "../../Footer";
