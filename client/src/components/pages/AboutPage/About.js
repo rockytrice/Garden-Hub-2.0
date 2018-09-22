@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Card, CardBody, Mask, View,} from 'mdbreact';
+import TeamPage from "../../TeamCard";
+import FooterPage from "../../Footer";
+
 const InfoPage = () =>  {
   return(
+    <React.Fragment>
     <Container>
       <Row>
         <Col md="12">
@@ -23,9 +27,11 @@ const InfoPage = () =>  {
           </Container>
         </Col>
       </Row>
-      <hr className="mb-5 mt-4"/>
-      
+      {/* <hr className="mb-5 mt-4"/> */}
+      <TeamPage />
     </Container>
+    <FooterPage />
+  </React.Fragment>
   );
 }
 export default InfoPage;
