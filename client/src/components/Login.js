@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import './Login.css';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import "./Login.css";
 
 class Login extends Component {
 
   constructor() {
     super();
     this.state = {
-      username: '',
-      password: '',
-      message: ''
+      username: "",
+      password: "",
+      message: ""
     };
   }
   onChange = (e) => {
@@ -25,15 +25,15 @@ class Login extends Component {
 
     const { username, password } = this.state;
 
-    axios.post('/api/auth/login', { username, password })
+    axios.post("/api/auth/login", { username, password })
       .then((result) => {
-        localStorage.setItem('jwtToken', result.data.token);
-        this.setState({ message: '' });
-        this.props.history.push('/')
+        localStorage.setItem("jwtToken", result.data.token);
+        this.setState({ message: "" });
+        this.props.history.push("/")
       })
       .catch((error) => {
         if(error.response.status === 401) {
-          this.setState({ message: 'Login failed. Username or password not match' });
+          this.setState({ message: "Login failed. Username or password not match" });
         }
       });
   }
@@ -43,7 +43,7 @@ class Login extends Component {
     return (
       <div class="container">
         <form class="form-signin" onSubmit={this.onSubmit}>
-          {message !== '' &&
+          {message !== "" &&
             <div class="alert alert-warning alert-dismissible" role="alert">
               { message }
             </div>

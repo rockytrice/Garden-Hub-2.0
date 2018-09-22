@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import './Login.css';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import "./Login.css";
 
 class Create extends Component {
 
   constructor() {
     super();
     this.state = {
-      username: '',
-      password: ''
+      username: "",
+      password: ""
     };
   }
   onChange = (e) => {
@@ -24,7 +24,7 @@ class Create extends Component {
 
     const { username, password } = this.state;
 
-    axios.post('/api/auth/register', { username, password })
+    axios.post("/api/auth/register", { username, password })
       .then((result) => {
         this.props.history.push("/login")
       });
