@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mask, Row, Col, Fa, Button, View, Container, } from 'mdbreact';
+import { Mask, Row, Col, Button, View, Container, } from 'mdbreact';
 import './SignUp.css'
 import SignUpCard from "./RegisterCard";
 const SignUpPage = ()=> (
