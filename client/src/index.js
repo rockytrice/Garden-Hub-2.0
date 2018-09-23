@@ -5,5 +5,5 @@ import Router from "./components/Router";
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import 'mdbreact/dist/css/mdb.css';
-
+// import   DashBoard from "./components/pages/DashboardPage/Dashboard"
 ReactDOM.render(<Router />, document.getElementById("root"));

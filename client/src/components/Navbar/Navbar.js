@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import {  Navbar, NavbarNav, NavItem, Fa, SideNavItem, SideNavCat, SideNavNav, SideNav,  } from 'mdbreact';
-
-class DoubleNavigationPage extends React.Component {
+import {  Navbar, NavbarNav, NavItem, Fa, SideNavItem, SideNavCat, SideNavNav, SideNav  } from 'mdbreact';
+import "./Navbar.css";
+class NavBar extends React.Component {
     constructor(props) {
     super(props);
     this.state = {
@@ -36,17 +36,16 @@ class DoubleNavigationPage extends React.Component {
     
     return (
         <Router>
-        <div className="fixed-sn light-blue-skin" >
+        <div className="fixed-sn light-blue-skin"  >
             <SideNav
             triggerOpening={this.state.toggleStateA}
             breakWidth={this.state.breakWidth}
-            bg="https://i0.wp.com/meqasa.com/blog/wp-content/uploads/2016/03/garden-watering.jpg?ssl=1"
+            bg="https://images.unsplash.com/photo-1521798948753-02f843fd3e5d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7a2059a47213b313bb76f8996273d794&auto=format&fit=crop&w=1350&q=80"
             mask="slight"
             >
             <SideNavNav>
                 <SideNavCat name="Dashboard" id="dash-board" icon="line-chart">
-                    <SideNavItem>Submit listing</SideNavItem>
-                    <SideNavItem>Registration form</SideNavItem>
+                <a href="/DashBoard">Home</a>
                 </SideNavCat>
                 <SideNavCat name="Overview" id="full-app" icon="eye">
                     <SideNavItem></SideNavItem>
@@ -59,12 +58,11 @@ class DoubleNavigationPage extends React.Component {
                     <SideNavItem>Monthly meetings</SideNavItem>
                 </SideNavCat>    
                 <SideNavCat name="Units" id="temp" icon="thermometer-3">
-                    <SideNavItem>Instruction</SideNavItem>
+                    <SideNavItem>Info</SideNavItem>
                     <SideNavItem>Monthly meetings</SideNavItem>  
                 </SideNavCat>      
                 <SideNavCat name="About" id="about-cat" icon="info-circle">
-                    <SideNavItem>Instruction</SideNavItem>
-                    <SideNavItem>Monthly meetings</SideNavItem>
+                    <a href="/About">Info</a>
                 </SideNavCat>
                 <SideNavCat name="Contact me" id="contact-me-cat" icon="envelope-o">
                     <SideNavItem>FAQ</SideNavItem>
@@ -72,8 +70,8 @@ class DoubleNavigationPage extends React.Component {
                 </SideNavCat>
             </SideNavNav>
             </SideNav>
-            <Navbar style={navStyle} double expand="md" fixed="top" scrolling> 
-            <NavbarNav left>
+            <Navbar style={navStyle} double expand="md" fixed="top" scrolling > 
+            <NavbarNav left >
                 <NavItem>
                     <div onClick={this.handleToggleClickA} key="sideNavToggleA" style={{ lineHeight: '32px', marginRight: '1em', verticalAlign: 'middle' }}><Fa icon="bars" color="white" size="2x"></Fa></div>
                 </NavItem>
@@ -89,4 +87,4 @@ class DoubleNavigationPage extends React.Component {
     }
 };
 
-export default DoubleNavigationPage;
+export default NavBar;

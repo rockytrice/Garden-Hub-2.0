@@ -1,0 +1,11 @@
+.light-blue-skin .navbar {
+    background: #007E33!important
+    ;
+}
+
+.light-blue-skin .side-nav .collapsible li .collapsible-header.active {
+    background-color: #007E33!important;
+}
+.light-blue-skin .side-nav .collapsible li .collapsible-header:hover {
+    background-color: #007E33
+}

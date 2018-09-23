@@ -2,10 +2,12 @@ import React from 'react';
 import { Container, Row, Col, Card, CardBody, Mask, View,} from 'mdbreact';
 import TeamPage from "../../TeamCard";
 import FooterPage from "../../Footer";
-
+import "./About.css";
+import NavBar from "../../Navbar";
 const InfoPage = () =>  {
   return(
     <React.Fragment>
+    <NavBar />
     <Container>
       <Row>
         <Col md="12">
