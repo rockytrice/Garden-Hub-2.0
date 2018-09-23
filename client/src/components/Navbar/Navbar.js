@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import {  Navbar, NavbarNav, NavItem, Fa, SideNavItem, SideNavCat, SideNavNav, SideNav  } from 'mdbreact';
-
+import "./Navbar.css";
 class NavBar extends React.Component {
     constructor(props) {
     super(props);
@@ -36,7 +36,7 @@ class NavBar extends React.Component {
     
     return (
         <Router>
-        <div className="fixed-sn light-blue-skin" >
+        <div className="fixed-sn light-blue-skin"  >
             <SideNav
             triggerOpening={this.state.toggleStateA}
             breakWidth={this.state.breakWidth}
@@ -70,8 +70,8 @@ class NavBar extends React.Component {
                 </SideNavCat>
             </SideNavNav>
             </SideNav>
-            <Navbar style={navStyle} double expand="md" fixed="top" scrolling> 
-            <NavbarNav left>
+            <Navbar style={navStyle} double expand="md" fixed="top" scrolling > 
+            <NavbarNav left >
                 <NavItem>
                     <div onClick={this.handleToggleClickA} key="sideNavToggleA" style={{ lineHeight: '32px', marginRight: '1em', verticalAlign: 'middle' }}><Fa icon="bars" color="white" size="2x"></Fa></div>
                 </NavItem>

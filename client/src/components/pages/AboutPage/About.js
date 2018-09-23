@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Card, CardBody, Mask, View,} from 'mdbreact';
 import TeamPage from "../../TeamCard";
-// import FooterPage from "../../Footer";
+import FooterPage from "../../Footer";
 import "./About.css";
 import NavBar from "../../Navbar";
 const InfoPage = () =>  {
@@ -32,7 +32,7 @@ const InfoPage = () =>  {
       {/* <hr className="mb-5 mt-4"/> */}
       <TeamPage />
     </Container>
-    {/* <FooterPage /> */}
+    <FooterPage />
   </React.Fragment>
   );
 }

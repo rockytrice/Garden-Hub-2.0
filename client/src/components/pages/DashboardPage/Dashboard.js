@@ -4,6 +4,7 @@ import "./Dashboard.css";
 import NavBar from "../../Navbar/Navbar";
 import Zone1 from "./Zones/Zone1";
 import Zone2 from "./Zones/Zone2";
+import FooterPage from "../../Footer";
 const DashBoard= ()=> {
     return(
       <React.Fragment>
@@ -20,6 +21,7 @@ const DashBoard= ()=> {
         <div className="col-md-6"><Zone2 /></div>
       </div>
       </Container>
+      <FooterPage />
       </React.Fragment>
      
       

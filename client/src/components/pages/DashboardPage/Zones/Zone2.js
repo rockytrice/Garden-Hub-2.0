@@ -5,7 +5,7 @@ class Zone2 extends React.Component {
   render() {
     return (
       <Card>
-        <CardImage className="img-fluid" src="https://yearroundharvest.files.wordpress.com/2012/11/dscn4807.jpg" />
+        <CardImage className="img-fluid" src="http://www.thekitchengarden.co.nz/wp-content/uploads/2013/04/tray-of-salad.jpg" />
         <CardBody>
             <CardTitle>Zone 2</CardTitle>
             <CardText>Click more Info to see real time data for zone 2.</CardText>
