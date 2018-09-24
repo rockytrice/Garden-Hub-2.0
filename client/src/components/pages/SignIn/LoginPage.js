@@ -30,7 +30,7 @@ class LoginPage extends Component {
       .then((result) => {
         localStorage.setItem("jwtToken", result.data.token);
         this.setState({ message: "" });
-        this.props.history.push("/")
+        this.props.history.push("/DashBoard")
       })
       .catch((error) => {
         if(error.response.status === 401) {
@@ -61,8 +61,8 @@ class LoginPage extends Component {
                   <CardBody className="z-depth-2 white-text">
                   <h3 className="text-center"><Fa icon="user"/> Login:</h3>
                     <hr className="hr-light"/>
-                    <Input label="Your email" icon="envelope"/>
-                    <Input label="Your password" icon="lock" type="password"/>
+                    <Input label="Your email" icon="envelope" class="form-control" placeholder="Email address" name="username" value={username} onChange={this.onChange}/>
+                    <Input label="Your password" icon="lock" type="password" class="form-control" placeholder="Password" name="password" value={password} onChange={this.onChange}/>
                       <div className="text-center mt-4 black-text">
                         <Button outline color="white" type="submit">Login</Button>
                         <hr className="hr-light"/>

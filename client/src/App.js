@@ -8,17 +8,18 @@ import SignUpPage from "./components/pages/SignUp"
 
 class App extends Component {
 
-  constructor(props) {
+ /* constructor(props) {
     super(props);
     this.state = {
       books: []
     };
   }
+  */
 
   componentDidMount() {
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
-    axios.get('/api/book')
-      .then(res => {
+    axios.get('/DashBoard')
+      /*.then(res => {
         this.setState({ books: res.data });
         console.log(this.state.books);
       })
@@ -26,8 +27,9 @@ class App extends Component {
         if(error.response.status === 401) {
           this.props.history.push("/");
         }
-      });
+      });*/
   }
+  
 
   logout = () => {
     localStorage.removeItem('jwtToken');
