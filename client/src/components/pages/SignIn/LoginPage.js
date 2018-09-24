@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import { Mask, Row, Col,  View, Container } from 'mdbreact';
+import axios from "axios";
 //import CardLogin from "./LoginCard";
 import {Card, CardBody, Input,Fa,Button} from "mdbreact";
 import SocialIcon from "./Icons"
 import Irrigationicon from "../../../images/Irrigationicon.png";
-class LoginPage extends Component (
+class LoginPage extends Component {
 
   constructor() {
     super();
@@ -37,12 +38,19 @@ class LoginPage extends Component (
         }
       });
   }
-
-
-  <div id="classicformpage">
+  render(){
+    const { username, password, message } = this.state;
+    return(
+  <div id ="classicformpage">
         <View>
           <Mask className="d-flex justify-content-center align-items-center gradient">
             <Container>
+              <form className="form-signin" onSubmit={this.onSubmit}>
+              {message !== "" &&
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                  { message }
+                </div>
+              }
               <Row>
                 <div className="white-text text-center   text-md-left col-md-6 mt-xl-5 mb-5">
                 <h1 className="pic-header" style={{fontFamily:"GardenPartySans", textAlign:"center",fontSize:50, fontWeight:"bolder"}}>GardenHub 2.0</h1>
@@ -56,7 +64,7 @@ class LoginPage extends Component (
                     <Input label="Your email" icon="envelope"/>
                     <Input label="Your password" icon="lock" type="password"/>
                       <div className="text-center mt-4 black-text">
-                        <Button outline color="white">Login</Button>
+                        <Button outline color="white" type="submit">Login</Button>
                         <hr className="hr-light"/>
                           <SocialIcon />
                       </div>
@@ -64,9 +72,11 @@ class LoginPage extends Component (
                 </Card>  
                 </Col>
               </Row>
+              </form>
             </Container>
           </Mask>
         </View>
         </div>
-    );
+      )}
+    };
 export default LoginPage;
