@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button, Card, CardBody, CardImage, CardTitle, CardText } from 'mdbreact';
-
+import lettuce from "../../../../images/lettuce.jpg";
 class Zone2 extends React.Component {
   render() {
     return (
       <Card>
-        <CardImage className="img-fluid" src="http://www.thekitchengarden.co.nz/wp-content/uploads/2013/04/tray-of-salad.jpg" />
+        <CardImage className="img-fluid" src={lettuce} />
         <CardBody>
             <CardTitle>Zone 2</CardTitle>
             <CardText>Click more Info to see real time data for zone 2.</CardText>
