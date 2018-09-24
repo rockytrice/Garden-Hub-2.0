@@ -5,7 +5,7 @@ import App from "../App";
 import DashBoard from "./pages/DashboardPage/Dashboard";
 import InfoPage from "./pages/AboutPage/About";
 
-const Router = () => (
+const Router1 = () => (
     <BrowserRouter>
         <Switch>
         <Route exact path="/" component={App} />
@@ -16,4 +16,4 @@ const Router = () => (
     </BrowserRouter>
 )
 
-export default Router;
+export default Router1;

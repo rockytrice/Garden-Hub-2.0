@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import reactDom from "react-dom";
-import { link } from "react-router-dom";
+//import { link } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
 import InfoPage from "./components/pages/AboutPage/About"
@@ -37,6 +37,10 @@ class App extends Component {
 
    render() {
     return (
+      <div>
+        <SignUpPage/>
+      </div>
+      /*
       <div class="container">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -59,7 +63,7 @@ class App extends Component {
               <tbody>
                 {this.state.books.map(book =>
                   <tr>
-                    <td><Link to={`/show/${book._id}`}>{book.isbn}</Link></td>
+                    
                     <td>{book.title}</td>
                     <td>{book.author}</td>
                   </tr>
@@ -68,7 +72,7 @@ class App extends Component {
             </table>
           </div>
         </div>
-      </div>
+      </div>*/
     );
   }
 }
