@@ -5,7 +5,7 @@ import FooterPage from "../../Footer";
 import "./About.css";
 import NavBar from "../../Navbar";
 import Summary from "./AboutSummary";
-
+import iotcontroller from "../../../images/iotcontroller.png"
 
 
 const InfoPage = () =>  {
@@ -17,7 +17,7 @@ const InfoPage = () =>  {
         <Col md="12">
           <Card reverse>
             <View cascade hover waves>
-              <img src="https://cdn-images-1.medium.com/max/1600/1*1gdLYPB6XiDPFv2B_lnkSw.png" className="img-fluid" alt="iot controller"/>
+              <img src={iotcontroller} className="img-fluid" alt="iot controller"/>
               <Mask overlay="white-slight" className="waves-light"/>
             </View>
             <CardBody cascade className="text-center">
