@@ -9,26 +9,28 @@ const API_KEY= `${process.env.REACT_APP_API_KEY}`
 
 class WeatherTron extends React.Component {
   state= {
-    icon: undefined,
-    temperature:  undefined,
+    icon: "icon",
+    temperature:"",
     maxtemperature:undefined ,
     mintemperature: undefined, 
     city:undefined ,
     country:undefined,
     humidity:undefined,
     description:undefined,
-    error: ""
+    error: "",
+    loading:true
 
   }
   getWeather= async(event)=> {
         event.preventDefault();
         const city=event.target.elements.city.value;
         const country=event.target.elements.country.value;
-
+        
         const api_call = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&APPID=${API_KEY}&units=imperial`);
         const data = await api_call.json();
         console.log(data);
         this.setState({
+          loading:data.false,
           temperature:data.list[0].main.temp,
           maxtemperature:data.list[0].main.temp_max,
           mintemperature:data.list[0].main.temp_min,
@@ -36,8 +38,8 @@ class WeatherTron extends React.Component {
           country:data.city.country,
           humidity:data.list[0].main.humidity,
           description:data.list[0].weather[0].description,
-          icon:data.list[0].weather[0].icon,
-          err:""
+           icon: data.list[0].weather[0].icon,
+          err:"please enter values"
 
 
           
@@ -50,6 +52,7 @@ class WeatherTron extends React.Component {
     <Container fluid style={{textAlign:"center"}} >
     <Title />
       <Form getWeather={this.getWeather}/>
+      {this.state.loading ? "Loading....":
       <WeatherContent
       city={this.state.city}
       country={this.state.country}
@@ -62,6 +65,7 @@ class WeatherTron extends React.Component {
       error={this.state.error}
 
        />
+      }
     </Container>
   </Jumbotron> 
      )
