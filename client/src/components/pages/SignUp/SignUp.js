@@ -1,9 +1,9 @@
-import React, { Component, history }from 'react';
+import React, { Component }from 'react';
 import axios from "axios";
 import { Mask, Row, Col, View, Container, } from 'mdbreact';
 import {Card, CardBody, Input,Fa,Button} from "mdbreact";
 import SocialIcon from "../SignIn/Icons"
-import Irrigationicon from "../../../images/Irrigationicon.png";
+// import Irrigationicon from "../../../images/Irrigationicon.png";
 import './SignUp.css';
 
 
@@ -56,7 +56,7 @@ class SignUpPage extends Component {
                           <hr className="hr-light"/>
                             <Input label="Your name" icon="user" />
                             <Input label="Your email" icon="envelope" type="email" class="form-control" placeholder="Email address" name="username" value={username} onChange={this.onChange}/>
-                            <Input label="Your password" icon="lock" type="password" type="password" class="form-control" placeholder="Password" name="password" value={password} onChange={this.onChange}/>
+                            <Input label="Your password" icon="lock" type="password" class="form-control" placeholder="Password" name="password" value={password} onChange={this.onChange}/>
                           <div className="text-center mt-4 black-text">
                             <Button outline color="white" type="submit">Sign Up</Button>
                               <hr className="hr-light"/>

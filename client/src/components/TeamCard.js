@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {  Row, Col, Card, CardBody, Avatar,  Fa,} from 'mdbreact';
 const TeamPage = () =>  {
   return(
