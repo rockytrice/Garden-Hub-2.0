@@ -4,12 +4,12 @@ import {Button} from "mdbreact";
 class  Form extends React.Component{
     render(){
         return (
-            <div>
+            
+            <form onSubmit={this.props.getWeather}>
             <input type="text" name="city" placeholder="City..." />
             <input type="text" name="country" placeholder="Country..." />
-            <Button color="primary">Get Weather</Button>
-
-            </div>
+            <Button color="primary" type="submit">Get Weather</Button>
+            </form>
         )
     }
 }
