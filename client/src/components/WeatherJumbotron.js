@@ -2,21 +2,21 @@ import React from "react";
 import { Jumbotron, Container } from 'reactstrap';
 import Title from "./Title";
 import Form from "./WeatherForm";
-import Weather from "./Weather";
+import WeatherContent from "./Weather";
 
 const API_KEY= `${process.env.REACT_APP_API_KEY}`
 
 
 class WeatherTron extends React.Component {
   state= {
-    icon: "",
-    temperature: "" ,
-    maxtemperature:"" ,
-    mintemperature: "", 
-    city:"" ,
-    country:"",
-    humidity:"",
-    description:"",
+    icon: undefined,
+    temperature:  undefined,
+    maxtemperature:undefined ,
+    mintemperature: undefined, 
+    city:undefined ,
+    country:undefined,
+    humidity:undefined,
+    description:undefined,
     error: ""
 
   }
@@ -29,14 +29,14 @@ class WeatherTron extends React.Component {
         const data = await api_call.json();
         console.log(data);
         this.setState({
-          temperature:data.list.main.temp,
-          maxtemperature:data.list.main.temp_max,
-          mintemperature:data.list.main.temp_min,
+          temperature:data.list[0].main.temp,
+          maxtemperature:data.list[0].main.temp_max,
+          mintemperature:data.list[0].main.temp_min,
           city:data.city.name,
           country:data.city.country,
-          humidity:data.list.main.humidity,
-          description:data.list.weather[0].description,
-          icon:data.list.weather[0].icon,
+          humidity:data.list[0].main.humidity,
+          description:data.list[0].weather[0].description,
+          icon:data.list[0].weather[0].icon,
           err:""
 
 
@@ -50,7 +50,18 @@ class WeatherTron extends React.Component {
     <Container fluid style={{textAlign:"center"}} >
     <Title />
       <Form getWeather={this.getWeather}/>
-      <Weather />
+      <WeatherContent
+      city={this.state.city}
+      country={this.state.country}
+      icon={this.state.icon}
+      temperature={this.state.temperature}
+      mintemperature={this.state.mintemperature}
+      maxtemperature={this.state.maxtemperature}
+      humidity={this.state.humidity}
+      description={this.state.description}
+      error={this.state.error}
+
+       />
     </Container>
   </Jumbotron> 
      )
