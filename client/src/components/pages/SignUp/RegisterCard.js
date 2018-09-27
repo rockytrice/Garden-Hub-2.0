@@ -6,7 +6,6 @@ const SignUpCard = () =>(
   <CardBody className="z-depth-2 white-text">
     <h3 className="text-center"><Fa icon="user"/> Register:</h3>
     <hr className="hr-light"/>
-      <Input label="Your name" icon="user"/>
       <Input label="Your email" icon="envelope"/>
       <Input label="Your password" icon="lock" type="password"/>
     <div className="text-center mt-4 black-text">

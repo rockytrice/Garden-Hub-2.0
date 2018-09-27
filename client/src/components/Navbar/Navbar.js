@@ -53,8 +53,8 @@ class NavBar extends React.Component {
                 <SideNavCat name="Instruction" id="instruction-cat" icon="hand-pointer-o">
                     <SideNavItem>Install</SideNavItem>
                 </SideNavCat>
-                <SideNavCat name="Control" id="controller" icon="toggle-on">
-                <a href="/Controls">Info</a>
+                <SideNavCat name="Controls" id="controller" icon="toggle-on">
+                <a href="/Controls">control panel</a>
                 </SideNavCat>    
                 <SideNavCat name="Units" id="temp" icon="thermometer-3">
                     <SideNavItem>Info</SideNavItem>
