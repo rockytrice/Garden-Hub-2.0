@@ -16,12 +16,12 @@ const Controls =() => {
             <Button type="submit" color="danger">ALL-OFF</Button>
                     </div>
                 <div className="col-md-4">
-            <Button type="submit" color="success">ZONE1-ON</Button>
-            <Button type="submit" color="danger">ZONE1-OFF</Button>
+            <Button type="submit" color="success">ZONE 1-ON</Button>
+            <Button type="submit" color="danger">ZONE 1-OFF</Button>
                     </div>
                 <div className="col-md-4">
-            <Button type="submit" color="success">ZONE2-ON</Button>
-            <Button type="submit" color="danger">ZONE2-OFF</Button>
+            <Button type="submit" color="success">ZONE 2-ON</Button>
+            <Button type="submit" color="danger">ZONE 2-OFF</Button>
                 </div>
             </div>
          </Container>

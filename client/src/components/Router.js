@@ -4,7 +4,7 @@ import Login from "./pages/SignIn/LoginPage";
 import App from "../App";
 import DashBoard from "./pages/DashboardPage/Dashboard";
 import InfoPage from "./pages/AboutPage/About";
-import Controls from "./pages/Controller/ControlPage";
+import Controls from "./pages/MQTTControllers/ControlPage";
 
 const Router1 = () => (
     <BrowserRouter>
