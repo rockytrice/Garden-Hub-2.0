@@ -4,6 +4,7 @@ import Login from "./pages/SignIn/LoginPage";
 import App from "../App";
 import DashBoard from "./pages/DashboardPage/Dashboard";
 import InfoPage from "./pages/AboutPage/About";
+import Controls from "./pages/Controller/ControlPage";
 
 const Router1 = () => (
     <BrowserRouter>
@@ -12,6 +13,7 @@ const Router1 = () => (
         <Route  path= "/Login" component = {Login} />
         <Route path="/DashBoard" component= {DashBoard} />
         <Route path="/About" component= {InfoPage} /> 
+        <Route path="/Controls" component={Controls} />
         </Switch>
     </BrowserRouter>
 )
