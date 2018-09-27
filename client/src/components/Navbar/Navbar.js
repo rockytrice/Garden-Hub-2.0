@@ -56,12 +56,10 @@ class NavBar extends React.Component {
                 <SideNavCat name="Controls" id="controller" icon="toggle-on">
                 <a href="/Controls">control panel</a>
                 </SideNavCat>    
-                <SideNavCat name="Units" id="temp" icon="thermometer-3">
-                    <SideNavItem>Info</SideNavItem>
-                </SideNavCat>      
                 <SideNavCat name="About" id="about-cat" icon="info-circle">
                     <a href="/About">Info</a>
                 </SideNavCat>
+                      
             </SideNavNav>
             </SideNav>
             <Navbar style={navStyle} double expand="md" fixed="top" scrolling > 

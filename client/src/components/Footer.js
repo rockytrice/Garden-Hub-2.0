@@ -12,12 +12,12 @@ class FooterPage extends React.Component {
                         <p>Here you can use rows and columns here to organize your footer content.</p>
                     </Col>
                     <Col sm="6">
-                        <h5 className="title">Links</h5>
+                        <h5 className="title">Links to some of the products used</h5>
                         <ul>
-                        <li className="list-unstyled"><a href="#!">Link 1</a></li>
-                        <li className="list-unstyled"><a href="#!">Link 2</a></li>
-                        <li className="list-unstyled"><a href="#!">Link 3</a></li>
-                        <li className="list-unstyled"><a href="#!">Link 4</a></li>
+                        <li className="list-unstyled"><a href="https://www.amazon.com/UTL-version-ESP-12E-ESP-12F-wireless/dp/B07F7H547B/ref=sr_1_2?s=toys-and-games&ie=UTF8&qid=1538067496&sr=1-2&keywords=esp12e&dpID=41hxeZuQZSL&preST=_SY300_QL70_&dpSrc=srch">esp8266 Wireless Module</a></li>
+                        <li className="list-unstyled"><a href="https://www.dfrobot.com/product-599.html">Gravity: Analog Soil Moisture Sensor For Arduino</a></li>
+                        <li className="list-unstyled"><a href="https://www.dfrobot.com/product-164.html">Gravity: DS18B20 Temperature Sensor</a></li>
+                        {/* <li className="list-unstyled"><a href="#!">Link 4</a></li> */}
                         </ul>
                     </Col>
                     </Row>
