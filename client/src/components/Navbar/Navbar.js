@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import {  Navbar, NavbarNav, NavItem, Fa, SideNavItem, SideNavCat, SideNavNav, SideNav  } from 'mdbreact';
+import {  Navbar, NavbarNav, NavItem, Fa, SideNavItem, SideNavCat, SideNavNav, SideNav, Button  } from 'mdbreact';
 import "./Navbar.css";
 class NavBar extends React.Component {
     constructor(props) {
@@ -59,6 +59,7 @@ class NavBar extends React.Component {
                 <SideNavCat name="About" id="about-cat" icon="info-circle">
                     <a href="/About">Info</a>
                 </SideNavCat>
+                <Button flat>logout</Button>
                       
             </SideNavNav>
             </SideNav>

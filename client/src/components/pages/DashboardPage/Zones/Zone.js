@@ -4,7 +4,7 @@ import { Card, CardBody, CardImage, CardTitle, CardText,Tooltip,Col,CardFooter,R
 import tomatoes from "../../../../images/tomatoes.jpg";
 import lettuce from "../../../../images/lettuce.jpg";
 
-class Zone1 extends React.Component {
+class Zone extends React.Component {
   render() {
     return (
       <section className="text-center my-5">
@@ -63,7 +63,7 @@ class Zone1 extends React.Component {
     )
   }
 }
-export default Zone1;
+export default Zone;
 
 
 
