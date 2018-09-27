@@ -12,16 +12,16 @@ const Controls =() => {
             <Container className="controls" style={{marginTop:300}}>
                 <div className="row">
                     <div className="col-md-4">
-            <Button type="submit" color="primary">ALL-ON</Button>
-            <Button type="submit" color="primary">ALL-OFF</Button>
+            <Button type="submit" color="success">ALL-ON</Button>
+            <Button type="submit" color="danger">ALL-OFF</Button>
                     </div>
                 <div className="col-md-4">
-            <Button type="submit" color="primary">ZONE1-ON</Button>
-            <Button type="submit" color="primary">ZONE1-OFF</Button>
+            <Button type="submit" color="success">ZONE1-ON</Button>
+            <Button type="submit" color="danger">ZONE1-OFF</Button>
                     </div>
                 <div className="col-md-4">
-            <Button type="submit" color="primary">ZONE2-ON</Button>
-            <Button type="submit" color="primary">ZONE2-OFF</Button>
+            <Button type="submit" color="success">ZONE2-ON</Button>
+            <Button type="submit" color="danger">ZONE2-OFF</Button>
                 </div>
             </div>
          </Container>
