@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
 const SingleListItem = (props) => {
-    const weatherId = 200;
-    const iconClass = getIconClassName(weatherId);
   
     return (
       <div className="single-list-item">
@@ -14,7 +12,6 @@ const SingleListItem = (props) => {
           <div className="li-desc">Sky is clear</div>
         </div>
         <div className="li-weather-icon">
-          <i className={`wi wi-owm-${weatherId} ${iconClass}`}></i>
         </div>
       </div>
     );
