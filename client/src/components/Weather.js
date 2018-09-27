@@ -1,7 +1,5 @@
 import React from "react";
-// import {Card,CardHeader,CardBody,CardTitle,CardText} from "mdbreact";
 import "./Weather.css"
-// import Moment from "react-moment";
 import moment from "moment";
 
 class  WeatherContent extends React.Component{
@@ -27,27 +25,6 @@ class  WeatherContent extends React.Component{
              </div>  
              </div>  
             
-
-        //     <div>
-        //     <div className= "row">
-        //     <div className="col-md-4">
-        //     <Card style={{width: '22rem', marginTop: '1rem'}}>
-        //       <CardHeader color="primary-color" tag="h3">Current Weather in {this.props.city},{this.props.country} </CardHeader>
-        //          <CardBody>
-        //     <CardTitle> <img src={`http://openweathermap.org/img/w/${this.props.icon}.png`} alt="weather icon" width="108" />{this.props.description}</CardTitle>
-        //     <CardText>
-        //       <ul style={{listStyle:"none"}}>
-        //         <li> Temperature is {this.props.temperature}</li>
-        //         <li> Humidity is {this.props.humidity}%</li>    
-        //        <li> Sunrise at {this.props.sunrise}</li>    
-        //        <li> Sunset at {this.props.sunset} </li> 
-        //      </ul>
-        //       </CardText>
-        //      </CardBody>
-        //     </Card>
-        //     </div>
-        //    </div>
-        //  </div>
         )   
     }
 }
@@ -55,4 +32,4 @@ export default WeatherContent;
 
 
 
-//  
+ 

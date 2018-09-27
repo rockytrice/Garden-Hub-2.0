@@ -21,20 +21,3 @@ export default Form;
 
 
 
-// / constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //       queryString: ''
-    //     };
-    //   }
-    
-    //   handleQueryStringChange = (e) => {
-    //     this.setState({
-    //       queryString: e.target.value
-    //     })
-    //   }
-      
-    //   handleSearch = (e) => {
-    //     e.preventDefault();
-    //     console.log('Fetch weather data for:', this.state.queryString);
-    //   }
