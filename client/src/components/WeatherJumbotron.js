@@ -5,10 +5,7 @@ import Title from "./Title";
 import Form from "./WeatherForm";
 import WeatherContent from "./Weather";
 
-
-
 const API_KEY= `${process.env.REACT_APP_API_KEY}`
-
 
 class WeatherTron extends React.Component {
   state={
