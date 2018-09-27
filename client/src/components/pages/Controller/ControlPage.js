@@ -1,12 +1,15 @@
 import React from "react";
-import {Button} from "mdbreact";
-
+import {Button,Container} from "mdbreact";
+import NavBar from "../../Navbar/Navbar";
+import "./Control.css";
 
 const Controls =() => {
 
 
         return(
-            <div className ="Container">
+            <React.Fragment>
+            <NavBar />
+            <Container className="controls" style={{marginTop:300}}>
                 <div className="row">
                     <div className="col-md-4">
             <Button type="submit" color="primary">ALL-ON</Button>
@@ -21,7 +24,9 @@ const Controls =() => {
             <Button type="submit" color="primary">ZONE2-OFF</Button>
                 </div>
             </div>
-         </div>
+         </Container>
+        
+         </React.Fragment>
          
         )
     
