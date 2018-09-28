@@ -2,7 +2,6 @@
 import React from 'react';
 import { Card, CardBody, CardImage, CardTitle, CardText,Tooltip,Col,CardFooter,Row } from 'mdbreact';
 import tomatoes from "../../../../images/tomatoes.jpg";
-import lettuce from "../../../../images/lettuce.jpg";
 
 class Zone extends React.Component {
   render() {
@@ -35,27 +34,33 @@ class Zone extends React.Component {
     </Card>
   </Col>
   <Col lg="4" md="12" className="mb-lg-0 mb-4">
-    <Card wide ecommerce>
-      <CardImage cascade src={lettuce} style={{width:400,height:300}}/>
-      <CardBody cascade className="text-center">
-        <a href="" className="text-muted">
-          <h5>Zone 2</h5>
-        </a>
-        <CardTitle>
-          <strong><a href="">Lettuce</a></strong>
-        </CardTitle>
-        <CardText></CardText>
-        <CardFooter className="px-1">
-          <span className="float-left font-weight-bold">
-          </span>
-          <span className="float-right">
-            <Tooltip placement="top" tag="a" component="i" componentClass="fa fa-eye grey-text ml-3" tooltipContent="Quick look"/>
-            <Tooltip placement="top" tag="a" component="i" componentClass="fa fa-heart grey-text ml-3" tooltipContent="Add to watchlist"/>
-          </span>
-        </CardFooter>
-      </CardBody>
-    </Card>
-  </Col>
+  <Card cascade>
+    <CardImage cascade tag="div">
+        <div className="view gradient-card-header blue-gradient">
+            <h2 className="h2-responsive">Heading</h2>
+            <p>Subheading</p>
+        </div>
+    </CardImage>
+    <CardBody cascade>
+          <CardTitle>Card title</CardTitle>
+          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+    </CardBody>
+  </Card>
+ </Col>
+ <Col lg="4" md="12" className="mb-lg-0 mb-4">
+  <Card cascade>
+    <CardImage cascade tag="div">
+        <div className="view gradient-card-header blue-gradient">
+            <h2 className="h2-responsive">Heading</h2>
+            <p>Subheading</p>
+        </div>
+    </CardImage>
+    <CardBody cascade>
+          <CardTitle>Card title</CardTitle>
+          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+    </CardBody>
+  </Card>
+ </Col>
   
 </Row>
 </section> 
