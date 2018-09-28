@@ -50,7 +50,7 @@ class Zone extends React.Component {
     <CardImage cascade tag="div">
         <div className="heading2" style={{background: '#21d192'}}>
             <h2 className="h2-responsive">Temperature</h2>
-            <p>data</p>
+            <p>25˚C</p>
         </div>
       </CardImage>
       <CardBody cascade>
@@ -64,7 +64,7 @@ class Zone extends React.Component {
     <CardImage cascade tag="div">
         <div className="heading2" style={{background: '#21d192'}}>
             <h2 className="h2-responsive">Soil Moisture</h2>
-            <p>data</p>
+            <p>45%</p>
         </div>
     </CardImage>
     <CardBody cascade>
