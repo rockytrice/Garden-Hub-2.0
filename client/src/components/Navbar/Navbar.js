@@ -3,6 +3,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import {  Navbar, NavbarNav, NavItem, Fa, SideNavItem, SideNavCat, SideNavNav, SideNav, Button  } from 'mdbreact';
 import "./Navbar.css";
 class NavBar extends React.Component {
+    
+
     constructor(props) {
     super(props);
     this.state = {
@@ -30,6 +32,10 @@ class NavBar extends React.Component {
         toggleStateA: !this.state.toggleStateA
     });
     }
+    logout = () => {
+        localStorage.removeItem('jwtToken');
+        window.location.reload();
+      }
 
     render() {
     const navStyle = { paddingLeft: this.state.windowWidth > this.state.breakWidth ? '210px' : '16px' };
@@ -59,8 +65,9 @@ class NavBar extends React.Component {
                 <SideNavCat name="About" id="about-cat" icon="info-circle">
                     <a href="/About">Info</a>
                 </SideNavCat>
-                <Button flat>logout</Button>
-                      
+                {localStorage.getItem("jwtToken") &&
+                <Button flat onClick={this.logout}>logout</Button>
+                     }
             </SideNavNav>
             </SideNav>
             <Navbar style={navStyle} double expand="md" fixed="top" scrolling > 
