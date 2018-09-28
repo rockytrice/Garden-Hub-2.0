@@ -40,6 +40,9 @@ client.on("message", function (topic, payload, packet) {
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
 //=======================================================================================================
 //Middleware to enable passport-jwt authentication
 //=======================================================================================================

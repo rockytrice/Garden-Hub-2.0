@@ -2,8 +2,22 @@
 import React from 'react';
 import { Card, CardBody, CardImage, CardTitle, CardText,Tooltip,Col,CardFooter,Row } from 'mdbreact';
 import tomatoes from "../../../../images/tomatoes.jpg";
+import { subscribe } from "../../../../messages";
+
 
 class Zone extends React.Component {
+  constructor(props) {
+	  super(props);
+
+	  subscribe((err, msg) => this.setState({ 
+		msg
+		}));
+
+	}
+
+	state = {
+		msg: 'no message yet',
+	};
   render() {
     return (
   <section className="text-center my-5">
@@ -40,7 +54,7 @@ class Zone extends React.Component {
         </div>
       </CardImage>
       <CardBody cascade>
-          <CardTitle>Card title</CardTitle>
+          <CardTitle>{this.state.temp}</CardTitle>
           <CardText></CardText>
       </CardBody>
     </Card>
@@ -54,7 +68,7 @@ class Zone extends React.Component {
         </div>
     </CardImage>
     <CardBody cascade>
-          <CardTitle>Card title</CardTitle>
+          <CardTitle>{this.state.moist}</CardTitle>
           <CardText></CardText>
     </CardBody>
   </Card>

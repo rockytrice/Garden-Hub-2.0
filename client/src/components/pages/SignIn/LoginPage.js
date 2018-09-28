@@ -47,7 +47,7 @@ class LoginPage extends Component {
             <Container>
               <form className="form-signin" onSubmit={this.onSubmit}>
               {message !== "" &&
-                <div class="alert alert-warning alert-dismissible" role="alert">
+                <div className="alert alert-warning alert-dismissible" role="alert">
                   { message }
                 </div>
               }
@@ -61,8 +61,8 @@ class LoginPage extends Component {
                   <CardBody className="z-depth-2 white-text">
                   <h3 className="text-center"><Fa icon="user"/> Login:</h3>
                     <hr className="hr-light"/>
-                    <Input label="Your email" icon="envelope" class="form-control" placeholder="Email address" name="username" value={username} onChange={this.onChange}/>
-                    <Input label="Your password" icon="lock" type="password" class="form-control" placeholder="Password" name="password" value={password} onChange={this.onChange}/>
+                    <Input label="Your email" icon="envelope" className="form-control" placeholder="Email address" name="username" value={username} onChange={this.onChange}/>
+                    <Input label="Your password" icon="lock" type="password" className="form-control" placeholder="Password" name="password" value={password} onChange={this.onChange}/>
                       <div className="text-center mt-4 black-text">
                         <Button outline color="white" type="submit">Login</Button>
                         <hr className="hr-light"/>
