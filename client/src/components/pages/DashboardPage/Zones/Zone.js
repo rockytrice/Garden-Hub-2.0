@@ -36,28 +36,28 @@ class Zone extends React.Component {
   <Col lg="4" md="12" className="mb-lg-0 mb-4">
   <Card cascade>
     <CardImage cascade tag="div">
-        <div className="view gradient-card-header blue-gradient">
-            <h2 className="h2-responsive">Heading</h2>
-            <p>Subheading</p>
+        <div className="heading2" style={{background: '#21d192'}}>
+            <h2 className="h2-responsive">Temperature</h2>
+            <p>data</p>
         </div>
     </CardImage>
     <CardBody cascade>
           <CardTitle>Card title</CardTitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+          <CardText></CardText>
     </CardBody>
   </Card>
  </Col>
  <Col lg="4" md="12" className="mb-lg-0 mb-4">
   <Card cascade>
     <CardImage cascade tag="div">
-        <div className="view gradient-card-header blue-gradient">
-            <h2 className="h2-responsive">Heading</h2>
-            <p>Subheading</p>
+        <div className="heading2" style={{background: '#21d192'}}>
+            <h2 className="h2-responsive">Soil Moisture</h2>
+            <p>data</p>
         </div>
     </CardImage>
     <CardBody cascade>
           <CardTitle>Card title</CardTitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+          <CardText></CardText>
     </CardBody>
   </Card>
  </Col>
