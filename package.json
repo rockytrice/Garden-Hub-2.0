@@ -28,11 +28,16 @@
     "nodemon": "^1.11.0",
     "passport": "^0.4.0",
     "passport-jwt": "^3.0.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.1",
-    "serve-favicon": "^2.4.5"
+    "serve-favicon": "^2.4.5","ascoltatori": "^4.3.0",
+    "mosca": "^2.8.3",
+    "mqtt": "^2.18.8",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-scripts": "1.1.4",
+    "socket.io": "^2.1.0",
+    "socket.io-client": "^2.1.0"
+
   },
   "dependencies": {
     "body-parser": "^1.18.2",
