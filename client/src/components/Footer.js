@@ -24,10 +24,9 @@ class FooterPage extends React.Component {
           <Container className="mt-5 mb-4 text-center text-md-left">
             <Row className="mt-3">
               <Col md="3" lg="4" xl="3" className="mb-4 dark-grey-text">
-                  <h6 className="text-uppercase font-weight-bold"><strong>IOT Guys</strong></h6>
-                  <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: '60px'}}/>
-                  <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit
-                      amet, consectetur adipisicing elit.</p>
+                  {/* <h6 className="text-uppercase font-weight-bold"><strong>IOT Guys</strong></h6> */}
+                  {/* <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: '60px'}}/> */}
+                  
               </Col>
               <Col md="2" lg="2" xl="2" className="mb-4 dark-grey-text">
                   <h6 className="text-uppercase font-weight-bold"><strong>Products</strong></h6>
@@ -41,8 +40,6 @@ class FooterPage extends React.Component {
                   <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{width: '60px'}}/>
                   <p><a href="#!" className="dark-grey-text">Your Account</a></p>
                   <p><a href="#!" className="dark-grey-text">Become an Affiliate</a></p>
-                  <p><a href="#!" className="dark-grey-text">Shipping Rates</a></p>
-                  <p><a href="#!" className="dark-grey-text">Help</a></p>
               </Col>
               <Col md="4" lg="3" xl="3" className="mb-4 dark-grey-text">
                   <h6 className="text-uppercase font-weight-bold"><strong>Contact</strong></h6>
