@@ -40,3 +40,13 @@
     }
     
     
+    input.form-control{
+      color: white
+    }
+    .md-form
+    input[type=text]{
+      color:white;
+    }
+    .md-form .prefix ~ input, .md-form .prefix ~ textarea{
+      color: white
+    }

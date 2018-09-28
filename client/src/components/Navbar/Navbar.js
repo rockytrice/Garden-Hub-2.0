@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import {  Navbar, NavbarNav, NavItem, Fa, SideNavItem, SideNavCat, SideNavNav, SideNav  } from 'mdbreact';
+import {  Navbar, NavbarNav, NavItem, Fa, SideNavItem, SideNavCat, SideNavNav, SideNav, Button  } from 'mdbreact';
 import "./Navbar.css";
 class NavBar extends React.Component {
     constructor(props) {
@@ -53,21 +53,14 @@ class NavBar extends React.Component {
                 <SideNavCat name="Instruction" id="instruction-cat" icon="hand-pointer-o">
                     <SideNavItem>Install</SideNavItem>
                 </SideNavCat>
-                <SideNavCat name="Control" id="controller" icon="toggle-on">
-                    <SideNavItem>Instruction</SideNavItem>
-                    <SideNavItem>Monthly meetings</SideNavItem>
+                <SideNavCat name="Controls" id="controller" icon="toggle-on">
+                <a href="/Controls">control panel</a>
                 </SideNavCat>    
-                <SideNavCat name="Units" id="temp" icon="thermometer-3">
-                    <SideNavItem>Info</SideNavItem>
-                    <SideNavItem>Monthly meetings</SideNavItem>  
-                </SideNavCat>      
                 <SideNavCat name="About" id="about-cat" icon="info-circle">
                     <a href="/About">Info</a>
                 </SideNavCat>
-                <SideNavCat name="Contact me" id="contact-me-cat" icon="envelope-o">
-                    <SideNavItem>FAQ</SideNavItem>
-                    <SideNavItem>Write a message</SideNavItem>
-                </SideNavCat>
+                <Button flat>logout</Button>
+                      
             </SideNavNav>
             </SideNav>
             <Navbar style={navStyle} double expand="md" fixed="top" scrolling > 

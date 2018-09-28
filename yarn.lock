@@ -4715,7 +4715,7 @@ mkdirp@0.5.1, mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@
   dependencies:
     minimist "0.0.8"
 
-moment@2.x.x:
+moment@2.x.x, moment@^2.22.2:
   version "2.22.2"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
 
@@ -5925,6 +5925,14 @@ react-dom@^16.2.0:
 react-error-overlay@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.1.tgz#417addb0814a90f3a7082eacba7cee588d00da89"
+
+react-icons-weather@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-icons-weather/-/react-icons-weather-1.0.5.tgz#c327f22c66f59565061bb82118d4c3b32482f7b9"
+
+react-moment@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-0.8.1.tgz#0f60604752fdfa1811d8ebe04ec339d897c9d085"
 
 react-router-dom@^4.2.2:
   version "4.3.1"

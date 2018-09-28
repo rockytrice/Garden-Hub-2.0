@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import reactDom from "react-dom";
+// import reactDom from "react-dom";
 //import { link } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
-import InfoPage from "./components/pages/AboutPage/About"
 import SignUpPage from "./components/pages/SignUp"
 
 class App extends Component {

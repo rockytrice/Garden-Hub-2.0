@@ -54,7 +54,7 @@ class LoginPage extends Component {
               <Row>
                 <div className="white-text text-center   text-md-left col-md-6 mt-xl-5 mb-5">
                 <h1 className="pic-header" style={{fontFamily:"GardenPartySans", textAlign:"center",fontSize:50, fontWeight:"bolder"}}>GardenHub 2.0</h1>
-                <img src={Irrigationicon} width="500" height="400" />
+                <img src={Irrigationicon} width="500" height="400" alt="logo"/>
                 </div>
                 <Col md="6" xl="5" className="mb-4">
                 <Card id="classic-card" style={{marginTop:61}} >
