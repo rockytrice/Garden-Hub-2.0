@@ -35,7 +35,6 @@ class NavBar extends React.Component {
     logout = () => {
         localStorage.removeItem('jwtToken');
         window.location.reload();
-        console.log("clicked");
       }
 
     render() {

@@ -13,10 +13,7 @@ class App extends Component {
   }
   
 
-  logout = () => {
-    localStorage.removeItem('jwtToken');
-    window.location.reload();
-  }
+  
 
 //	The message: {this.state.msg}
    render() {
