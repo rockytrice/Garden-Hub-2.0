@@ -1,13 +1,26 @@
-import express from "express";
-import http from "http";
-import bodyParser from "body-parser";
-import path from "path";
+const express = require ("express");
+const http = require("http");
+const bodyParser = require("body-parser");
+const path = require("path");
 var favicon = require("serve-favicon");
-var logger = require("morgan");
-//require the models for the passport-jqt authentication
+const morgan =require("morgan");
+const app = express();
 
-const sys = require('sys');
+
+// App setup
+
+
+
+
+// Server Setup
+const PORT = process.env.PORT || 3001;
+const server = http.createServer(app);
+server.listen(PORT);
+console.log("Server Listening on", PORT);
+
+
 //this is the mqtt client
+const sys = require('sys');
 const mqtt = require('mqtt');
 const port = 5000;
 const io = require('socket.io').listen(port);
@@ -37,8 +50,7 @@ client.on("message", function (topic, payload, packet) {
 //========================================================================================================
 
 //initialize express
-const PORT = process.env.PORT || 3001;
-const app = express();
+
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
@@ -55,54 +67,8 @@ mongoose.connect('mongodb://localhost/mern-secure', { promiseLibrary: require('b
   .catch((err) => console.error(err));
 
 //setup the middleware for morgan, express, and bodyParser
-app.use(logger('dev'));
+// app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'build')));
 
-//the middleware for the models
-app.use('/api/book', book);
-app.use('/api/auth', auth);
-
-//=======================================================================================================
-//Error Handling
-//=======================================================================================================
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-
-//=======================================================================================================
-//Turn the Server on
-//=======================================================================================================
-
-
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-
-// Send every request to the React app
-// Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-
-app.listen(PORT, function() {
-  console.log(`🌎 ==> Server now on port ${PORT}!`);
-});
