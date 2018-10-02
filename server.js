@@ -7,8 +7,11 @@ const morgan =require("morgan");
 const app = express();
 
 
-// App setup
-
+// App setup=====================================================
+// middleware (morgan-logging framwork)
+app.use(morgan("combined"));
+// parse incoming request into json
+app.use(bodyParser.json({ type: "*/*"}));
 
 
 
