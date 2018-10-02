@@ -5,13 +5,14 @@ const path = require("path");
 var favicon = require("serve-favicon");
 const morgan =require("morgan");
 const app = express();
-
+const router = require("./routes/router");
 
 // App setup=====================================================
 // middleware (morgan-logging framwork)
 app.use(morgan("combined"));
 // parse incoming request into json
 app.use(bodyParser.json({ type: "*/*"}));
+router(app);
 
 
 
