@@ -1,11 +1,11 @@
-const express = require("express");
-const path = require("path");
+import express from "express";
+import http from "http";
+import bodyParser from "body-parser";
+import path from "path";
 var favicon = require("serve-favicon");
 var logger = require("morgan");
-var bodyParser = require("body-parser");
 //require the models for the passport-jqt authentication
-var book = require("./routes/book");
-var auth = require("./routes/auth");
+
 const sys = require('sys');
 //this is the mqtt client
 const mqtt = require('mqtt');
