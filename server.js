@@ -1,13 +1,21 @@
-const express = require ("express");
-const http = require("http");
-const bodyParser = require("body-parser");
+const  express = require('express');
+const bodyParser = require('body-parser');
+const  http = require('http');
 const path = require("path");
-var favicon = require("serve-favicon");
-const morgan =require("morgan");
+// import favicon from "serve-favicon";
+const morgan = require("morgan");
 const app = express();
 const router = require("./routes/router");
+const mongoose = require("mongoose");
 
-// App setup=====================================================
+// Database setup===========================================================
+mongoose.connect("mongodb://locatlhost:auth/auth");
+
+
+
+
+
+// App setup=================================================================
 // middleware (morgan-logging framwork)
 app.use(morgan("combined"));
 // parse incoming request into json
@@ -22,9 +30,9 @@ const server = http.createServer(app);
 server.listen(PORT);
 console.log("Server Listening on", PORT);
 
+const sys =require('sys');
 
 //this is the mqtt client
-const sys = require('sys');
 const mqtt = require('mqtt');
 const port = 5000;
 const io = require('socket.io').listen(port);
@@ -46,7 +54,7 @@ io.sockets.on('connection', function (socket) {
 
 //listen to messages coming from the mqtt broker
 client.on("message", function (topic, payload, packet) {
-  sys.puts(topic+ "=" + payload);
+  puts(topic+ "=" + payload);
   io.sockets.emit('mqtt',{'topic':String(topic),
     'payload':String(payload)});  //should be hello mqtt
 })
@@ -64,15 +72,14 @@ app.engine('jsx', require('express-react-views').createEngine());
 //=======================================================================================================
 
 //setup the mongoose connection
-var mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost/mern-secure', { promiseLibrary: require('bluebird') })
-  .then(() =>  console.log('connection succesful'))
-  .catch((err) => console.error(err));
+// Promise = require('bluebird');
+// connect('mongodb://localhost/mern-secure', { promiseLibrary: require('bluebird') })
+//   .then(() =>  console.log('connection succesful'))
+//   .catch((err) => console.error(err));
 
-//setup the middleware for morgan, express, and bodyParser
+// // setup the middleware for morgan, express, and bodyParser
 // app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({'extended':'false'}));
-app.use(express.static(path.join(__dirname, 'build')));
+// app.use(json());
+// app.use(urlencoded({'extended':'false'}));
+// app.use(static(join(__dirname, 'build')));
 
