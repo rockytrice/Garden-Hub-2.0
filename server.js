@@ -9,7 +9,7 @@ const router = require("./routes/router");
 const mongoose = require("mongoose");
 
 // Database setup===========================================================
-mongoose.connect("mongodb://locatlhost:auth/auth");
+mongoose.connect("mongodb://localhost/auth");
 
 
 
@@ -73,7 +73,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 
 //setup the mongoose connection
 // Promise = require('bluebird');
-// connect('mongodb://localhost/mern-secure', { promiseLibrary: require('bluebird') })
+// mongoose.connect('mongodb://localhost/auth', { promiseLibrary: require('bluebird') })
 //   .then(() =>  console.log('connection succesful'))
 //   .catch((err) => console.error(err));
 
