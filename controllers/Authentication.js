@@ -7,7 +7,7 @@ exports.signup = function(req,res,next) {
     const password = req.body.password;
 
     // check to guard against server adding password without providing a email address to the db
-    if(!email || !pasword) {
+    if(!email || !password) {
       return res.status(422).send ({error: "You must provide email and password"});
     }
 
