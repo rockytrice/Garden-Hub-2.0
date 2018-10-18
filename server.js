@@ -12,9 +12,6 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/auth");
 
 
-
-
-
 // App setup=================================================================
 // middleware (morgan-logging framwork)
 app.use(morgan("combined"));
@@ -29,6 +26,7 @@ const PORT = process.env.PORT || 3001;
 const server = http.createServer(app);
 server.listen(PORT);
 console.log("Server Listening on", PORT);
+
 
 const sys =require('sys');
 
