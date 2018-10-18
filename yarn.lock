@@ -5004,6 +5004,10 @@ jws@^3.1.4, jws@^3.1.5:
     jwa "^1.1.5"
     safe-buffer "^5.0.1"
 
+jwt-simple@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/jwt-simple/-/jwt-simple-0.5.5.tgz#53f60ceab266708450a22cafa6fd93cfa2ccfa3a"
+
 kafka-node@~0.5.8:
   version "0.5.9"
   resolved "http://registry.npmjs.org/kafka-node/-/kafka-node-0.5.9.tgz#9a9c29d09237ee892b6f56640e0d32a80391a212"
