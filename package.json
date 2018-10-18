@@ -45,6 +45,7 @@
     "if-env": "^1.0.4",
     "jwt-simple": "^0.5.5",
     "moment": "^2.22.2",
+    "passport-local": "^1.0.0",
     "react-icons-weather": "^1.0.5",
     "react-moment": "^0.8.1"
   }
