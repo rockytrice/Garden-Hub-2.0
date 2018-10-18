@@ -9,11 +9,16 @@ function tokenForUser(user) {
 
 }
 
-exports.signup = function(req,res,next) {
+exports.signin = function(req, res, next) {
+  // user has already had their email and password auth'd and we just need to give them a token
+res.send({ token: tokenForUser(req.user )});
+};
+
+
+exports.signup = function(req,res, next) {
     console.log(req.body);
     const email = req.body.email;
     const password = req.body.password;
-
     // check to guard against server adding password without providing a email address to the db
     if(!email || !password) {
       return res.status(422).send ({error: "You must provide email and password"});
