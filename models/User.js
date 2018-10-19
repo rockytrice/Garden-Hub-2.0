@@ -53,18 +53,5 @@ UserSchema.methods.comparePassword = function (candiidatePassword, callback) {
 // Create model class============================================================================
 const ModelClass = mongoose.model("user",UserSchema);
 
-
-
-
-
-// UserSchema.methods.comparePassword = function (passw, cb) {
-//     bcrypt.compare(passw, this.password, function (err, isMatch) {
-//         if (err) {
-//             return cb(err);
-//         }
-//         cb(null, isMatch);
-//     });
-// };
-
 // Export the model
 module.exports = ModelClass;
