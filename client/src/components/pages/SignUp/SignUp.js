@@ -1,4 +1,6 @@
 import React, { Component }from 'react';
+import { reduxForm, Field} from "redux-form";
+
 // import axios from "axios";
 // import { Mask, Row, Col, View, Container, } from 'mdbreact';
 // import {Card, CardBody, Input,Fa,Button} from "mdbreact";
@@ -39,9 +41,22 @@ class SignUpPage extends Component {
         <form>
           <fieldset>
             <label>Email</label>
+            <Field
+            name="email"
+            type="text"
+            component="input"
+            autoComplete="none"
+            />
           </fieldset>
           <fieldset>
           <label>Password</label>
+          <Field
+          name="password"
+          type="password"
+          component="input"
+          autoComplete="none"
+
+          />
           </fieldset>
         </form>
          
@@ -54,7 +69,7 @@ class SignUpPage extends Component {
 
 
 
-export default SignUpPage;
+export default reduxForm({form: "signup"}) (SignUpPage);
 
 
 
