@@ -10,35 +10,21 @@ import './SignUp.css';
 
 
 class SignUpPage extends Component {
-
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     username: "",
-  //     password: ""
-  //   };
-  // }
-  // onChange = (e) => {
-  //   const state = this.state
-  //   state[e.target.name] = e.target.value;
-  //   this.setState(state);
-  // }
-
-  // onSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   const { username, password } = this.state;
-
-  //   axios.post("/api/auth/register", { username, password })
-  //     .then((result) => {
-  //       window.location.href = "/Login";
-  //     });
-  // }
-
-
+// handler to watch for submission of the form.this will be called anytime the users submit the form 
+// recieves all the props that the user entered in the form{email, password}
+  onSubmit = (formProps) => {
+    console.log(formProps);
+  }
+  
     render(){
+      // we need to make sure that anytime the user submits the form we call on submit.
+      // so we make use of the redux form and we get a fuction on our private prop's object called handle submit. 
+      // this is the function that we bave to call that's going to make sure that we take the email and password out of the form itself and provide it to our submit callback
+      // before adding any callback directly to the form tag we have to restructure the handle Submit
+      const { handleSubmit } = this.props;
       return(
-        <form>
+        // note!! not putting on any parentheses here because we don't want to call on submit the instant we render this form instead we want to render it on the call submit at some point
+        <form onSubmit={handleSubmit(this.onSubmit)}>
           <fieldset>
             <label>Email</label>
             <Field
@@ -55,9 +41,9 @@ class SignUpPage extends Component {
           type="password"
           component="input"
           autoComplete="none"
-
           />
           </fieldset>
+          <button> Sign Up!</button>
         </form>
          
 
@@ -72,7 +58,18 @@ class SignUpPage extends Component {
 export default reduxForm({form: "signup"}) (SignUpPage);
 
 
-
+// constructor() {
+  //   super();
+  //   this.state = {
+  //     username: "",
+  //     password: ""
+  //   };
+  // }
+  // onChange = (e) => {
+  //   const state = this.state
+  //   state[e.target.name] = e.target.value;
+  //   this.setState(state);
+  // }
 
  /* // <div id="classicformpage">
       //       <View>
