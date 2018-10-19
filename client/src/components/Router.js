@@ -14,6 +14,7 @@ const Router1 = () => (
         <Route path="/DashBoard" component= {DashBoard} />
         <Route path="/About" component= {InfoPage} /> 
         <Route path="/Controls" component={Controls} />
+        <Route path="/signout" component={SignOut} />
         </Switch>
     </BrowserRouter>
 )

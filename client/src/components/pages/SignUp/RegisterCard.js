@@ -1,6 +1,8 @@
 import React from "react";
 import { Card, CardBody, Input,Button,Col,Fa} from "mdbreact";
 import SocialIcon from "../SignIn/Icons";
+
+
 const SignUpCard = () =>(
 <Card id="classic-card">
   <CardBody className="z-depth-2 white-text">
