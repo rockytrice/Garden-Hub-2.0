@@ -15,7 +15,10 @@ class SignUp extends Component {
 // recieves all the props that the user entered in the form{email, password}
   onSubmit = (formProps) => {
     console.log(formProps);
-    this.props.signup(formProps);
+    this.props.signup(formProps, ()=> {
+      // automatically redirect user to dashboard page
+      this.props.history.push("/feature");
+    });
   }
   
     render(){
@@ -47,10 +50,7 @@ class SignUp extends Component {
           </fieldset>
           <div>{this.props.errorMessage}</div>
           <button> Sign Up!</button>
-        </form>
-         
-
-          
+        </form>   
        );
     }
   };
