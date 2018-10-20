@@ -56,7 +56,7 @@ class SignUp extends Component {
   };
 
 function mapStateToProps(state) {
-  return { erroMessage: state.auth.errorMessage };
+  return { errorMessage: state.auth.errorMessage };
 }
 // compose allows us to apply multiple higher order components to a sigle component with a more attractive syntax
 //  inside of compose we can pass in as many higher order components as we wish and they will all be applied in series to whatever component we pass in at the last call down here. 
