@@ -37,7 +37,6 @@ UserSchema.pre('save', function (next) {
         });
     }); 
 
-
 UserSchema.methods.comparePassword = function (candiidatePassword, callback) {
     bcrypt.compare(candiidatePassword, this.password, function(err, isMatch){
         if (err) {
@@ -46,9 +45,6 @@ UserSchema.methods.comparePassword = function (candiidatePassword, callback) {
         callback(null, isMatch);
     })
 }
-
-
-
 
 // Create model class============================================================================
 const ModelClass = mongoose.model("user",UserSchema);

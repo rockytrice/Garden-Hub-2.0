@@ -16,7 +16,6 @@ res.send({ token: tokenForUser(req.user )});
 
 
 exports.signup = function(req,res, next) {
-    console.log(req.body);
     const email = req.body.email;
     const password = req.body.password;
     // check to guard against server adding password without providing a email address to the db

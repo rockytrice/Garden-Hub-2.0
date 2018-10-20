@@ -9,7 +9,7 @@ class App extends Component {
   
   componentDidMount() {
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
-    axios.get('/DashBoard')
+    // axios.get('/DashBoard')
   }
   
 

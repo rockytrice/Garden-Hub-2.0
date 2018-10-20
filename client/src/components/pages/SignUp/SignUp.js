@@ -15,6 +15,7 @@ class SignUpPage extends Component {
 // handler to watch for submission of the form.this will be called anytime the users submit the form 
 // recieves all the props that the user entered in the form{email, password}
   onSubmit = (formProps) => {
+    console.log(formProps);
     this.props.signup(formProps);
   }
   
