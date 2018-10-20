@@ -63,23 +63,6 @@ client.on("message", function (topic, payload, packet) {
 
 //initialize express
 
-
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
-//=======================================================================================================
-//Middleware to enable passport-jwt authentication
-//=======================================================================================================
-
-//setup the mongoose connection
-// Promise = require('bluebird');
-// mongoose.connect('mongodb://localhost/auth', { promiseLibrary: require('bluebird') })
-//   .then(() =>  console.log('connection succesful'))
-//   .catch((err) => console.error(err));
-
-// // setup the middleware for morgan, express, and bodyParser
-// app.use(logger('dev'));
-// app.use(json());
-// app.use(urlencoded({'extended':'false'}));
-// app.use(static(join(__dirname, 'build')));
-

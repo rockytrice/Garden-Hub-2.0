@@ -10,8 +10,7 @@ import {compose} from "redux";
 // import Irrigationicon from "../../../images/Irrigationicon.png";
 import './SignUp.css';
 
-
-class SignUpPage extends Component {
+class SignUp extends Component {
 // handler to watch for submission of the form.this will be called anytime the users submit the form 
 // recieves all the props that the user entered in the form{email, password}
   onSubmit = (formProps) => {
@@ -46,6 +45,7 @@ class SignUpPage extends Component {
           autoComplete="none"
           />
           </fieldset>
+          <div>{this.props.errorMessage}</div>
           <button> Sign Up!</button>
         </form>
          
@@ -55,13 +55,15 @@ class SignUpPage extends Component {
     }
   };
 
-
+function mapStateToProps(state) {
+  return { erroMessage: state.auth.errorMessage };
+}
 // compose allows us to apply multiple higher order components to a sigle component with a more attractive syntax
 //  inside of compose we can pass in as many higher order components as we wish and they will all be applied in series to whatever component we pass in at the last call down here. 
 export default compose(
-connect(null, actions),
+connect(mapStateToProps, actions),
 reduxForm({form: "signup"}) 
-)(SignUpPage);
+)(SignUp);
 
 
 
