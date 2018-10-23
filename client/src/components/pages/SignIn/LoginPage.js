@@ -5,10 +5,10 @@ import axios from "axios";
 import {Card, CardBody, Input,Fa,Button} from "mdbreact";
 import SocialIcon from "./Icons"
 import Irrigationicon from "../../../images/Irrigationicon.png";
+import { reduxForm } from "redux-form";
 
 
-
-class Login extends Component {
+class Signin extends Component {
 
   constructor() {
     super();
@@ -82,4 +82,7 @@ class Login extends Component {
         </div>
       )}
     };
-export default Login;
+export default reduxForm({
+  form:"signin",
+  fields: ["email", "password"]
+})(Signin);

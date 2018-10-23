@@ -2,12 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import App from "./App";
-import {Router, Route, IndexRoute, browserHistory } from react-router
+import {Router, Route, IndexRoute } from "react-router";
+import { createBrowserHistory } from "history";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware} from "redux";
 import reducers from "./reducers"
 import reduxThunk from "redux-thunk";
-
+import history from "../src/history";
 
 import "./index.css";
 import 'font-awesome/css/font-awesome.min.css';
@@ -22,7 +23,7 @@ const store = createStore(
 
 ReactDOM.render(
 <Provider store={store}>
-    <Router history = {browserHistory}>
+    <Router history = {history}>
       <Route path="/"  component = {App} />    
     </Router>
 </Provider>, 
