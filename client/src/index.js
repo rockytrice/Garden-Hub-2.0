@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import App from "./App";
 import {Router, Route, IndexRoute } from "react-router";
-import { createBrowserHistory } from "history";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware} from "redux";
 import reducers from "./reducers"
