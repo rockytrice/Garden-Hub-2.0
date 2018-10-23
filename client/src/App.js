@@ -1,9 +1,9 @@
 import React from "react";
-//import { link } from "react-router-dom";
+import Header from "./components/Header"
 // import axios from "axios";
 import "./App.css";
 // import SignUpPage from "./components/pages/SignUp"
-import Header from "./components/Header";
+// import Header from "./components/Header";
 
 export default ({ children }) => {
 
@@ -11,8 +11,8 @@ export default ({ children }) => {
    
     return (
       <div>
-        <Header/>
-         {children}
+      <Header />
+      {/* <SignUpPage/> */}
       </div>
     );
   };

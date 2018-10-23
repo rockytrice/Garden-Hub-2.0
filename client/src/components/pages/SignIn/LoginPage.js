@@ -5,7 +5,10 @@ import axios from "axios";
 import {Card, CardBody, Input,Fa,Button} from "mdbreact";
 import SocialIcon from "./Icons"
 import Irrigationicon from "../../../images/Irrigationicon.png";
-class LoginPage extends Component {
+
+
+
+class Login extends Component {
 
   constructor() {
     super();
@@ -79,4 +82,4 @@ class LoginPage extends Component {
         </div>
       )}
     };
-export default LoginPage;
+export default Login;

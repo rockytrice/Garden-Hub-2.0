@@ -50,3 +50,6 @@
     .md-form .prefix ~ input, .md-form .prefix ~ textarea{
       color: white
     }
+input {
+  width: 291px
+}
