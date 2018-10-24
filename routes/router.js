@@ -15,7 +15,7 @@ module.exports = function (app) {
             hi: "there"
         });
     })
-    app.post("/Login", requireSignin, Authentication.signin)
+    app.post("/signin", requireSignin, Authentication.signin)
     app.post("/signup", Authentication.signup)
 
 };
