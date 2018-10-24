@@ -11,17 +11,15 @@ import {compose} from "redux";
 import './SignUp.css';
 
  class Signup extends Component {
-// handler to watch for submission of the form.this will be called anytime the users submit the form 
-// recieves all the props that the user entered in the form{email, password}
-  onSubmit = (formProps) => {
+  // handler to watch for submission of the form.this will be called anytime the users submit the form 
+  // recieves all the props that the user entered in the form{email, password}
+    onSubmit = (formProps) => {
     console.log(formProps);
-     this.props.signup(formProps);
-    // , () => {
-    //   this.props.history.push("/LoginPage");
+     this.props.signup(formProps, () => {
+     // automatically redirect user to dashboard page
+       this.props.history.push("/dashboard");
+     });
     };
-      // // automatically redirect user to dashboard page
-      // this.props.history.push("/Login");
-    
       render() {
         // we need to make sure that anytime the user submits the form we call on submit.
         // so we make use of the redux form and we get a fuction on our private prop's object called handle submit. 
@@ -55,13 +53,12 @@ import './SignUp.css';
                   />
                 </div>
             </fieldset>
+            <div>{this.props.errorMessage}</div>
             <button>Sign Up!</button>
           </form>  
       ); 
   }
-}
-      
-    
+} 
  function mapStateToProps(state) { 
    return { errorMessage: state.auth.errorMessage };
  }
@@ -72,11 +69,6 @@ export default compose(
  reduxForm({form: "signup"}) 
  )(Signup);
 
-
-          
-//         //   <div>{this.props.errorMessage}</div>
-//         //   <button> Sign Up!</button>
-//         // </form> 
 
 
                          

@@ -9,7 +9,7 @@ import { createStore, applyMiddleware} from "redux";
 import reducers from "./reducers"
 import reduxThunk from "redux-thunk";
 import Signup from "./components/pages/SignUp/SignUp";
-
+import Dashboard from "./components/pages/DashboardPage/Dashboard";
 import "./index.css";
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
@@ -28,6 +28,7 @@ ReactDOM.render(
         <App>
             <Route exact path="/"  component={Welcome} />
             <Route path="/signup" component={Signup} />
+            <Route path="/dashboard" component={Dashboard}/>
         </App>    
     </Router>
 </Provider>,

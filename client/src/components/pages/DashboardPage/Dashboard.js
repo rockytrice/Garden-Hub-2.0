@@ -1,11 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
 import {Container} from "reactstrap";
 import "./Dashboard.css";
 import WeatherTron from "../../WeatherJumbotron";
 import NavBar from "../../Navbar/Navbar";
 import Zone from "./Zones/Zone";
 import FooterPage from "../../Footer";
-const DashBoard= ()=> {
+
+
+class DashBoard extends Component {
+  render(){
     return(
       <React.Fragment>
       <NavBar />
@@ -16,6 +19,8 @@ const DashBoard= ()=> {
       <FooterPage />
       </React.Fragment>
     );
+  }
+    
 };
 export default DashBoard;
 
