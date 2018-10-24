@@ -5,7 +5,7 @@ import WeatherTron from "../../WeatherJumbotron";
 import NavBar from "../../Navbar/Navbar";
 import Zone from "./Zones/Zone";
 import FooterPage from "../../Footer";
-
+import requireAuth from "../../requireAuth";
 
 class DashBoard extends Component {
   render(){
@@ -22,7 +22,7 @@ class DashBoard extends Component {
   }
     
 };
-export default DashBoard;
+export default requireAuth(DashBoard);
 
 
 
