@@ -18,4 +18,15 @@ import { AUTH_USER, AUTH_ERROR } from "./types";
         //  call dispatch, and into that function pass the action that we want to send to all the middlewares and reducers inside the application
         dispatch ({type: AUTH_ERROR, payload: "Email in use"});
      }
-  };
+    };
+
+    export const signout= () => {
+        // clear my local storage of that token property 
+        localStorage.clearItem("token");
+        // return action
+        return {
+            type: AUTH_USER,
+            // assign empty string and set.(essentially means sign this user out by clearing that authenticated piece of state)
+            payload: ""
+        };
+    };

@@ -10,6 +10,7 @@ import reducers from "./reducers"
 import reduxThunk from "redux-thunk";
 import Signup from "./components/pages/SignUp/SignUp";
 import Dashboard from "./components/pages/DashboardPage/Dashboard";
+import Signout from "./components/pages/Signout";
 import "./index.css";
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
@@ -34,6 +35,7 @@ ReactDOM.render(
             <Route exact path="/"  component={Welcome} />
             <Route path="/signup" component={Signup} />
             <Route path="/dashboard" component={Dashboard}/>
+            <Route path ="/signout" component ={Signout} />
         </App>    
     </Router>
 </Provider>,
