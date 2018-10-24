@@ -10,6 +10,8 @@ import { AUTH_USER, AUTH_ERROR } from "./types";
             //   make use of dispatch function.
             // pass in the action that we want to send to all the middlewares and reducers inside of the application 
             dispatch({type: AUTH_USER, payload: response.data.token});
+            // localStorage is browser data store that we can use to store little bits of information. we use this to presist the log in state so that every time the browser is refreshed we do get pushed back to the root page.
+            localStorage.setItem("token",response.data.token);
             callback();
        
      } catch (e) {

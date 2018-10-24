@@ -17,7 +17,12 @@ import 'mdbreact/dist/css/mdb.css';
 
 const store = createStore(
     reducers,
-    {},
+    {
+        // pass in the key of Auth and then the value we want to intialize when we create our redux store which is authenticated.
+        // then assign whatever i get from localStorage.getItem.
+        // So now any time our application starts up we're going to check to see if we have a stored token and if we do we'll start up the redux state with that token as our auth.authenticated property 
+        auth: { authenticated: localStorage.getItem("token") }
+    },
     // middleware
     applyMiddleware(reduxThunk)
 )
