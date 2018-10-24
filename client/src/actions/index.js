@@ -13,6 +13,7 @@ import { AUTH_USER, AUTH_ERROR } from "./types";
             // callback();
        
      } catch (e) {
+        //  call dispatch, and into that function pass the action that we want to send to all the middlewares and reducers inside the application
         dispatch ({type: AUTH_ERROR, payload: "Email in use"});
      }
   };

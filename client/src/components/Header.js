@@ -1,17 +1,16 @@
 import React, { Component } from "react";
-import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink, NavbarToggler, Collapse,Container,FormInline } from 'mdbreact';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Navbar, NavbarBrand, NavbarNav, NavItem, NavbarToggler, Collapse,Container } from 'mdbreact';
+import {  NavLink } from "react-router-dom";
 
 class Header extends Component {
     constructor(props) {
-        super(props),
+        super(props)
         this.state = {
           collapse : false
         }
         this.onClick = this.onClick.bind(this);
         this.handleNavbarClick = this.handleNavbarClick.bind(this);
       }
-    
       onClick(){
         this.setState({
             collapse: !this.state.collapse,
@@ -26,33 +25,29 @@ class Header extends Component {
       render(){
       const overlay = <div id="sidenav-overlay" style={{backgroundColor: 'transparent'}} onClick={this.handleNavbarClick}/>
         return (
-            <Router>
               <div>
                 <Navbar dark expand="md" fixed="top" scrolling>
                   <Container>
                     <NavbarBrand>
-                      <strong className="white-text">MDB</strong>
+                      <strong className="black-text">MDB</strong>
                     </NavbarBrand>
                     <NavbarToggler onClick = { this.onClick } />
                     <Collapse isOpen = {this.state.collapse} navbar>
                       <NavbarNav left>
-                        <NavItem active>
-                          <Link to="#!">Sign In </Link>
+                      <NavItem>
+                        <NavLink to ="/">Home</NavLink>
+                      </NavItem>
+                        <NavItem>
+                        <NavLink to ="/signup">Sign Up</NavLink>
                         </NavItem>
                         <NavItem>
-                          <Link to="#!">Sign Up </Link>
+                        <NavLink to ="/signin">Sign In</NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink to="#!">Profile</NavLink>
+                        <NavLink to ="/dashboard">dashboard</NavLink>
                         </NavItem>
-                      </NavbarNav>
-                      <NavbarNav right >
                         <NavItem>
-                          <FormInline waves>
-                            <div className="md-form my-0">
-                              <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"/>
-                            </div>
-                          </FormInline>
+                        <NavLink to ="/signout">Sign Out</NavLink>
                         </NavItem>
                       </NavbarNav>
                     </Collapse>
@@ -60,7 +55,6 @@ class Header extends Component {
                 </Navbar>
               { this.state.collapse && overlay}
               </div>
-            </Router>
         )
     }
 }

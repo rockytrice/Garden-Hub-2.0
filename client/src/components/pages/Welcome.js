@@ -3,5 +3,5 @@ import React from "react";
 
 
 export default ()=> {
-    return <h3> Welcome! Sign Up or Sign In! </h3>
-}
+    return <h1> Welcome! Sign Up or Sign In!</h1>
+};
