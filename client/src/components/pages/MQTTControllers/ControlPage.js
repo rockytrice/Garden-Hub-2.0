@@ -1,6 +1,5 @@
 import React from "react";
 import {Button,Container} from "mdbreact";
-import NavBar from "../../Navbar/Navbar";
 import "./Control.css";
 
 const Controls =() => {
@@ -8,7 +7,6 @@ const Controls =() => {
 
         return(
             <React.Fragment>
-            <NavBar />
             <Container className="controls" style={{marginTop:300}}>
                 <div className="row">
                     <div className="col-md-4">
