@@ -4,10 +4,9 @@ import { connect } from "react-redux";
 import * as actions from "../../../actions";
 import {compose} from "redux";
 
-// import { Mask, Row, Col, View, Container, } from 'mdbreact';
-// import {Card, CardBody,Fa,Button} from "mdbreact";
-// import SocialIcon from "../SignIn/Icons"
-// import Irrigationicon from "../../../images/Irrigationicon.png";
+import { Mask, Row, Col, View, Container, } from 'mdbreact';
+import {Card, CardBody,Fa,Button} from "mdbreact";
+import SocialIcon from "../SignIn/Icons"
 import './SignUp.css';
 
  class Signup extends Component {
@@ -26,36 +25,60 @@ import './SignUp.css';
         // this is the function that we bave to call that's going to make sure that we take the email and password out of the form itself and provide it to our submit callback
         // before adding any callback directly to the form tag we have to restructure the handle Submit
          const { handleSubmit } = this.props;
-        return (
+         return (
         // note!! not putting on any parentheses here because we don't want to call on submit the instant we render this form instead we want to render it on the call submit at some point
         //  note..handleSubmit is provided by reduxForm
-        <form onSubmit={handleSubmit(this.onSubmit)}>
-        <fieldset>
-            <label>Email</label>
-              <div>
-                <Field 
-                name= "email"
-                type="text"
-                component="input"
-                autoComplete="none"
-                />
-              </div>  
-            </fieldset> 
-            <br />       
-            <fieldset>
-              <label>Password</label>
-                <div>
-                  <Field
-                  name="password"
-                  type="password"
-                  component="input"
-                  autoComplete="none"
-                  />
-                </div>
-            </fieldset>
-            <div>{this.props.errorMessage}</div>
-            <button>Sign Up!</button>
-          </form>  
+        <div id="classicformpage">
+         <View>
+           <Mask className="d-flex justify-content-center align-items-center gradient">
+              <Container>
+               <form className="form-signup" onSubmit={handleSubmit(this.onSubmit)}>     
+                 <Row>
+                   <div className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5">
+                     <h1 className="h1-responsive font-weight-bold">Sign up right now! </h1>
+                     <hr className="hr-light"/>
+                     <h6 className="mb-4" >Garden Hub is an IOT application that directly controls a user’s home lawn/garden  irrigation system and monitors the immediate soil and climate with wirelessly transmitted sensor data.</h6>
+                   </div>
+                  <Col md="6" xl="5" className="mb-4">
+                    <Card id="classic-card">
+                      <CardBody className="z-depth-2 white-text">
+                        <h3 className="text-center"><Fa icon="user-plus"/> Register:</h3>
+                        <hr className="hr-light"/> 
+                        <fieldset>
+                          <label>Email</label>
+                          <Field 
+                          name="email"
+                          type="text"
+                          component="input"
+                          autoComplete="none"
+                          />
+                        </fieldset>
+                        <fieldset>
+                          <label>Password</label>
+                          <Field
+                          name="password"
+                          type="password"
+                          component="input"
+                          autoComplete="none"
+                          />
+                        </fieldset>
+                        <div>{this.props.errorMessage}</div>
+                        <Button outline color="white" type="submit">Sign Up</Button>
+                        <hr className="hr-light"/>
+                        <Col md="12">
+                          <p className="font-small white-text d-flex justify-content-end">Have an account? <a href="/Login" className="green-text ml-1 font-weight-bold"> Log in</a></p>
+                          </Col>
+                         <SocialIcon />
+                      </CardBody> 
+                    </Card> 
+                  </Col> 
+                 </Row> 
+               </form> 
+              </Container>
+            </Mask> 
+         </View>
+       </div>  
+
       ); 
   }
 } 
@@ -75,58 +98,33 @@ export default compose(
 
 
 
-//                            /* //   <div id="Signupformpage">
-//         //   <View>
-//         //    <Mask className="d-flex justify-content-center align-items-center gradient">
-//         //       <Container>
-//         //         <form className="form-signup" onSubmit={handleSubmit(this.onSubmit)}>     
-//         //           <Row>
-//         //             <div className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5">
-//         //               <h1 className="h1-responsive font-weight-bold">Sign up right now! </h1>
-//         //               <hr className="hr-light"/>
-//         //             <h6 className="mb-4" >Garden Hub is an IOT application that directly controls a user’s home lawn/garden  irrigation system and monitors the immediate soil and climate with wirelessly transmitted sensor data.</h6>
-//         //               <Button outline color="white">Learn More</Button>
-//         //           </div>
-//         //           <Col md="6" xl="5" className="mb-4">
-//         //             <Card id="classic-card">
-//         //                 <CardBody className="z-depth-2 white-text">
-//         //                   <h3 className="text-center"><Fa icon="user"/> Register:</h3>
-//         //                   <hr className="hr-light"/>
-//         //                   <Fa icon="envelope"/>
-//         //                   <fieldset>
-//         //                     <label>Email</label>
-//         //                     <Field */
-//         /* //                     name="email"
-//         //                     type="text"
-//         //                     component="input"
-//         //                     autoComplete="none"
-//         //                     />
-//         //                   </fieldset>
-//         //                   <fieldset>
-//         //                   <label>Password</label>
-//         //                   <Field
-//         //                   name="password"
-//         //                   type="password"
-//         //                   component="input"
-//         //                   autoComplete="none"
-//         //                   />
-//         //                   </fieldset>
-//         //                     <div>{this.props.errorMessage}</div>
-//         //                     <Button outline color="white" type="submit">Sign Up</Button>
-//         //                     <hr className="hr-light"/>
-//         //                         <Col md="12">
-//         //                           <p className="font-small white-text d-flex justify-content-end">Have an account? <a href="/Login" className="green-text ml-1 font-weight-bold"> Log in</a></p>
-//         //                         </Col>
-//         //                     <SocialIcon />
-//         //                   {/* </div> */
-//         /* //                 </CardBody> */
-//         /* //               </Card> */
-//         /* //           </Col> */
-//                    /* </Row> */
-//         /* //         </form> */
-//         /* //       </Container>
-//         //     </Mask> */
-//         /* //   </View>
-//         // </div>   */ 
-        
+       
+         
     
+//  <form onSubmit={handleSubmit(this.onSubmit)}>
+//         <fieldset>
+//             <label>Email</label>
+//               <div>
+//                 <Field 
+//                 name= "email"
+//                 type="text"
+//                 component="input"
+//                 autoComplete="none"
+//                 />
+//               </div>  
+//             </fieldset> 
+//             <br />       
+//             <fieldset>
+//               <label>Password</label>
+//                 <div>
+//                   <Field
+//                   name="password"
+//                   type="password"
+//                   component="input"
+//                   autoComplete="none"
+//                   />
+//                 </div>
+//             </fieldset>
+//             <div>{this.props.errorMessage}</div>
+//             <button>Sign Up!</button>
+//             </form>  

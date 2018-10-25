@@ -10,6 +10,7 @@
     "mdbreact": "git+https://oauth2:So7e1mY4Cxrk99irwGWc@git.mdbootstrap.com/mdb/react/re-pro.git",
     "moment": "^2.22.2",
     "react": "^16.0.0",
+    "react-alert": "^4.0.4",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",

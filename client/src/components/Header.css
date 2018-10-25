@@ -1,0 +1,14 @@
+
+a {
+    color: black!important;
+    margin-left: 10px;
+}
+li.nav-item {
+    list-style: none;
+}
+.fa-user-plus:before{
+    margin-right: 1px;
+}
+.fa-user:before {
+    margin-right: 1px;
+}

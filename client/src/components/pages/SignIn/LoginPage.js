@@ -3,7 +3,7 @@ import { reduxForm, Field} from "redux-form";
 import { connect } from "react-redux";
 import * as actions from "../../../actions";
 import {compose} from "redux";
-
+import  "../SignUp/SignUp.css";
 import { Card,Mask, CardBody,Row,Fa, Col, View, Container, Button } from 'mdbreact';
 import SocialIcon from "../SignIn/Icons"
 import Irrigationicon from "../../../images/Irrigationicon.png";
@@ -25,7 +25,7 @@ class Signin extends Component {
       // this is the function that we bave to call that's going to make sure that we take the email and password out of the form itself and provide it to our submit callback
       // before adding any callback directly to the form tag we have to restructure the handle Submit
       const { handleSubmit } = this.props;
-      return(
+      return (
         <div id ="classicformpage">
         <View>
             <Mask className="d-flex justify-content-center align-items-center gradient">
@@ -33,7 +33,6 @@ class Signin extends Component {
                 <form className="form-signin" onSubmit={handleSubmit(this.onSubmit)}>
                   <Row>
                     <div className="white-text text-center   text-md-left col-md-6 mt-xl-5 mb-5">
-                    <h1 className="pic-header" style={{fontFamily:"GardenPartySans", textAlign:"center",fontSize:50, fontWeight:"bolder"}}>GardenHub 2.0</h1>
                     <img src={Irrigationicon} width="500" height="400" alt="logo"/>
                     </div>
                     <Col md="6" xl="5" className="mb-4">
@@ -43,26 +42,29 @@ class Signin extends Component {
                         <hr className="hr-light"/>
                         <fieldset>
                           <label>Email</label>
-                          <Field
+                          <div>
+                            <Field
                               name="email"
                               type="text"
                               component="input"
                               autoComplete="none"
                               />
+                         </div>
                         </fieldset>
                         <fieldset>
                           <label>Password</label>
-                          <Field
-                            name="password"
-                            type="password"
-                            component="input"
-                            autoComplete="none"
-                            />
+                          <div>
+                            <Field
+                              name="password"
+                              type="password"
+                              component="input"
+                              autoComplete="none"
+                              />
+                          </div>
                         </fieldset>
                           <div className="text-center mt-4 black-text">
                           <div>{this.props.errorMessage}</div>
-                        <button color="brown">Sign in</button>
-                            <hr className="hr-light"/>
+                          <Button outline color="white" type="submit">Sign In</Button>       <hr className="hr-light"/>
                               <SocialIcon />
                           </div>
                       </CardBody>

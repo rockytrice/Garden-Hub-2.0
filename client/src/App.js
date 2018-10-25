@@ -7,9 +7,6 @@ export default ({children}) => {
     return (
     <div>
         <Header />
-      <br/> 
-      <br/>
-      <br/>
         {children} 
     </div>
     );
