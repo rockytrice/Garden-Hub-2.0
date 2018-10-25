@@ -1,28 +1,18 @@
-import React, { Component } from "react";
-// import reactDom from "react-dom";
-//import { link } from "react-router-dom";
-import axios from "axios";
-import "./App.css";
-import SignUpPage from "./components/pages/SignUp"
-class App extends Component {
+import React from "react";
+import Header from "./components/Header"
 
-  
-  componentDidMount() {
-    axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
-    axios.get('/DashBoard')
-  }
-  
-
-  
+export default ({children}) => {
 
 //	The message: {this.state.msg}
-   render() {
     return (
-      <div>
-        <SignUpPage/>
-      </div>
+    <div>
+        <Header />
+        {children} 
+    </div>
     );
-  }
-}
+   
+};
 
-export default App;
+
+
+

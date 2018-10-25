@@ -17,7 +17,7 @@
   "devDependencies": {
     "ascoltatori": "^4.3.0",
     "axios": "^0.18.0",
-    "bcrypt-nodejs": "0.0.3",
+    "bcrypt-nodejs": "^0.0.3",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0",
@@ -28,7 +28,7 @@
     "morgan": "^1.9.0",
     "mosca": "^2.8.3",
     "mqtt": "^2.18.8",
-    "nodemon": "^1.11.0",
+    "nodemon": "^1.18.4",
     "passport": "^0.4.0",
     "passport-jwt": "^3.0.1",
     "react": "^16.3.1",
@@ -41,10 +41,12 @@
   },
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.15.4",
+    "cors": "^2.8.4",
     "express-react-views": "^0.10.5",
     "if-env": "^1.0.4",
+    "jwt-simple": "^0.5.5",
     "moment": "^2.22.2",
+    "passport-local": "^1.0.0",
     "react-icons-weather": "^1.0.5",
     "react-moment": "^0.8.1"
   }

@@ -1,12 +1,13 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-var bcrypt = require('bcrypt-nodejs');
-
-var UserSchema = new Schema({
-  username: {
+const mongoose =require("mongoose");
+const Schema = mongoose.Schema;
+const bcrypt = require("bcrypt-nodejs");
+// Define Model
+const UserSchema = new Schema({
+  email: {
         type: String,
         unique: true,
-        required: true
+        required: true,
+        lowercase:true
     },
   password: {
         type: String,
@@ -14,33 +15,39 @@ var UserSchema = new Schema({
     }
 });
 
+// on save hook encrypt password================================================================
+// before saving a model, run this function
 UserSchema.pre('save', function (next) {
-    var user = this;
-    if (this.isModified('password') || this.isNew) {
-        bcrypt.genSalt(10, function (err, salt) {
+    // get access to user model
+    const user = this;
+    // generate a salt then run callback
+    bcrypt.genSalt(10, function (err, salt) {
             if (err) {
                 return next(err);
             }
+            // hash (encrypt) the password using the salt
             bcrypt.hash(user.password, salt, null, function (err, hash) {
                 if (err) {
                     return next(err);
                 }
+                // overwrite plain text password with encrypted password
                 user.password = hash;
                 next();
             });
         });
-    } else {
-        return next();
-    }
-});
+    }); 
 
-UserSchema.methods.comparePassword = function (passw, cb) {
-    bcrypt.compare(passw, this.password, function (err, isMatch) {
+UserSchema.methods.comparePassword = function (candiidatePassword, callback) {
+    bcrypt.compare(candiidatePassword, this.password, function(err, isMatch){
         if (err) {
-            return cb(err);
+            return callback(err);
         }
-        cb(null, isMatch);
-    });
-};
+        callback(null, isMatch);
+    })
+}
 
-module.exports = mongoose.model('User', UserSchema);
+// Create model class============================================================================
+const ModelClass = mongoose.model("user",UserSchema);
+
+// Export the model
+module.exports = ModelClass;

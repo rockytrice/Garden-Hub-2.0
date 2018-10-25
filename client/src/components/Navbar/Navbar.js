@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink} from 'react-router-dom';
 import {  Navbar, NavbarNav, NavItem, Fa, SideNavItem, SideNavCat, SideNavNav, SideNav, Button  } from 'mdbreact';
 import "./Navbar.css";
 class NavBar extends React.Component {
@@ -32,10 +32,6 @@ class NavBar extends React.Component {
         toggleStateA: !this.state.toggleStateA
     });
     }
-    logout = () => {
-        localStorage.removeItem('jwtToken');
-        window.location.reload();
-      }
 
     render() {
     const navStyle = { paddingLeft: this.state.windowWidth > this.state.breakWidth ? '210px' : '16px' };
@@ -65,9 +61,7 @@ class NavBar extends React.Component {
                 <SideNavCat name="About" id="about-cat" icon="info-circle">
                     <a href="/About">Info</a>
                 </SideNavCat>
-                {localStorage.getItem("jwtToken") &&
-                <Button flat onClick={this.logout}>logout</Button>
-                     }
+                <NavLink to ="/signout">Sign Out</NavLink>
             </SideNavNav>
             </SideNav>
             <Navbar style={navStyle} double expand="md" fixed="top" scrolling > 

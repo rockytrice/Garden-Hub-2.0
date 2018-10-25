@@ -29,12 +29,6 @@
       background: black !important;
     }
     
-    @media (max-width: 768px) {
-      #classicformpage .navbar:not(.top-nav-collapse) {
-          background: black !important;
-      }
-    }
-    
     #classicformpage label {
       color: #fff!important;
     }
@@ -50,3 +44,30 @@
     .md-form .prefix ~ input, .md-form .prefix ~ textarea{
       color: white
     }
+
+input {
+  width: 378px
+}
+/* media queries=============================================================================================================== */
+@media (max-width: 768px) {
+  #classicformpage .navbar:not(.top-nav-collapse) {
+      background: transparent !important;
+  }
+}
+
+@media (max-width: 991px){
+  input {
+    width: 288px;
+  }
+  img {
+    width: 400px;
+    height:300px;
+    margin-left:-90px;
+    margin-top: 103px;
+  }
+  .pic-header {
+    font-size: 40px!important;
+  }
+
+}
+

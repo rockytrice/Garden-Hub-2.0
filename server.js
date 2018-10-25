@@ -1,12 +1,37 @@
-const express = require("express");
+const  express = require('express');
+const bodyParser = require('body-parser');
+const  http = require('http');
 const path = require("path");
-var favicon = require("serve-favicon");
-var logger = require("morgan");
-var bodyParser = require("body-parser");
-//require the models for the passport-jqt authentication
-var book = require("./routes/book");
-var auth = require("./routes/auth");
-const sys = require('sys');
+// import favicon from "serve-favicon";
+const morgan = require("morgan");
+const app = express();
+const router = require("./routes/router");
+const mongoose = require("mongoose");
+const cors = require("cors");
+
+// Database setup===========================================================
+mongoose.connect("mongodb://localhost/auth");
+
+
+// App setup=================================================================
+// middleware (morgan-logging framwork)
+app.use(morgan("combined"));
+app.use(cors());
+// parse incoming request into json
+app.use(bodyParser.json({ type: "*/*"}));
+router(app);
+
+
+
+// Server Setup
+const PORT = process.env.PORT || 3001;
+const server = http.createServer(app);
+server.listen(PORT);
+console.log("Server Listening on", PORT);
+
+
+const sys =require('sys');
+
 //this is the mqtt client
 const mqtt = require('mqtt');
 const port = 5000;
@@ -29,7 +54,7 @@ io.sockets.on('connection', function (socket) {
 
 //listen to messages coming from the mqtt broker
 client.on("message", function (topic, payload, packet) {
-  sys.puts(topic+ "=" + payload);
+  puts(topic+ "=" + payload);
   io.sockets.emit('mqtt',{'topic':String(topic),
     'payload':String(payload)});  //should be hello mqtt
 })
@@ -37,72 +62,7 @@ client.on("message", function (topic, payload, packet) {
 //========================================================================================================
 
 //initialize express
-const PORT = process.env.PORT || 3001;
-const app = express();
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
-//=======================================================================================================
-//Middleware to enable passport-jwt authentication
-//=======================================================================================================
-
-//setup the mongoose connection
-var mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost/mern-secure', { promiseLibrary: require('bluebird') })
-  .then(() =>  console.log('connection succesful'))
-  .catch((err) => console.error(err));
-
-//setup the middleware for morgan, express, and bodyParser
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({'extended':'false'}));
-app.use(express.static(path.join(__dirname, 'build')));
-
-//the middleware for the models
-app.use('/api/book', book);
-app.use('/api/auth', auth);
-
-//=======================================================================================================
-//Error Handling
-//=======================================================================================================
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-
-//=======================================================================================================
-//Turn the Server on
-//=======================================================================================================
-
-
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-
-// Send every request to the React app
-// Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-
-app.listen(PORT, function() {
-  console.log(`🌎 ==> Server now on port ${PORT}!`);
-});
