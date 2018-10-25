@@ -10,7 +10,7 @@ class  WeatherContent extends React.Component{
         return (
             <div className="col-md-12">
               <div className="card text-center" style={{marginTop:17}}>
-               <div className="card-header" style={{backgroundColor:"#4285F4"}}>
+               <div className="card-header" style={{backgroundColor:"yellow"}}>
                  <h1>Current Weather in {this.props.city},{this.props.country}</h1>
                </div>
                <div className="card-body2">

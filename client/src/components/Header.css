@@ -1,14 +1,34 @@
 
 a {
-    color: black!important;
+    color: white!important;
     margin-left: 10px;
+    margin-top: -7px;
 }
-li.nav-item {
+/* li.nav-item {
     list-style: none;
-}
+    color:white!important;
+} */
 .fa-user-plus:before{
     margin-right: 1px;
 }
 .fa-user:before {
     margin-right: 1px;
+}
+/* navbar brand color */
+a.navbar-brand{
+    color: yellow;
+}
+
+/* navbar dropdown button color */
+
+
+
+a:hover{
+    color:#ffeb3b!important;
+}
+.navbar .dropdown-menu a {
+    color: black!important;
+}
+button{    
+color: red!important
 }

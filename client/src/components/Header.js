@@ -13,11 +13,7 @@ class Header extends Component {
   renderLinks(){
     if (this.props.authenticated){
       return (
-       
         <NavbarNav right>
-          <NavItem>
-            <NavLink to ="/signout" onClick={this.showAlert}><Fa icon="sign-out"/>Sign Out</NavLink>
-          </NavItem>
           <NavItem>
             <Dropdown>
               <DropdownToggle nav caret>Dropdown</DropdownToggle>
@@ -25,7 +21,7 @@ class Header extends Component {
                   <DropdownItem> 
                     <NavLink to="/dashboard">Dashboard</NavLink>
                   </DropdownItem>
-                  <DropdownItem> 
+                  <DropdownItem className="about"> 
                     <NavLink to ="/about">About</NavLink>
                   </DropdownItem>
                   <DropdownItem> 
@@ -34,23 +30,24 @@ class Header extends Component {
               </DropdownMenu>
             </Dropdown>            
           </NavItem>
+          <NavItem>
+            <NavLink to ="/signout" onClick={this.showAlert}><Fa icon="sign-out"/>Sign Out</NavLink>
+          </NavItem>
         </NavbarNav>    
       );
     } else {
       return (
-        <div>
-          <NavbarNav right>
-            <NavItem>
-              <NavLink to ="/">Home</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink to ="/signup"><Fa icon="user-plus"/>Sign Up</NavLink>
-            </NavItem>
-            <NavItem>
-            <NavLink to ="/signin"><Fa icon="user"/>Sign In</NavLink>
-            </NavItem>  
-          </NavbarNav>
-        </div>
+        <NavbarNav right>
+          <NavItem>
+            <NavLink to ="/">Home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to ="/signup"><Fa icon="user-plus"/>Sign Up</NavLink>
+          </NavItem>
+          <NavItem>
+          <NavLink to ="/signin"><Fa icon="user"/>Sign In</NavLink>
+          </NavItem>  
+        </NavbarNav>
       )
     }
   }
@@ -68,24 +65,11 @@ class Header extends Component {
         collapse: !this.state.collapse,
     });
   }
-  // constructor(props) {
-  //   super(props);
-
-  //   this.toggle = this.toggle.bind(this);
-  //   this.state = {
-  //     isOpen: false
-  //   };
-  // }
-  // toggle() {
-  //   this.setState({
-  //     isOpen: !this.state.isOpen
-  //   });
-  // }
   render() {
     return (
-      <Navbar color="indigo" dark expand="md" scrolling>
-        <NavbarBrand href="/">
-            <strong>Navbar</strong>
+      <Navbar  style={{backgroundColor:"#212121"}} dark expand="md" fixed="top" scrolling>
+        <NavbarBrand style={{fontFamily:"GardenPartySans",color:"yellow"}}>
+            GardenHub 2.0
         </NavbarBrand>
         { !this.state.isWideEnough && <NavbarToggler onClick = { this.onClick } />}
         <Collapse isOpen = { this.state.collapse } navbar>
@@ -93,17 +77,6 @@ class Header extends Component {
         </Collapse>
       </Navbar>
 
-      // <div>
-      //   <Navbar color="light"  light expand="md">
-      //     <NavbarBrand style={{fontFamily:"GardenPartySans"}}>GardenHub 2.0</NavbarBrand>
-      //     <NavbarToggler onClick={this.toggle} />
-      //     <Collapse isOpen={this.state.isOpen} navbar>
-      //       <Nav className="ml-auto" navbar>
-      //      {this.renderLinks()}
-      //       </Nav>
-      //     </Collapse>
-      //   </Navbar>
-      // </div>
     );
   }
 }

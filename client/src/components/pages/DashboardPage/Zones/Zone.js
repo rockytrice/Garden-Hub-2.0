@@ -48,7 +48,7 @@ class Zone extends React.Component {
   <Col lg="4" md="12" className="mb-lg-0 mb-4">
   <Card cascade>
     <CardImage cascade tag="div">
-        <div className="heading2" style={{background: '#21d192'}}>
+        <div className="heading2" style={{background: '#ffeb3b'}}>
             <h2 className="h2-responsive">Temperature</h2>
             <p></p>
         </div>
@@ -62,7 +62,7 @@ class Zone extends React.Component {
    <Col lg="4" md="12" className="mb-lg-0 mb-4">
   <Card cascade>
     <CardImage cascade tag="div">
-        <div className="heading2" style={{background: '#21d192'}}>
+        <div className="heading2" style={{background: '#ffeb3b'}}>
             <h2 className="h2-responsive">Soil Moisture</h2>
         </div>
     </CardImage>

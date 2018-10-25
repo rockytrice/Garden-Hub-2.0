@@ -19,7 +19,7 @@ const InfoPage = () =>  {
               <Mask overlay="white-slight" className="waves-light"/>
             </View>
             <CardBody cascade className="text-center">
-              <h2 className="font-weight-bold"><a>Our Mission</a></h2>           
+              <h2 className="font-weight-bold">Our Mission</h2>           
             </CardBody>
           </Card>
           <Summary />
