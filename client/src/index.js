@@ -42,7 +42,6 @@ ReactDOM.render(
             <Route path ="/signout" component ={Signout} />
             <Route path ="/about" component ={InfoPage} />
             <Route path ="/controls" component ={Controls} />
-
         </App>    
     </Router>
 </Provider>,
