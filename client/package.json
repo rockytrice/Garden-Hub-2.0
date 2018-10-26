@@ -18,8 +18,8 @@
     "reactstrap": "^6.4.0",
     "redux": "^4.0.1",
     "redux-form": "^7.4.2",
-    "redux-thunk": "^2.3.0",
-    "node":"8.11.3"
+    "redux-thunk": "^2.3.0"
+    
   },
   "scripts": {
     "start": "react-scripts start",
