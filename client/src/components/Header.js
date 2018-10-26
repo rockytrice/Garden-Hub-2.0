@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Collapse,Navbar,NavbarToggler,NavbarBrand,Nav,NavItem } from 'reactstrap';
+import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'mdbreact';
  import {  NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import  "./Header.css";
@@ -13,62 +13,70 @@ class Header extends Component {
   renderLinks(){
     if (this.props.authenticated){
       return (
-       
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink to ="/signout" onClick={this.showAlert}><Fa icon="sign-out"/>Sign Out</NavLink>
-            </NavItem>
-            <NavItem>
-              {/* <NavLink to ="/dashboard">dashboard</NavLink> */}
-            </NavItem>
-          </Nav>  
-          
+        <NavbarNav right>
+          <NavItem>
+            <Dropdown>
+              <DropdownToggle nav caret>Dropdown</DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem> 
+                    <NavLink to="/dashboard"><Fa icon="line-chart"/>Dashboard</NavLink>
+                  </DropdownItem>
+                  <DropdownItem className="about"> 
+                  <NavLink to ="/about"><Fa icon="info"/>About</NavLink>
+                  </DropdownItem>
+                  <DropdownItem> 
+                    <NavLink to ="/controls"><Fa icon="toggle-on"/>MQTT Controls</NavLink>
+                  </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>            
+          </NavItem>
+          <NavItem>
+            <NavLink to ="/signout" onClick={this.showAlert}><Fa icon="sign-out"/>Sign Out</NavLink>
+          </NavItem>
+        </NavbarNav>    
       );
     } else {
       return (
-        <div>
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink to ="/">Home</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink to ="/signup"><Fa icon="user-plus"/>Sign Up</NavLink>
-            </NavItem>
-            <NavItem>
-            <NavLink to ="/signin"><Fa icon="user"/>Sign In</NavLink>
-            </NavItem>  
-          </Nav>
-        </div>
+        <NavbarNav right>
+          <NavItem>
+            <NavLink to ="/">Home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to ="/signup"><Fa icon="user-plus"/>Sign Up</NavLink>
+          </NavItem>
+          <NavItem>
+          <NavLink to ="/signin"><Fa icon="user"/>Sign In</NavLink>
+          </NavItem>  
+        </NavbarNav>
       )
     }
   }
-  // here
   constructor(props) {
     super(props);
-
-    this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+        collapse: false,
+        isWideEnough: false,
     };
+  this.onClick = this.onClick.bind(this);
   }
-  toggle() {
+  
+  onClick(){
     this.setState({
-      isOpen: !this.state.isOpen
+        collapse: !this.state.collapse,
     });
   }
   render() {
     return (
-      <div>
-        <Navbar color="light"  light expand="md">
-          <NavbarBrand style={{fontFamily:"GardenPartySans"}}>GardenHub 2.0</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-           {this.renderLinks()}
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
+      <Navbar  style={{backgroundColor:"#212121"}} dark expand="md" fixed="top" scrolling>
+        <NavbarBrand style={{fontFamily:"GardenPartySans",color:"yellow"}}>
+            GardenHub 2.0
+        </NavbarBrand>
+        { !this.state.isWideEnough && <NavbarToggler onClick = { this.onClick } />}
+        <Collapse isOpen = { this.state.collapse } navbar>
+        {this.renderLinks()} 
+        </Collapse>
+      </Navbar>
+
     );
   }
 }
@@ -81,43 +89,5 @@ export default connect(mapStateToProps)(Header);
 
 
 
-// constructor(props) {
-//   super(props)
-//   this.state = {
-//     collapse : false
-//   }
-//   this.onClick = this.onClick.bind(this);
-//   this.handleNavbarClick = this.handleNavbarClick.bind(this);
-// }
-// onClick(){
-//   this.setState({
-//       collapse: !this.state.collapse,
-//   });
-// }
 
-// handleNavbarClick(){
-//   this.setState({
-//     collapse: false
-//   });
-// }
-// render(){
-// const overlay = <div id="sidenav-overlay" style={{backgroundColor: 'transparent'}} onClick={this.handleNavbarClick}/>
-//   return (
-//         <div>
-//           <Navbar dark expand="md" fixed="top" scrolling>
-//             <Container>
-//               <NavbarBrand>
-//                 <strong className="black-text" style={{fontFamily:"GardenPartySans", textAlign:"center",fontSize:20, fontWeight:"bolder"}} >GardenHub 2.0</strong>
-//               </NavbarBrand>
-//               <NavbarToggler onClick = { this.onClick } />
-//               <Collapse isOpen = {this.state.collapse} navbar>
-//                 <NavbarNav left>
-//                 {this.renderLinks()}
-//                 </NavbarNav>
-//               </Collapse>
-//             </Container>
-//           </Navbar>
-//         { this.state.collapse && overlay}
-//         </div>
-//   )
-// } 
+

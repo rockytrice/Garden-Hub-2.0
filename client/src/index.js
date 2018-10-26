@@ -12,6 +12,8 @@ import Signup from "./components/pages/SignUp/SignUp";
 import Dashboard from "./components/pages/DashboardPage/Dashboard";
 import Signout from "./components/pages/Signout";
 import Signin from "./components/pages/SignIn/LoginPage";
+import InfoPage from "./components/pages/AboutPage/About"
+import Controls from "./components/pages/MQTTControllers/ControlPage"
 import "./index.css";
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
@@ -38,6 +40,9 @@ ReactDOM.render(
             <Route path ="/signin" component={Signin} />
             <Route path="/dashboard" component={Dashboard}/>
             <Route path ="/signout" component ={Signout} />
+            <Route path ="/about" component ={InfoPage} />
+            <Route path ="/controls" component ={Controls} />
+
         </App>    
     </Router>
 </Provider>,

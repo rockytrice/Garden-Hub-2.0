@@ -3,7 +3,6 @@ import { Container, Row, Col, Card, CardBody, Mask, View,} from 'mdbreact';
 import TeamPage from "../../TeamCard";
 import FooterPage from "../../Footer";
 import "./About.css";
-import NavBar from "../../Navbar";
 import Summary from "./AboutSummary";
 import iotcontroller from "../../../images/iotcontroller.png"
 
@@ -11,7 +10,6 @@ import iotcontroller from "../../../images/iotcontroller.png"
 const InfoPage = () =>  {
   return(
     <React.Fragment>
-    <NavBar />
     <Container>
       <Row>
         <Col md="12">
@@ -21,7 +19,7 @@ const InfoPage = () =>  {
               <Mask overlay="white-slight" className="waves-light"/>
             </View>
             <CardBody cascade className="text-center">
-              <h2 className="font-weight-bold"><a>Our Mission</a></h2>           
+              <h2 className="font-weight-bold">Our Mission</h2>           
             </CardBody>
           </Card>
           <Summary />

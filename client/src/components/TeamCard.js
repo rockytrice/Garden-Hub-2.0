@@ -15,7 +15,7 @@ const TeamPage = () =>  {
               </Col>
               <Col md="8" lg="6" className="float-right">
                 <h4 className="font-weight-bold mb-3">Rocky Trice</h4>
-                <h6 className="font-weight-bold grey-text mb-3">Frontend Developer/React Developer</h6>
+                <h6 className="font-weight-bold grey-text mb-3">Front End/Back End Developer</h6>
                 <p className="grey-text"></p>
                 <a className="p-2 fa-lg fb-ic">
                   <Fa icon="linkedin"/>
@@ -33,7 +33,7 @@ const TeamPage = () =>  {
               </Col>
               <Col md="8" lg="6" className="float-right">
                 <h4 className="font-weight-bold mb-3">Johathan Sells</h4>
-                <h6 className="font-weight-bold grey-text mb-3">Backend Developer/IOT Specialist</h6>
+                <h6 className="font-weight-bold grey-text mb-3">Back End Developer/IOT Specialist</h6>
                 <p className="grey-text"></p>
                 <a className="p-2 fa-lg fb-ic">
                   <Fa icon="linkedin"/>

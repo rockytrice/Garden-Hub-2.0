@@ -8,7 +8,7 @@ class  Form extends React.Component{
             <form onSubmit={this.props.getWeather}>
               <input type="text" name="city" placeholder="Enter your City..."/>
               <input type="text" name="country" placeholder="Country..."/>
-              <Button color="primary" type="submit">Get Weather</Button>
+              <Button color="yellow" type="submit">Get Weather</Button>
             </form>
           </div>
         );
