@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions";
-import Signup from "./SignUp/SignUp";
+// import Signup from "./SignUp/SignUp";
 
 class Signout extends Component {
     // live cycle method.
@@ -12,8 +12,10 @@ class Signout extends Component {
     }
     render (){
         return (
-            <Signup />
-            // <div>Sorry to see you go</div>
+            <div>
+            {/* <Signup /> */}
+            Sorry to see you go
+            </div>
         )
     }
 }
