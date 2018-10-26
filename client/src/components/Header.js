@@ -19,13 +19,13 @@ class Header extends Component {
               <DropdownToggle nav caret>Dropdown</DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem> 
-                    <NavLink to="/dashboard">Dashboard</NavLink>
+                    <NavLink to="/dashboard"><Fa icon="line-chart"/>Dashboard</NavLink>
                   </DropdownItem>
                   <DropdownItem className="about"> 
-                    <NavLink to ="/about">About</NavLink>
+                  <NavLink to ="/about"><Fa icon="info"/>About</NavLink>
                   </DropdownItem>
                   <DropdownItem> 
-                    <NavLink to ="/controls">MQTT Controls</NavLink>
+                    <NavLink to ="/controls"><Fa icon="toggle-on"/>MQTT Controls</NavLink>
                   </DropdownItem>
               </DropdownMenu>
             </Dropdown>            

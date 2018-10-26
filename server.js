@@ -2,7 +2,6 @@ const  express = require('express');
 const bodyParser = require('body-parser');
 const  http = require('http');
 const path = require("path");
-// import favicon from "serve-favicon";
 const morgan = require("morgan");
 const app = express();
 const router = require("./routes/router");
