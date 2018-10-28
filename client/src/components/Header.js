@@ -38,9 +38,9 @@ class Header extends Component {
     } else {
       return (
         <NavbarNav right>
-          <NavItem>
+          {/* <NavItem>
             <NavLink to ="/">Home</NavLink>
-          </NavItem>
+          </NavItem> */}
           <NavItem>
             <NavLink to ="/signup"><Fa icon="user-plus"/>Sign Up</NavLink>
           </NavItem>
