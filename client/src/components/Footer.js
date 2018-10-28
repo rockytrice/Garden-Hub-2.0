@@ -52,7 +52,7 @@ class FooterPage extends React.Component {
           </Container>
           <div className="footer-copyright text-center py-3" style={{backgroundColor:"#212121"}}>
             <Container fluid>
-                &copy; {(new Date().getFullYear())} Copyright: <span className="copyright-style" style={{fontFamily: "GardenPartySans",fontSize:"20px",color:"green",fontWeight:"bolder"}}> GardenHub 2.0 </span>
+                &copy; {(new Date().getFullYear())} Copyright: <span className="copyright-style" style={{fontFamily: "GardenPartySans",fontSize:"20px",color:"#ffbb33",fontWeight:"bolder"}}> GardenHub 2.0 </span>
             </Container>
           </div>
         </Footer>
