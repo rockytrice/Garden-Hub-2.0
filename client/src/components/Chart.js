@@ -10,7 +10,7 @@ const data = {
       label: 'My First dataset',
       fill: false,
       lineTension: 0.1,
-      backgroundColor: 'yellow',
+      backgroundColor: '#ffbb33',
       borderColor: '#848484',
       borderCapStyle: 'butt',
       borderDash: [],
