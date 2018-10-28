@@ -32,7 +32,7 @@ class WeatherTron extends React.Component {
       const data = await api_call.json();
       console.log(data);
       this.setState({
-         temperature:Math.round(data.main.temp),
+         temperature: Math.round(data.main.temp),
         //  date:data.dt,
         loading:data.false,
         maxtemperature:data.main.temp_max,
@@ -51,7 +51,7 @@ class WeatherTron extends React.Component {
            return(
 
             <Jumbotron fluid>
-             <Container fluid style={{textAlign:"center"}} >
+             <Container fluid style={{textAlign:"center", marginTop:"47px"}} >
               <Title />
                 <Form getWeather={this.getWeather}/>
               {this.state.loading ? "Loading....":

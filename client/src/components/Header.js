@@ -38,9 +38,9 @@ class Header extends Component {
     } else {
       return (
         <NavbarNav right>
-          <NavItem>
+          {/* <NavItem>
             <NavLink to ="/">Home</NavLink>
-          </NavItem>
+          </NavItem> */}
           <NavItem>
             <NavLink to ="/signup"><Fa icon="user-plus"/>Sign Up</NavLink>
           </NavItem>
@@ -68,7 +68,7 @@ class Header extends Component {
   render() {
     return (
       <Navbar  style={{backgroundColor:"#212121"}} dark expand="md" fixed="top" scrolling>
-        <NavbarBrand style={{fontFamily:"GardenPartySans",color:"yellow"}}>
+        <NavbarBrand style={{fontFamily:"GardenPartySans",fontSize:"20px", color:"#ffffff"}}>
             GardenHub 2.0
         </NavbarBrand>
         { !this.state.isWideEnough && <NavbarToggler onClick = { this.onClick } />}

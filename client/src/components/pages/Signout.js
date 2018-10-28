@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions";
-// import Signup from "./SignUp/SignUp";
-
 class Signout extends Component {
     // live cycle method.
     // the instance this component appears on the screen
     componentDidMount(){
         // call this.props.signout action creator. This will attempt to sign our user out of our application entirely by removing the authenticated JWT out of the reducer and by clearing the localStorage token key.
         this.props.signout();
+        // on signout redirects back to signin page
+        this.props.history.push("/signin");
     }
     render (){
         return (
             <div>
-            {/* <Signup /> */}
             Sorry to see you go
             </div>
         )

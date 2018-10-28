@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import App from "./App";
-import Welcome from "./components/pages/Welcome";
 import {BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware} from "redux";
@@ -35,7 +34,7 @@ ReactDOM.render(
 <Provider store={store}>
     <Router>     
         <App>
-            <Route exact path="/"  component={Welcome} />
+            <Route exact path="/"  component={Signup} />
             <Route path="/signup" component={Signup} />
             <Route path ="/signin" component={Signin} />
             <Route path="/dashboard" component={Dashboard}/>

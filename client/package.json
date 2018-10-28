@@ -7,10 +7,12 @@
     "animate.css": "^3.7.0",
     "axios": "^0.18.0",
     "bootstrap": "^4.1.3",
+    "chart.js": "^2.7.3",
     "mdbreact": "git+https://oauth2:So7e1mY4Cxrk99irwGWc@git.mdbootstrap.com/mdb/react/re-pro.git",
     "moment": "^2.22.2",
     "react": "^16.0.0",
     "react-alert": "^4.0.4",
+    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
@@ -19,7 +21,6 @@
     "redux": "^4.0.1",
     "redux-form": "^7.4.2",
     "redux-thunk": "^2.3.0"
-    
   },
   "scripts": {
     "start": "react-scripts start",
