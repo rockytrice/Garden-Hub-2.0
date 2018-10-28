@@ -5,7 +5,7 @@ import WeatherTron from "../../WeatherJumbotron";
 import Zone from "./Zones/Zone";
 import FooterPage from "../../Footer";
 import requireAuth from "../../requireAuth";
-
+import ChartsPage from "../../Chart";
 class DashBoard extends Component {
   render(){
     return(
@@ -13,6 +13,7 @@ class DashBoard extends Component {
        <WeatherTron />
        <Container>
         <Zone />
+        <ChartsPage />
        </Container> 
       <FooterPage />
       </React.Fragment>

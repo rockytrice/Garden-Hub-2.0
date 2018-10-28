@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { Card, CardBody, CardImage, CardTitle, CardText,Tooltip,Col,CardFooter,Row } from 'mdbreact';
-import tomatoes from "../../../../images/tomatoes.jpg";
+import { Card, CardBody, CardImage, CardTitle, CardText,Col, Row, Button } from 'mdbreact';
 import { subscribe } from "../../../../messages";
 
 
@@ -23,27 +22,10 @@ class Zone extends React.Component {
   <section className="text-center my-5">
    <Row>
    <Col lg="4" md="12" className="mb-lg-0 mb-4">
-    <Card wide ecommerce>
-      <CardImage cascade src={tomatoes} style={{width:400,height:300}}/>
-      <CardBody cascade className="text-center">
-        <a href="" className="text-muted">
-          <h5>Zone 1</h5>
-        </a>
-        <CardTitle>
-          <strong><a href="">Tamatoes</a></strong>
-        </CardTitle>
-        <CardText></CardText>
-        <CardFooter className="px-1">
-          <span className="float-left font-weight-bold">
-            
-          </span>
-          <span className="float-right">
-            <Tooltip placement="top" tag="a" component="i" componentClass="fa fa-eye grey-text ml-3" tooltipContent="Quick look"/>
-            <Tooltip placement="top" tag="a" component="i" componentClass="fa fa-heart grey-text ml-3" tooltipContent="Add to watchlist"/>
-          </span>
-        </CardFooter>
-      </CardBody>
-    </Card>
+   {/* buttons to trigger relay on and off */}
+    <Button color="yellow">Relay On</Button>
+    <Button color="yellow">Relay Off</Button>
+
   </Col>
   <Col lg="4" md="12" className="mb-lg-0 mb-4">
   <Card cascade>
