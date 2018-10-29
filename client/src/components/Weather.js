@@ -1,12 +1,12 @@
 import React from "react";
 import "./Weather.css"
-import moment from "moment";
+// import moment from "moment";
 
 class  WeatherContent extends React.Component{
     render(){
-        const time = moment(this.props.sunrise);
-        const sunsettime=moment(this.props.sunset);
-        console.log(time);
+        // const time = moment(this.props.sunrise);
+        // const sunsettime=moment(this.props.sunset);
+        // console.log(time);
         return (
             <div className="col-md-12">
               <div className="card text-center" style={{marginTop:17}}>
@@ -18,8 +18,8 @@ class  WeatherContent extends React.Component{
                  <ul className="card-text" style={{listStyle:"none",fontFamily:"Lora",fontSize:"30"}}>
                  <li> Temperature is {this.props.temperature}˚F</li>
                 <li> Humidity is {this.props.humidity}%</li>    
-               <li> Sunrise at {moment.unix(time).format("LLL")}</li>    
-               <li> Sunset at {moment.unix(sunsettime).format("LLL")} </li>
+               {/* <li> Sunrise at {moment.unix(time).format("LLL")}</li>    
+               <li> Sunset at {moment.unix(sunsettime).format("LLL")} </li> */}
                  </ul>
                </div>
              </div>  
