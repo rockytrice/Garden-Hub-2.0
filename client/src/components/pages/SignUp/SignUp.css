@@ -51,7 +51,7 @@ input {
 /* media queries=============================================================================================================== */
 
 
-/* Smartphones (portrait and landscape) ----------- */
+/* Smartphones (portrait and landscape) -----------
 @media only screen and (min-width : 320px) and (max-width : 480px) {
  img{
    width: 400px;
@@ -64,21 +64,22 @@ input {
    width: 334px;
  }
  
-}
+} */
 
-/* iPads (landscape) -----------
+ /* iPads (landscape) -----------
+
 @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
-  img {
+   img {
     margin-left: -62px;
     margin-top: 87px;
   }
-}
+} 
 /* iPads (portrait) ----------- */
-/* @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
+ /* @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
   input {
     width: 292px;
   }
-  } */ 
+  }  */ 
 
 /* ==========================================================login page media queries============================================================================== */
 
@@ -95,7 +96,48 @@ input {
   }
 
 
+  /* Ipad Pro=============================== */
+  @media only screen and (min-width: 1366px) {
+    img.login-pic{
+      margin-left: -14px;
+      margin-top: 43px;  
+    }
+    input{
+      width: 401px;
+    }
 
+  }
+
+
+  @media only screen and (min-width: 1275px) {
+    input{
+      width: 405px;
+    }
+    img.login-pic{
+      margin-top: 20px;
+      margin-left: 60px;
+    }
+  }
+
+/* Ipad Pro===============================
+@media only screen and (min-width: 600px) {
+  
+  img.login-pic{
+    margin-left: 59px;
+    margin-top: 406px;
+    width: 400px;
+    height: 300px;
+  }
+  input{
+    width: 360px;
+  }
+  #classic-card{
+    width: 400px;
+    height: 400px;
+    margin-left: 48px;
+  }
+
+} */
 
 
 
