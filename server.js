@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const mongoose = require("mongoose");
 const socketIo = require("socket.io");
 const mqtt = require("mqtt");
-var moment = require("moment");
+const moment = require("moment");
 moment().format();
 const router = require("./routes/router");
 const cors = require("cors");
@@ -43,6 +43,27 @@ const io = socketIo(server);
 console.log("socket.io server listening on port ", port);
 
 //=======================================================================================================
+
+
+//======================================================database config with mongoose===============================================================//
+
+var db = require("./models");
+
+//define the 'sensorData' database for MongoDB storage of all incoming sensor data
+var MONGODB_URI = "mongodb://127.0.0.1:27017/SensorData";
+
+//set mongoose to leverage built in Javascript ES6 Promise
+mongoose.Promise = Promise;
+
+//connect to Mongo DB
+mongoose.connect(MONGODB_URI);
+
+
+//==================================================================================================================================================
+
+
+
+
 
 //=============================Connect this server side MQTT Client to the Broker & setup Socket Server ==========================================//
 
