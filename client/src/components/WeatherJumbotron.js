@@ -58,9 +58,6 @@ class WeatherTron extends React.Component {
         mintemperature4:Math.round(data.list[25].main.temp_min),  
         mintemperature5:Math.round(data.list[30].main.temp_min),  
 
-
-
-        
         city:data.city.name,
         country:data.city.country,
 
@@ -71,17 +68,12 @@ class WeatherTron extends React.Component {
         description4:data.list[28].weather[0].description,
         description5:data.list[32].weather[0].description,
 
-
-
-
         // icon data================================================================
         icon1: data.list[0].weather[0].icon,
         icon2: data.list[11].weather[0].icon,
         icon3: data.list[17].weather[0].icon,
         icon4: data.list[28].weather[0].icon,
         icon5: data.list[32].weather[0].icon,
-
-
 
         err:"please enter values"     
       });
@@ -95,7 +87,6 @@ class WeatherTron extends React.Component {
                 <Form getWeather={this.getWeather}/>
               {this.state.loading ? "Loading....":
               <Forecast
-              
               date1={this.state.date1}
               date2={this.state.date2}
               date3={this.state.date3}
@@ -108,10 +99,9 @@ class WeatherTron extends React.Component {
               icon4={this.state.icon4}
               icon5={this.state.icon5}
 
-
               mintemperature1={this.state.mintemperature1}
               maxtemperature1={this.state.maxtemperature1}
-
+              
               mintemperature2={this.state.mintemperature2}
               maxtemperature2={this.state.maxtemperature2}
 
