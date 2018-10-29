@@ -1,13 +1,12 @@
 import React from "react";
 import { Jumbotron, Container } from 'reactstrap';
-// import axios from 'axios';
 import Title from "./Title";
 import Form from "./WeatherForm";
 import WeatherContent from "./Weather";
-const config= require("../config");
+const config2= require("../config2");
 
 
-const API_KEY = config.API_KEY
+const API_KEY = config2.API_KEY
 
 class WeatherTron extends React.Component {
   state={
