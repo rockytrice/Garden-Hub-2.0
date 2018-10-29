@@ -76,7 +76,7 @@ componentDidMount() {
       </CardImage>
       <CardBody cascade>
           <CardTitle>{this.state.temp}</CardTitle>
-          <CardText style={{fontSize: 30}}><span>{ tempGraph }</span></CardText>
+          <CardText style={{fontSize: 30}}><span>{ tempGraph }&#176;F</span></CardText>
       </CardBody>
     </Card>
    </Col>
@@ -89,7 +89,7 @@ componentDidMount() {
     </CardImage>
     <CardBody cascade>
           <CardTitle>{this.state.moist}</CardTitle>
-          <CardText style={{fontSize: 30}} ><span>{ response2 }</span></CardText>
+          <CardText style={{fontSize: 30}} ><span>{ response2 }%</span></CardText>
     </CardBody>
   </Card>
  </Col>
