@@ -3,14 +3,25 @@ import { Card, CardBody, CardImage, CardTitle, CardText, CardGroup } from 'mdbre
 
 class Forecast extends React.Component {
   render() {
+      
     return (
         <CardGroup deck>
 
         <Card>
-          <CardImage src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg" alt="Card image cap" top hover overlay="white-slight"/>
+          <CardImage src={`http://openweathermap.org/img/w/${this.props.icon}.png`} alt="weather icon" width="108" />
           <CardBody>
             <CardTitle tag="h5">Monday</CardTitle>
-            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+            <CardText style={{listStyle:"none"}}>
+            <li>
+                {this.props.description}
+                </li> 
+                <li>
+                {this.props.maxtemperature1}
+                </li> 
+                <li>
+                {this.props.mintemperature1}
+             </li> 
+            </CardText>
           </CardBody>
         </Card>
       
@@ -18,7 +29,10 @@ class Forecast extends React.Component {
           <CardImage src="https://mdbootstrap.com/img/Photos/Others/images/14.jpg" alt="Card image cap" top hover overlay="white-slight"/>
           <CardBody>
             <CardTitle tag="h5">Tuesday</CardTitle>
-            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+            <CardText style={{listStyle:"none"}}>
+                <li>Some quick example text to build on the card title and make up the bulk of the card's content.
+                </li> 
+            </CardText>
           </CardBody>
         </Card>
       
@@ -26,7 +40,10 @@ class Forecast extends React.Component {
           <CardImage src="https://mdbootstrap.com/img/Photos/Others/images/15.jpg" alt="Card image cap" top hover overlay="white-slight"/>
           <CardBody>
             <CardTitle tag="h5">Wednesday</CardTitle>
-            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+            <CardText style={{listStyle:"none"}}>
+                <li>Some quick example text to build on the card title and make up the bulk of the card's content.
+                </li> 
+            </CardText>
           </CardBody>
         </Card>
 
@@ -34,7 +51,10 @@ class Forecast extends React.Component {
           <CardImage src="https://mdbootstrap.com/img/Photos/Others/images/15.jpg" alt="Card image cap" top hover overlay="white-slight"/>
           <CardBody>
             <CardTitle tag="h5">Thursday</CardTitle>
-            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+            <CardText style={{listStyle:"none"}}>
+            <li>Some quick example text to build on the card title and make up the bulk of the card's content.
+                </li> 
+            </CardText>
           </CardBody>
         </Card>
 
@@ -42,7 +62,10 @@ class Forecast extends React.Component {
           <CardImage src="https://mdbootstrap.com/img/Photos/Others/images/15.jpg" alt="Card image cap" top hover overlay="white-slight"/>
           <CardBody>
             <CardTitle tag="h5">Friday</CardTitle>
-            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+            <CardText style={{listStyle:"none"}}>
+                <li>Some quick example text to build on the card title and make up the bulk of the card's content.
+                </li> 
+            </CardText>
           </CardBody>
         </Card>
       

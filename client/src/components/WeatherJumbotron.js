@@ -2,9 +2,9 @@ import React from "react";
 import { Jumbotron, Container } from 'reactstrap';
 import Title from "./Title";
 import Form from "./WeatherForm";
-import WeatherContent from "./Weather";
+import Forecast from "./WeatherForecast";
+// import WeatherContent from "./Weather";
 const config2= require("../config2");
-
 
 const API_KEY = config2.API_KEY
 
@@ -20,9 +20,7 @@ class WeatherTron extends React.Component {
     description:"",
     icon:"",
     err:"",
-    // sunrise:"",
-    // sunset:"",
-    date:""
+   
   
   }
   
@@ -40,9 +38,9 @@ class WeatherTron extends React.Component {
         //  date:data.dt,
         loading:data.false,
         // maxtemperature:data.main.temp_max,
-        maxtemperature:data.list[0].main.temp_max,
+        maxtemperature1:Math.round(data.list[5].main.temp_max),
         // mintemperature:data.main.temp_min,
-        mintemperature:data.list[0].main.temp_min,
+        mintemperature1:Math.round(data.list[0].main.temp_min),
         city:data.city.name,
         // city:city.name,
         // country:data.sys.country,
@@ -51,7 +49,7 @@ class WeatherTron extends React.Component {
         humidity:data.list[0].main.humidity,
         // sunrise:data.sys.sunrise,
         // sunset:data.sys.sunset,
-        description:data.list[0].weather[0].description,
+        description1:data.list[0].weather[0].description,
          icon: data.list[0].weather[0].icon,
         err:"please enter values"     
       });
@@ -64,19 +62,18 @@ class WeatherTron extends React.Component {
               <Title />
                 <Form getWeather={this.getWeather}/>
               {this.state.loading ? "Loading....":
-              <WeatherContent
-              // date={this.data.date}
-              city={this.state.city}
-              country={this.state.country}
+              <Forecast
+              // city={this.state.city}
+              // country={this.state.country}
               icon={this.state.icon}
-              temperature={this.state.temperature}
-              mintemperature={this.state.mintemperature}
-              maxtemperature={this.state.maxtemperature}
-              humidity={this.state.humidity}
-              description={this.state.description}
+              // temperature={this.state.temperature}
+              mintemperature1={this.state.mintemperature1}
+              maxtemperature1={this.state.maxtemperature1}
+              // humidity={this.state.humidity}
+              description1={this.state.description}
               // sunrise={this.state.sunrise}
               // sunset={this.state.sunset}
-              wind={this.state.wind}
+              // wind={this.state.wind}
               error={this.state.error}
               />
               }
