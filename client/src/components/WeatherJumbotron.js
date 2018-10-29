@@ -4,8 +4,10 @@ import { Jumbotron, Container } from 'reactstrap';
 import Title from "./Title";
 import Form from "./WeatherForm";
 import WeatherContent from "./Weather";
+const config= require("../config");
 
-const API_KEY= `${process.env.REACT_APP_API_KEY}`
+
+const API_KEY = config.API_KEY
 
 class WeatherTron extends React.Component {
   state={
