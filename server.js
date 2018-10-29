@@ -11,8 +11,6 @@ moment().format();
 const router = require("./routes/router");
 const cors = require("cors");
 
-// Database setup===========================================================
-mongoose.connect("mongodb://localhost/auth");
 
 
 // App setup=================================================================
@@ -26,14 +24,14 @@ router(app);
 
 
 // Server Setup
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 4001;
 const server = http.createServer(app);
 server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
 
 
 
-//this is the mqtt client
+//this is the server-side mqtt client
 const client = mqtt.connect(
   "mqtt://localhost",
   { port: 1883, clientId: "server-mqtt-client" }
