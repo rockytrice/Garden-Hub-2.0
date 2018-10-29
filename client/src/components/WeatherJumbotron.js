@@ -3,7 +3,7 @@ import { Jumbotron, Container } from 'reactstrap';
 import Title from "./Title";
 import Form from "./WeatherForm";
 import Forecast from "./WeatherForecast";
-// import WeatherContent from "./Weather";
+import cloudbackgroud from "../images/cloudbackground.jpg";
 const config2= require("../config2");
 
 const API_KEY = config2.API_KEY
@@ -48,7 +48,7 @@ class WeatherTron extends React.Component {
         maxtemperature2:Math.round(data.list[12].main.temp_max),
         maxtemperature3:Math.round(data.list[20].main.temp_max),
         maxtemperature4:Math.round(data.list[28].main.temp_max),
-        maxtemperature5:Math.round(data.list[35].main.temp_max),
+        maxtemperature5:Math.round(data.list[32].main.temp_max),
 
 
         // mintemperature data========================================================
@@ -56,7 +56,7 @@ class WeatherTron extends React.Component {
         mintemperature2:Math.round(data.list[10].main.temp_min),  
         mintemperature3:Math.round(data.list[17].main.temp_min),  
         mintemperature4:Math.round(data.list[25].main.temp_min),  
-        mintemperature5:Math.round(data.list[31].main.temp_min),  
+        mintemperature5:Math.round(data.list[30].main.temp_min),  
 
 
 
@@ -89,7 +89,7 @@ class WeatherTron extends React.Component {
          render () {
            return(
 
-            <Jumbotron fluid>
+            <Jumbotron fluid style={{backgroundImage:`url(${cloudbackgroud})`, backgroundRepeat:"no-repeat", backgroundSize:"cover"}}>
              <Container fluid style={{textAlign:"center", marginTop:"47px"}} >
               <Title />
                 <Form getWeather={this.getWeather}/>

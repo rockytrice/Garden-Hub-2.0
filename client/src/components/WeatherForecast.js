@@ -1,6 +1,8 @@
-import React from 'react';
-import { Card, CardBody, CardImage, CardTitle, CardText, CardGroup } from 'mdbreact';
+ import React from 'react';
+ import { Card, CardBody, CardImage, CardTitle, CardText, CardGroup } from 'mdbreact';
  import moment from "moment";
+ import "./WeatherForecast.css";
+
 
 class Forecast extends React.Component {
   render() {
@@ -13,6 +15,13 @@ class Forecast extends React.Component {
 
 
     return (
+    <div> 
+        <Card>
+            <CardBody style={{backgroundColor:"#ffbb33",fontFamily:"Anton, sans-serif", fontSize:"30px"}}>
+            5 day Forecast
+            </CardBody>
+        </Card>
+
         <CardGroup deck>
 
         <Card>
@@ -20,14 +29,14 @@ class Forecast extends React.Component {
           <CardBody>
             <CardTitle tag="h5">{moment.unix(date1).format("MMM Do YYYY")}</CardTitle>
             <CardText style={{listStyle:"none"}}>
-            <li>
+            <li className="weather-list">
                 {this.props.description1}
             </li> 
-            <li>
-                {this.props.maxtemperature1}
+            <li className="weather-list">
+                 {this.props.mintemperature1}
             </li> 
-             <li>
-                {this.props.mintemperature1}
+             <li className="weather-list">
+                {this.props.maxtemperature1}
              </li> 
             </CardText>
           </CardBody>
@@ -38,14 +47,14 @@ class Forecast extends React.Component {
           <CardBody>
             <CardTitle tag="h5">{moment.unix(date2).format("MMM Do YYYY")}</CardTitle>
             <CardText style={{listStyle:"none"}}>
-            <li>
+            <li className="weather-list">
                 {this.props.description2}
             </li> 
-            <li>
-                {this.props.maxtemperature2}
+            <li className="weather-list">
+                 {this.props.mintemperature2}
             </li> 
-             <li>
-                {this.props.mintemperature2}
+             <li className="weather-list">
+                {this.props.maxtemperature2}
              </li> 
             </CardText>
           </CardBody>
@@ -56,14 +65,14 @@ class Forecast extends React.Component {
           <CardBody>
             <CardTitle tag="h5">{moment.unix(date3).format("MMM Do YYYY")}</CardTitle>
             <CardText style={{listStyle:"none"}}>
-            <li>
+            <li className="weather-list">
                 {this.props.description3}
             </li> 
-            <li>
-                {this.props.maxtemperature3}
+            <li className="weather-list">
+                 {this.props.mintemperature3}
             </li> 
-             <li>
-                {this.props.mintemperature3}
+             <li className="weather-list">
+                {this.props.maxtemperature3}
              </li> 
             </CardText>
           </CardBody>
@@ -74,14 +83,14 @@ class Forecast extends React.Component {
           <CardBody>
             <CardTitle tag="h5">{moment.unix(date4).format("MMM Do YYYY")}</CardTitle>
             <CardText style={{listStyle:"none"}}>
-            <li>
+            <li className="weather-list">
                 {this.props.description4}
             </li> 
-            <li>
-                {this.props.maxtemperature4}
-            </li> 
-             <li>
+            <li className="weather-list">
                 {this.props.mintemperature4}
+            </li> 
+             <li className="weather-list">
+                {this.props.maxtemperature4}
              </li> 
             </CardText>
           </CardBody>
@@ -92,20 +101,23 @@ class Forecast extends React.Component {
           <CardBody>
             <CardTitle tag="h5">{moment.unix(date5).format("MMM Do YYYY")}</CardTitle>
             <CardText style={{listStyle:"none"}}>
-            <li>
+            <li className="weather-list">
                 {this.props.description5}
             </li> 
-            <li>
+            <li className="weather-list">
                 {this.props.maxtemperature5}
+
             </li> 
-             <li>
+             <li className="weather-list">
                 {this.props.mintemperature5}
+
              </li>  
             </CardText>
           </CardBody>
         </Card>
       
       </CardGroup>
+    </div> 
     )
   };
 };
