@@ -6,14 +6,25 @@ import Zone from "./Zones/Zone";
 import FooterPage from "../../Footer";
 import requireAuth from "../../requireAuth";
 import ChartsPage from "../../Chart";
+import socketIOClient from "socket.io-client";
 class DashBoard extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      endpoint: "http://localhost:4001",
+    }
+  }
+
+
+
   render(){
     return(
       <React.Fragment>
        <WeatherTron />
        <Container>
         <Zone />
-        <ChartsPage />
+        <ChartsPage  />
        </Container> 
       <FooterPage />
       </React.Fragment>

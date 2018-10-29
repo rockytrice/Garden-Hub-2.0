@@ -54,7 +54,7 @@ componentDidMount() {
 }
 
 
-  render() {DataTransferItemList
+  render() {//DataTransferItemList
     const { response2 } = this.state;
     const { tempGraph } = this.state;
     return (
