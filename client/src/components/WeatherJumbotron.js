@@ -32,25 +32,49 @@ class WeatherTron extends React.Component {
       const data = await api_call.json();
       console.log(data);
       this.setState({
-        //  temperature: Math.round(data.main.temp),
-         temperature: Math.round(data.list[0].main.temp),
-
-        //  date:data.dt,
+        
         loading:data.false,
-        // maxtemperature:data.main.temp_max,
+
+        // maxtemperature data=======================================================
         maxtemperature1:Math.round(data.list[5].main.temp_max),
-        // mintemperature:data.main.temp_min,
+        maxtemperature2:Math.round(data.list[12].main.temp_max),
+        maxtemperature3:Math.round(data.list[20].main.temp_max),
+        maxtemperature4:Math.round(data.list[28].main.temp_max),
+        maxtemperature5:Math.round(data.list[35].main.temp_max),
+
+
+        // mintemperature data========================================================
         mintemperature1:Math.round(data.list[0].main.temp_min),
+        mintemperature2:Math.round(data.list[10].main.temp_min),  
+        mintemperature3:Math.round(data.list[17].main.temp_min),  
+        mintemperature4:Math.round(data.list[25].main.temp_min),  
+        mintemperature5:Math.round(data.list[31].main.temp_min),  
+
+
+
+        
         city:data.city.name,
-        // city:city.name,
-        // country:data.sys.country,
         country:data.city.country,
-        // humidity:data.main.humidity,
-        humidity:data.list[0].main.humidity,
-        // sunrise:data.sys.sunrise,
-        // sunset:data.sys.sunset,
+
+        // description data==========================================================
         description1:data.list[0].weather[0].description,
-         icon: data.list[0].weather[0].icon,
+        description2:data.list[3].weather[0].description,
+        description3:data.list[17].weather[0].description,
+        description4:data.list[28].weather[0].description,
+        description5:data.list[32].weather[0].description,
+
+
+
+
+        // icon data================================================================
+        icon1: data.list[0].weather[0].icon,
+        icon2: data.list[11].weather[0].icon,
+        icon3: data.list[17].weather[0].icon,
+        icon4: data.list[28].weather[0].icon,
+        icon5: data.list[32].weather[0].icon,
+
+
+
         err:"please enter values"     
       });
      }
@@ -63,17 +87,37 @@ class WeatherTron extends React.Component {
                 <Form getWeather={this.getWeather}/>
               {this.state.loading ? "Loading....":
               <Forecast
-              // city={this.state.city}
-              // country={this.state.country}
-              icon={this.state.icon}
-              // temperature={this.state.temperature}
+              
+              icon1={this.state.icon1}
+              icon2={this.state.icon2}
+              icon3={this.state.icon3}
+              icon4={this.state.icon4}
+              icon5={this.state.icon5}
+
+
               mintemperature1={this.state.mintemperature1}
               maxtemperature1={this.state.maxtemperature1}
-              // humidity={this.state.humidity}
-              description1={this.state.description}
-              // sunrise={this.state.sunrise}
-              // sunset={this.state.sunset}
-              // wind={this.state.wind}
+
+              mintemperature2={this.state.mintemperature2}
+              maxtemperature2={this.state.maxtemperature2}
+
+              mintemperature3={this.state.mintemperature3}
+              maxtemperature3={this.state.maxtemperature3}
+
+              mintemperature4={this.state.mintemperature4}
+              maxtemperature4={this.state.maxtemperature4}
+
+              mintemperature5={this.state.mintemperature5}
+              maxtemperature5={this.state.maxtemperature5}
+
+
+              description1={this.state.description1}
+              description2={this.state.description2}
+              description3={this.state.description3}
+              description4={this.state.description4}
+              description5={this.state.description5}
+
+
               error={this.state.error}
               />
               }
