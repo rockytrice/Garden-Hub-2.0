@@ -2,37 +2,9 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Container } from 'mdbreact';
 import socketIOClient from "socket.io-client";
-/*
-// Line chart
-const data = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-  datasets: [
-    {
-      label: 'My First dataset',
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: '#ffbb33',
-      borderColor: '#848484',
-      borderCapStyle: 'butt',
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: '#848484',
-      pointBackgroundColor: '#fff',
-      pointBorderWidth: 1,
-      pointHoverRadius: 5,
-      pointHoverBackgroundColor: '#848484',
-      pointHoverBorderColor: 'rgba(220,220,220,1)',
-      pointHoverBorderWidth: 2,
-      pointRadius: 1,
-      pointHitRadius: 10,
-      data: [65, 59, 80, 81, 56, 55, 40]
-    }
-  ]
-};
-*/
 
-class ChartsPage extends React.Component {
+
+class ChartsPage2 extends React.Component {
 
   constructor() {
     super();
@@ -45,7 +17,7 @@ class ChartsPage extends React.Component {
             { 
                 //label for the graph itself
                 type: "line",
-                label: "Temperature",
+                label: "Moisture",
                 fill: false,
                 lineTension: 0.1,
                 backgroundColor: '#ffbb33',
@@ -88,7 +60,7 @@ class ChartsPage extends React.Component {
     const { endpoint } = this.state;
     //as soon as the react component gets mounted, the componentDidMount creates a new connection to out Sokcet.io server by instantiating a new socket
     const socket = socketIOClient(endpoint);
-    socket.on('temperatures', data => 
+    socket.on('moistures', data => 
       {
         let incoming = data; //might not have to parse this, it is already an array
         let value = incoming
@@ -136,4 +108,4 @@ class ChartsPage extends React.Component {
 
 };
 
-export default ChartsPage;
+export default ChartsPage2;
