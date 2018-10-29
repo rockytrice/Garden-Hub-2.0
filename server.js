@@ -149,7 +149,7 @@ client.on("connect", function() {
 
     });
 
-    socket.on("btn5", () => {
+    /*socket.on("btn5", () => {
       
       console.log("//////////////ON COMMAND RECEIVED///////////////");
 
@@ -183,7 +183,7 @@ client.on("connect", function() {
       //send the command to irrigation controller
       client.publish("relay/control", "8");
 
-    });
+    });*/
 
     //Switch control of relay to auto mode
     socket.on("auto", () => {
@@ -199,15 +199,16 @@ client.on("connect", function() {
       }
     })
 
+    /*
     socket.on("allOn", () =>{
-      client.publish("relay/control", "ON")
+      client.publish("relay/control", "A")
       console.log("All realys ON");
     })
 
     socket.on("allOff", () =>{
-      client.publish("relay/control", "OFF");
+      client.publish("relay/control", "B");
       console.log("All relays OFF");
-    })
+    })*/
 
     
     // fired when a message is received on one of the subscribed topic; notice this event handler is outside of the on_connect event handler

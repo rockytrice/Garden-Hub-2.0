@@ -27,22 +27,23 @@ class Controls extends React.Component {
         
     relay1Off = () => {
         const { endpoint } = this.state;
-        const socket2 = socketIOClient(endpoint);
+        const socket1 = socketIOClient(endpoint);
         console.log('button clicked');
-        socket2.emit('btn2', 'button2 clicked!!');
+        socket1.emit('btn2', 'button2 clicked!!');
     }
+    
     relay2On = () => {
         const { endpoint } = this.state;
-        const socket3 = socketIOClient(endpoint);
+        const socket = socketIOClient(endpoint);
         console.log('button clicked');
-        socket3.emit('btn3', 'button3 clicked!!');
+        socket.emit('btn3', 'button3 clicked!!');
         }
         
     relay2Off = () => {
         const { endpoint } = this.state;
-        const socket4 = socketIOClient(endpoint);
+        const socket = socketIOClient(endpoint);
         console.log('button clicked');
-        socket4.emit('btn4', 'button4 clicked!!');
+        socket.emit('btn4', 'button4 clicked!!');
     }
     relay3On = () => {
         const { endpoint } = this.state;
@@ -53,9 +54,9 @@ class Controls extends React.Component {
         
     relay3Off = () => {
         const { endpoint } = this.state;
-        const socket6 = socketIOClient(endpoint);
+        const socket5 = socketIOClient(endpoint);
         console.log('button clicked');
-        socket6.emit('btn6', 'button6 clicked!!');
+        socket5.emit('btn6', 'button6 clicked!!');
     }
     relay4On = () => {
         const { endpoint } = this.state;
@@ -90,29 +91,17 @@ class Controls extends React.Component {
             <Container className="controls" style={{marginTop:300}}>
                 <div className="row">
                     <div className="col-md-4">
-            <Button type="submit" color="success" onClick={this.allOn}>ALL-ON</Button>
-            <Button type="submit" color="danger" onClick={this.allOff}>ALL-OFF</Button>
+                        <Button type="submit" color="success" onClick={this.relay1On}>ZONE 1-ON</Button>
+                        <Button type="submit" color="danger" onClick={this.relay1Off}>ZONE 1-OFF</Button>
                     </div>
-                <div className="col-md-4">
-            <Button type="submit" color="success" onClick={this.relay1On}>ZONE 1-ON</Button>
-            <Button type="submit" color="danger" onClick={this.relay1Off}>ZONE 1-OFF</Button>
+                    <div className="col-md-4">
+                        <Button type="submit" color="success" onClick={this.relay2On}>ZONE 2-ON</Button>
+                        <Button type="submit" color="danger"onClick={this.relay2Off}>ZONE 2-OFF</Button>
                     </div>
-                <div className="col-md-4">
-            <Button type="submit" color="success" onClick={this.relay2On}>ZONE 2-ON</Button>
-            <Button type="submit" color="danger"onClick={this.relay2Off}>ZONE 2-OFF</Button>
+                    <div className="col-md-4">
+                        <Button className="autoToggle" type="submit" color="yellow" onClick={this.autoToggle}>Toggle Auto-Mode</Button>
+                    </div>
                 </div>
-                <div className="col-md-4">
-            <Button className="autoToggle" type="submit" color="yellow" onClick={this.autoToggle}>Toggle Auto-Mode</Button>
-                </div>
-                <div className="col-md-4">
-            <Button type="submit" color="success" onClick={this.relay3On}>ZONE 3-ON</Button>
-            <Button type="submit" color="danger" onClick={this.relay3Off}>ZONE 3-OFF</Button>
-                </div>
-                <div className="col-md-4">
-            <Button type="submit" color="success" onClick={this.relay4On}>ZONE 4-ON</Button>
-            <Button type="submit" color="danger" onClick={this.relay4Off}>ZONE 4-OFF</Button>
-                </div>
-            </div>
          </Container>
         
          </React.Fragment>
