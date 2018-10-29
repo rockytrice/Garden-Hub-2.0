@@ -6,6 +6,8 @@ import Zone from "./Zones/Zone";
 import FooterPage from "../../Footer";
 import requireAuth from "../../requireAuth";
 import ChartsPage from "../../Chart";
+
+
 class DashBoard extends Component {
   render(){
     return(
