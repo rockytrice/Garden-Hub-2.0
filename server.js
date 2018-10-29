@@ -47,10 +47,10 @@ console.log("socket.io server listening on port ", port);
 
 //======================================================database config with mongoose===============================================================//
 
-var db = require("./models");
+const db = require("./modelsDb/");
 
 //define the 'sensorData' database for MongoDB storage of all incoming sensor data
-var MONGODB_URI = "mongodb://127.0.0.1:27017/SensorData";
+const MONGODB_URI = "mongodb://127.0.0.1:27017/SensorData";
 
 //set mongoose to leverage built in Javascript ES6 Promise
 mongoose.Promise = Promise;
