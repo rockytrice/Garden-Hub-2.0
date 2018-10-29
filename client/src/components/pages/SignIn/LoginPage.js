@@ -7,6 +7,7 @@ import  "../SignUp/SignUp.css";
 import { Card,Mask, CardBody,Row,Fa, Col, View, Container, Button } from 'mdbreact';
 import SocialIcon from "../SignIn/Icons"
 import Irrigationicon from "../../../images/Irrigationicon.png";
+// import "./Login.css";
 
 
 class Signin extends Component {
@@ -33,7 +34,7 @@ class Signin extends Component {
                 <form className="form-signin" onSubmit={handleSubmit(this.onSubmit)}>
                   <Row>
                     <div className="white-text text-center   text-md-left col-md-6 mt-xl-5 mb-5">
-                    <img src={Irrigationicon} width="500" height="400" alt="logo"/>
+                    <img className="login-pic" src={Irrigationicon} width="500" height="400" alt="logo"/>
                     </div>
                     <Col md="6" xl="5" className="mb-4">
                     <Card id="classic-card" style={{marginTop:61}} >

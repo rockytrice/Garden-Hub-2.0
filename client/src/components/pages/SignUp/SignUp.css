@@ -66,7 +66,7 @@ input {
  
 }
 
-/* iPads (landscape) ----------- */
+/* iPads (landscape) -----------
 @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
   img {
     margin-left: -62px;
@@ -74,16 +74,35 @@ input {
   }
 }
 /* iPads (portrait) ----------- */
-@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
+/* @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
   input {
     width: 292px;
   }
+  } */ 
+
+/* ==========================================================login page media queries============================================================================== */
+
+/* Ipad Mini=============================== */
+  @media only screen and (min-width: 768px) {
+    img.login-pic{
+      margin-left: -113px;
+      margin-top: 78px;    
+    }
+    input{
+      width: 292px;
+    }
+
   }
-/* Samsung Galaxy S5 ----------- */
-@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
 
 
-  }
+
+
+
+
+
+
+
+
 
 
 
@@ -94,19 +113,5 @@ input {
   }
 }
 
-/* @media (max-width: 991px){
-  input {
-    width: 288px;
-  }
-  img {
-    width: 400px;
-    height:300px;
-    margin-left:-90px;
-    margin-top: 103px;
-  }
-  .pic-header {
-    font-size: 40px!important;
-  }
 
-} */
 

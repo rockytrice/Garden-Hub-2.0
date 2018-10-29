@@ -25,7 +25,7 @@ class Forecast extends React.Component {
         <CardGroup deck>
 
         <Card>
-          <CardImage src={`http://openweathermap.org/img/w/${this.props.icon1}.png`} alt="weather icon" width="200" height="200" />
+          <CardImage className="weather-icon" src={`http://openweathermap.org/img/w/${this.props.icon1}.png`} alt="weather icon" width="200" height="200" />
           <CardBody>
             <CardTitle tag="h5">{moment.unix(date1).format("MMM Do YYYY")}</CardTitle>
             <CardText style={{listStyle:"none"}}>
@@ -43,7 +43,7 @@ class Forecast extends React.Component {
         </Card>
       
         <Card> 
-        <CardImage src={`http://openweathermap.org/img/w/${this.props.icon2}.png`} alt="weather icon" width="200" height="200" />
+        <CardImage className="weather-icon" src={`http://openweathermap.org/img/w/${this.props.icon2}.png`} alt="weather icon" width="200" height="200" />
           <CardBody>
             <CardTitle tag="h5">{moment.unix(date2).format("MMM Do YYYY")}</CardTitle>
             <CardText style={{listStyle:"none"}}>
@@ -61,7 +61,7 @@ class Forecast extends React.Component {
         </Card>
       
         <Card>
-        <CardImage src={`http://openweathermap.org/img/w/${this.props.icon3}.png`} alt="weather icon" width="200" height="200" />
+        <CardImage className="weather-icon" src={`http://openweathermap.org/img/w/${this.props.icon3}.png`} alt="weather icon" width="200" height="200" />
           <CardBody>
             <CardTitle tag="h5">{moment.unix(date3).format("MMM Do YYYY")}</CardTitle>
             <CardText style={{listStyle:"none"}}>
@@ -79,7 +79,7 @@ class Forecast extends React.Component {
         </Card>
 
         <Card>
-        <CardImage src={`http://openweathermap.org/img/w/${this.props.icon4}.png`} alt="weather icon" width="200" height="200" />
+        <CardImage className="weather-icon" src={`http://openweathermap.org/img/w/${this.props.icon4}.png`} alt="weather icon" width="200" height="200" />
           <CardBody>
             <CardTitle tag="h5">{moment.unix(date4).format("MMM Do YYYY")}</CardTitle>
             <CardText style={{listStyle:"none"}}>
@@ -97,7 +97,7 @@ class Forecast extends React.Component {
         </Card>
 
         <Card>
-        <CardImage src={`http://openweathermap.org/img/w/${this.props.icon5}.png`} alt="weather icon" width="200" height="200" />
+        <CardImage className="weather-icon" src={`http://openweathermap.org/img/w/${this.props.icon5}.png`} alt="weather icon" width="200" height="200" />
           <CardBody>
             <CardTitle tag="h5">{moment.unix(date5).format("MMM Do YYYY")}</CardTitle>
             <CardText style={{listStyle:"none"}}>
