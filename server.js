@@ -11,6 +11,9 @@ moment().format();
 const router = require("./routes/router");
 const cors = require("cors");
 
+//booleran for auto mode
+let auto_bool = false;
+
 
 
 // App setup=================================================================
@@ -106,6 +109,8 @@ client.on("connect", function() {
   //to the - socket - on the client side
   io.on("connection", socket => {
 
+   
+
     //Relay ON Button Listener; listens for emited data from the client side - when user presses the button
     socket.on("btn", () => {
 
@@ -125,7 +130,86 @@ client.on("connect", function() {
       client.publish("relay/control", "2");
 
     });
+    
+    socket.on("btn3", () => {
+      
+      console.log("//////////////ON COMMAND RECEIVED///////////////");
 
+      //send the command to irrigation controller
+      client.publish("relay/control", "3");
+
+    });
+
+    socket.on("btn4", () => {
+      
+      console.log("//////////////OFF COMMAND RECEIVED///////////////");
+
+      //send the command to irrigation controller
+      client.publish("relay/control", "4");
+
+    });
+
+    socket.on("btn5", () => {
+      
+      console.log("//////////////ON COMMAND RECEIVED///////////////");
+
+      //send the command to irrigation controller
+      client.publish("relay/control", "5");
+
+    });
+
+    socket.on("btn6", () => {
+      
+      console.log("//////////////OFF COMMAND RECEIVED///////////////");
+
+      //send the command to irrigation controller
+      client.publish("relay/control", "6");
+
+    });
+
+    socket.on("btn7", () => {
+      
+      console.log("//////////////ON COMMAND RECEIVED///////////////");
+
+      //send the command to irrigation controller
+      client.publish("relay/control", "7");
+
+    });
+
+    socket.on("btn8", () => {
+      
+      console.log("//////////////OFF COMMAND RECEIVED///////////////");
+
+      //send the command to irrigation controller
+      client.publish("relay/control", "8");
+
+    });
+
+    //Switch control of relay to auto mode
+    socket.on("auto", () => {
+      if(auto_bool === false){
+        //if auto_bool is currently false switch it to true (off/on)
+        auto_bool = true;
+        console.log(`AUTO MODE IS: ${auto_bool}`);
+      }
+      else{
+        //if auto_bool is currently true switch it to false (on/off)
+        auto_bool = false;
+        console.log(`AUTO MODE IS: ${auto_bool}`);
+      }
+    })
+
+    socket.on("allOn", () =>{
+      client.publish("relay/control", "ON")
+      console.log("All realys ON");
+    })
+
+    socket.on("allOff", () =>{
+      client.publish("relay/control", "OFF");
+      console.log("All relays OFF");
+    })
+
+    
     // fired when a message is received on one of the subscribed topic; notice this event handler is outside of the on_connect event handler
     client.on("message", function(topic, message, packet,) {
 
@@ -155,7 +239,37 @@ client.on("connect", function() {
         socket.emit("moistures", payload );
         console.log("MOISTURE REALTIME TO DASHBOARD:"+payload)
         saveMoistureData();
+        if (auto_bool === true){
+
+          //NOTE: if the moisture drops below 50% the pump will come on and reamin on (could set max timeout) till the moisutre is at 80%, then it will shut off again
+          //From this point, it will not turn on again until it reaches the level of 50% again. 
+          //NOTE: when activated auto mode will override manual commands till auto mode is toggled off again
+
+          console.log('Imma water yo plants for you')
+          if(payload < 50){
+            //the soil is at the bottom of the moist scale and top of the dry, turn on pump 5 seconds
+            client.publish("relay/control", "1");//turn on the pump 
+            //setTimeout(cutOFF, 5000); //turn back off in 5 seconds
+          }
+          else if(payload >= 80){
+            client.publish("relay/control", "2");//once the soil near the top(where the sensor is) has reached 80% moisture, turn off the pump
+          }
+        }
       }
+  
+
+       /*//auto mode function only runs as long as auto_bool is true
+       if(topic.toString("utf8") === "moisture"){
+        console.log('IS THIS COMING IN OR NOT?')
+        if (auto_bool === true){
+          switch (payload){
+            case (parseInt(payload) < 50) : //%50 percent from the sensor is actually very low moisture - nearly dryish soil
+              client.publish("relay/control", "1");//turn on the pump 
+              setTimeout(cutOFF, 5000); //turn back off in 5 seconds
+              break;
+          }
+        }
+      }*/
 
       /*const handleTemp = () => {
         //const demoArray =['25','25','24','26.5'];
@@ -175,7 +289,7 @@ client.on("connect", function() {
         setTimeout(handleTemp, 2000);
       }*/
 
-      //==============================Function to Save Sensor Data=======================================================================//
+      //==============================================Function to Save Sensor Data========================================================//
 
       function saveTemperatureData() {
         //save the sensor data to mongoDB with a timestamp
@@ -271,17 +385,17 @@ client.on("connect", function() {
           });
         
       }
-      
+
+      //=============================================function to automate plant watering=================================================//
+
+      function cutOFF () {
+        client.publish("relay/control", "2");
+      }
+
      
-      /*const handleMoisture = () => {
-        const demoArray =['60','60','60','60','61'];
-        socket.emit("temperatures", demoArray );
-        saveTemperatureData();
-        tempMessage = false;        
-      }*/
+
   
     });
-    //socket handler for messages coming from the client side
   });
 });
 
