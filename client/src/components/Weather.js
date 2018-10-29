@@ -1,6 +1,5 @@
 import React from "react";
 import "./Weather.css"
-// import moment from "moment";
 
 class  WeatherContent extends React.Component{
     render(){

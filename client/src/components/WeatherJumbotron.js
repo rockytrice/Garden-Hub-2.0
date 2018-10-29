@@ -20,6 +20,7 @@ class WeatherTron extends React.Component {
     description:"",
     icon:"",
     err:"",
+    date:""
    
   
   }
@@ -34,6 +35,13 @@ class WeatherTron extends React.Component {
       this.setState({
         
         loading:data.false,
+
+        date1:data.list[0].dt,
+        date2:data.list[9].dt,
+        date3:data.list[16].dt,
+        date4:data.list[24].dt,
+        date5:data.list[32].dt,
+
 
         // maxtemperature data=======================================================
         maxtemperature1:Math.round(data.list[5].main.temp_max),
@@ -88,6 +96,12 @@ class WeatherTron extends React.Component {
               {this.state.loading ? "Loading....":
               <Forecast
               
+              date1={this.state.date1}
+              date2={this.state.date2}
+              date3={this.state.date3}
+              date4={this.state.date4}
+              date5={this.state.date5}
+
               icon1={this.state.icon1}
               icon2={this.state.icon2}
               icon3={this.state.icon3}
