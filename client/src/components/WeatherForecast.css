@@ -237,3 +237,7 @@ h5.card-title{
     color: black;
     font-size: 30px;
 }
+
+card.forecast-header{
+    width: 100%;
+}

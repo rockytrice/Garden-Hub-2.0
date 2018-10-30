@@ -53,10 +53,10 @@ input {
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-width : 320px) and (max-width : 480px) {
- .card{
+ /* .card{
    width: 340px;
    margin-left: 10px;
- }
+ } */
  input.signup-input{
    width: 300px;
  }
@@ -69,9 +69,9 @@ input {
 
 }
 @media only screen and (min-width: 320px) {
-  .card {
+  /* .card {
     width: 250px;
-  }
+  } */
   input{
     width: 220px;
   }
@@ -106,9 +106,9 @@ input {
       margin-left: -14px;
       margin-top: 43px;  
     }
-    .card{
+    /* .card{
       width: 400px;
-     }
+     } */
    
   }
 
@@ -127,9 +127,9 @@ input {
   }
 
   @media only screen and (min-width:1024px){
-   .card{
+   /* .card{
     width: 337px;
-   }
+   } */
     
   }
 /* Ipad Pro===============================
