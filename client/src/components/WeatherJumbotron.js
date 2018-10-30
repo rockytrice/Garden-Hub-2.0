@@ -4,9 +4,10 @@ import Title from "./Title";
 import Form from "./WeatherForm";
 import Forecast from "./WeatherForecast";
 import cloudbackgroud from "../images/cloudbackground.jpg";
-const config2= require("../config2");
+// const config2= require("../config2");
 
-const API_KEY = config2.API_KEY
+// const API_KEY = config2.API_KEY
+const API_KEY = "52a664e93f6772d14f7ca04eaa53a9c9";
 
 class WeatherTron extends React.Component {
   state={
