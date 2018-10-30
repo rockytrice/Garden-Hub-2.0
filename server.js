@@ -16,7 +16,8 @@ let auto_bool = false;
 
 // Database setup===========================================================
 mongoose.connect("mongodb://localhost/auth");
-
+mongoose.Promise = Promise;
+const db = require("./models/");
 // App setup=================================================================
 // middleware (morgan-logging framwork)
 app.use(morgan("combined"));
@@ -49,9 +50,9 @@ console.log("socket.io server listening on port ", port);
 
 //======================================================database config with mongoose===============================================================//
 
-const db = require("./modelsDb/");
 
-//define the 'sensorData' database for MongoDB storage of all incoming sensor data
+
+/*//define the 'sensorData' database for MongoDB storage of all incoming sensor data
 const MONGODB_URI = "mongodb://127.0.0.1:27017/SensorData";
 
 //set mongoose to leverage built in Javascript ES6 Promise
@@ -59,13 +60,21 @@ mongoose.Promise = Promise;
 
 //connect to Mongo DB
 mongoose.connect(MONGODB_URI);
-
+*/
 
 //==================================================================================================================================================
 
 
 
-
+//boolean for saving db data only once
+let tempTopic = false;
+function resetTemp(){
+  tempTopic = false;
+}
+let moistTopic = false;
+function resetMoist(){
+  moistTopic = false;
+}
 
 //=============================Connect this server side MQTT Client to the Broker & setup Socket Server ==========================================//
 
@@ -229,25 +238,33 @@ client.on("connect", function() {
       //grab the payload from the receieved message
       let payload = packet.payload.toString("utf8");
       
-      if (topic.toString("utf8") === "temperature") {
-       
-        console.log("TEMPERATURE REALTIME TO DASHBOARD: " + payload);
-        saveTemperatureData();
+      if (topic.toString("utf8") === "temperature"){
         socket.emit("temperatures", payload);
-      }
+        if(tempTopic === false) {
+          tempTopic = true;
+          console.log("TEMPERATURE REALTIME TO DASHBOARD: " + payload);
+          saveTemperatureData();
+          socket.emit("temperatures", payload);
+          setTimeout(resetTemp, 3000);
+        }
 
-      if (topic.toString("utf8") === "moisture") {
-       
+        else if(topic.toString("utf8") === "temperature" && tempTopic === true){
+          return
+        }
+
+      } 
+
+      if (topic.toString("utf8") === "moisture"){
+
         socket.emit("moistures", payload );
-        console.log("MOISTURE REALTIME TO DASHBOARD:"+payload)
-        saveMoistureData();
+
         if (auto_bool === true){
 
           //NOTE: if the moisture drops below 50% the pump will come on and reamin on (could set max timeout) till the moisutre is at 80%, then it will shut off again
           //From this point, it will not turn on again until it reaches the level of 50% again. 
           //NOTE: when activated auto mode will override manual commands till auto mode is toggled off again
 
-          console.log('Imma water yo plants for you')
+          console.log('Watering your Plant(s)')
           if(payload < 50){
             //the soil is at the bottom of the moist scale and top of the dry, turn on pump 5 seconds
             client.publish("relay/control", "1");//turn on the pump 
@@ -257,7 +274,17 @@ client.on("connect", function() {
             client.publish("relay/control", "2");//once the soil near the top(where the sensor is) has reached 80% moisture, turn off the pump
           }
         }
-      }
+      
+        if( moistTopic === false) {
+          moistTopic = true;
+          console.log("MOISTURE REALTIME TO DASHBOARD:"+payload)
+          saveMoistureData();
+          setTimeout(resetMoist, 3000);
+        }
+        else if(moistTopic === true){
+          return
+        }
+    }
   
 
        /*//auto mode function only runs as long as auto_bool is true
