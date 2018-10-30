@@ -24,7 +24,7 @@ class Zone extends React.Component {
  this.state ={
   response2: false,
   tempGraph: false,
-  endpoint: 'http://localhost:4001'
+  endpoint: 'http://localhost:3001'
 }
 
 }
