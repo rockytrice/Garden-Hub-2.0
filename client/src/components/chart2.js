@@ -9,7 +9,7 @@ class ChartsPage2 extends React.Component {
   constructor() {
     super();
     this.state = {
-      endpoint: "http://localhost:4001",
+      endpoint: "http://localhost:3001",
       chartData:{
         //labels for the x axis
       labels:[/*'1','2','3','4','5','6','7','8','9','10'*/],
