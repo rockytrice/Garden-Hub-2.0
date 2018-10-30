@@ -16,8 +16,8 @@ class Forecast extends React.Component {
 
     return (
     <div> 
-        <Card>
-            <CardBody style={{backgroundColor:"#ffbb33",fontFamily:"Anton, sans-serif", fontSize:"30px"}}>
+        <Card >
+            <CardBody className="forecast-header" style={{backgroundColor:"#ffbb33",fontFamily:"Anton, sans-serif", fontSize:"30px"}}>
             5 day Forecast
             </CardBody>
         </Card>

@@ -1,6 +1,7 @@
 {
   "name": "mern",
   "version": "1.0.0",
+  "homepage": "https://github.com/rockytrice/Garden-Hub-2.0",
   "engines": {
     "node": "8.11.3"
   },
@@ -13,7 +14,9 @@
     "client": "cd client && npm run start",
     "install": "cd client && yarn install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "",
   "license": "ISC",
@@ -47,6 +50,7 @@
     "cors": "^2.8.4",
     "dotenv": "^6.1.0",
     "express-react-views": "^0.10.5",
+    "gh-pages": "^2.0.1",
     "if-env": "^1.0.4",
     "jwt-simple": "^0.5.5",
     "moment": "^2.22.2",
