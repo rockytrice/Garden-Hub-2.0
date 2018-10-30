@@ -16,7 +16,8 @@ let auto_bool = false;
 
 // Database setup===========================================================
 mongoose.connect("mongodb://localhost/auth");
-
+mongoose.Promise = Promise;
+const db = require("./models/");
 // App setup=================================================================
 // middleware (morgan-logging framwork)
 app.use(morgan("combined"));
@@ -49,9 +50,9 @@ console.log("socket.io server listening on port ", port);
 
 //======================================================database config with mongoose===============================================================//
 
-const db = require("./modelsDb/");
 
-//define the 'sensorData' database for MongoDB storage of all incoming sensor data
+
+/*//define the 'sensorData' database for MongoDB storage of all incoming sensor data
 const MONGODB_URI = "mongodb://127.0.0.1:27017/SensorData";
 
 //set mongoose to leverage built in Javascript ES6 Promise
@@ -59,7 +60,7 @@ mongoose.Promise = Promise;
 
 //connect to Mongo DB
 mongoose.connect(MONGODB_URI);
-
+*/
 
 //==================================================================================================================================================
 
