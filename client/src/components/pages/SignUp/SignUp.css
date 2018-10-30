@@ -3,7 +3,7 @@
       background-image: url("../../../images/grassBackground.jpeg");
       background-repeat: no-repeat;
       background-size: cover;
-      background-position: center center;
+      background-position: fixed center;
       height: 100vh;
     }
     
@@ -51,48 +51,52 @@ input {
 /* media queries=============================================================================================================== */
 
 
-/* Smartphones (portrait and landscape) -----------
+/* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-width : 320px) and (max-width : 480px) {
- img{
-   width: 400px;
-   height: 300px;
-   margin-bottom: -105px;
-   margin-left: 22px;
-   margin-top: 73px;
+ .card{
+   width: 340px;
+   margin-left: 10px;
  }
- input {
-   width: 334px;
+ input.signup-input{
+   width: 300px;
  }
- 
-} */
+ input{
+   width: 305px;
+ }
+ img.login-pic {
+  display:none!important;
+ }
 
- /* iPads (landscape) -----------
-
-@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
-   img {
-    margin-left: -62px;
-    margin-top: 87px;
+}
+@media only screen and (min-width: 320px) {
+  .card {
+    width: 250px;
   }
-} 
-/* iPads (portrait) ----------- */
- /* @media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
-  input {
-    width: 292px;
+  input{
+    width: 220px;
   }
-  }  */ 
-
-/* ==========================================================login page media queries============================================================================== */
+}
+ /*==========================================================login page media queries============================================================================== */
 
 /* Ipad Mini=============================== */
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (max-width:1024px) {
     img.login-pic{
       margin-left: -113px;
-      margin-top: 78px;    
     }
     input{
-      width: 292px;
+      width: 210px;
     }
-
+    input.signup-input{
+      width: 293px;
+    }
+    .text-md-left{
+      margin-top: 83px;
+    }
+    img.login-pic{
+      width: 350px;
+      height: 300px;
+      margin-left:10px;
+    }
   }
 
 
@@ -102,10 +106,10 @@ input {
       margin-left: -14px;
       margin-top: 43px;  
     }
-    input{
-      width: 401px;
-    }
-
+    .card{
+      width: 400px;
+     }
+   
   }
 
 
@@ -117,8 +121,17 @@ input {
       margin-top: 20px;
       margin-left: 60px;
     }
+    input.signup-input{
+      width: 410px;
+    }
   }
 
+  @media only screen and (min-width:1024px){
+   .card{
+    width: 337px;
+   }
+    
+  }
 /* Ipad Pro===============================
 @media only screen and (min-width: 600px) {
   

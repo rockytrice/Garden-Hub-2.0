@@ -7,7 +7,7 @@ import FooterPage from "../../Footer";
 import requireAuth from "../../requireAuth";
 import ChartsPage from "../../Chart";
 import ChartsPage2 from "../../chart2";
-import socketIOClient from "socket.io-client";
+
 class DashBoard extends Component {
 
   constructor() {

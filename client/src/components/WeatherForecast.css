@@ -20,7 +20,7 @@
 /* iPhone 6s Plus/7 Plus ---------------------------------------------------------------------------------------------------------- */
 @media only screen and (min-width: 414px){
     img.weather-icon{
-        margin-left: 110px!important;
+        margin-left: 110px;
     }
     li.weather-list{
         font-size: 15px!important;
@@ -45,9 +45,9 @@
 
 
 /* Samsung Galaxy S5/S6/S7 ---------------------------------------------------------------------------------------------------------- */
-@media only screen and (min-width: 360px){
+ @media only screen and (min-width: 360px){ 
     img.weather-icon{
-        margin-left: 80px;
+        margin-left: 109px;
     }
     li.weather-list{
         font-size: 15px!important;
@@ -55,10 +55,10 @@
     h5.card-title{
         font-size: 20px!important;
     }
-}
+} 
 
 /* iPads ---------------------------------------------------------------------------------------------------------- */
-@media only screen and (min-width: 1024px){
+ @media only screen and (min-width: 1024px){ 
     img.weather.icon{
         margin-left: 36px!important;
         margin-top: 31px;
@@ -71,7 +71,7 @@
     h5.card-title{
         font-size: 20px!important;
     }
-}
+} 
 
 /* iPad Pro ---------------------------------------------------------------------------------------------------------- */
 @media only screen and (min-width: 1366px) {
@@ -125,7 +125,7 @@
 /* 22' desktop screens ---------------------------------------------------------------------------------------------------------- */
 @media only screen and (min-width: 1680px) {
     img.weather-icon{
-        margin-left: 100px!important;
+        margin-left: 110px!important;
         margin-top: 50px;
         width: 108px;
         height: 84px;
@@ -173,7 +173,7 @@
 /* 20' desktop screens ---------------------------------------------------------------------------------------------------------- */
 @media only screen and (min-width: 1600px) {
     img.weather-icon{
-        margin-left: 90px!important;
+        margin-left: 60px;
         margin-top: 31px;
         width: 108px;
         height: 84px;
@@ -189,10 +189,10 @@
 /* 19' desktop screens ---------------------------------------------------------------------------------------------------------- */
 @media only screen and (min-width: 1440px) {
     img.weather-icon{
-        margin-left: 75px!important;
+        margin-left: 75px;
         margin-top: 31px;
-        width: 108px;
-        height: 84px;
+        width: 155px;
+        height: 98px;
     }
     li.weather-list{
         font-size: 25px!important;
@@ -211,6 +211,16 @@
 
     }
 }
+
+@media only screen and (max-width: 599px){
+    img.weather-icon{
+        margin-left: 103px!important;
+        width: 140px;
+        height: 140px;
+
+    }
+}
+
 /* =======================================================================end of media queries======================================================================= */
 
 

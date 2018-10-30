@@ -40,35 +40,42 @@ import './SignUp.css';
                      <h6 className="mb-4" >Garden Hub is an IOT application that directly controls a user’s home lawn/garden  irrigation system and monitors the immediate soil and climate with wirelessly transmitted sensor data.</h6>
                    </div>
                   <Col md="6" xl="5" className="mb-4">
-                    <Card id="classic-card">
+                    <Card id="classic-card" className="signup-card">
                       <CardBody className="z-depth-2 white-text">
                         <h3 className="text-center"><Fa icon="user-plus"/> Register:</h3>
                         <hr className="hr-light"/> 
-                        <fieldset>
-                          <label>Email</label>
-                          <Field 
-                          name="email"
-                          type="text"
-                          component="input"
-                          autoComplete="none"
-                          />
-                        </fieldset>
+                        
+                          <fieldset >
+                            <label>Email</label>
+                            <div>
+                              <Field className="signup-input"
+                              name="email"
+                              type="text"
+                              component="input"
+                              autoComplete="none"
+                              />
+                            </div>
+                          </fieldset>
                         <fieldset>
                           <label>Password</label>
-                          <Field
-                          name="password"
-                          type="password"
-                          component="input"
-                          autoComplete="none"
-                          />
+                          <div>
+                            <Field className="signup-input"
+                            name="password"
+                            type="password"
+                            component="input"
+                            autoComplete="none"
+                            />
+                          </div>
                         </fieldset>
                         <div>{this.props.errorMessage}</div>
+                        <div className="text-center mt-4 black-text">
                         <Button outline color="white" type="submit">Sign Up</Button>
                         <hr className="hr-light"/>
                         <Col md="12">
                           <p className="font-small white-text d-flex justify-content-end">Have an account? <a href="/Login" className="green-text ml-1 font-weight-bold"> Log in</a></p>
                           </Col>
                          <SocialIcon />
+                        </div>
                       </CardBody> 
                     </Card> 
                   </Col> 
