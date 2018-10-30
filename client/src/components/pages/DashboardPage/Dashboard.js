@@ -26,6 +26,7 @@ class DashBoard extends Component {
        <Container>
         <Zone />
         <ChartsPage  />
+        <br />
         <ChartsPage2/>
        </Container> 
       <FooterPage />

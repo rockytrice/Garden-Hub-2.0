@@ -14,7 +14,8 @@ const cors = require("cors");
 //booleran for auto mode
 let auto_bool = false;
 
-
+// Database setup===========================================================
+mongoose.connect("mongodb://localhost/auth");
 
 // App setup=================================================================
 // middleware (morgan-logging framwork)
