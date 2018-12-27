@@ -12,4 +12,23 @@ The user sets a moisture max and minimum level to regulate the cycle of adding o
 
 Web App Deployment Coming Soon:
 
+The passport-jwt login page
 <img src='https://github.com/Pioneer18/garden_hub2.1/blob/master/src/images/Screenshot%20(37).png'>
+
+Dashboard Weather API (forecast for the week)
+<img src='https://github.com/Pioneer18/garden_hub2.1/blob/master/src/images/Screenshot%20(50).png'>
+
+Real time Temperature and Humidity from garden sensors (relies on WebSockets and MQTT)
+<img src='https://github.com/Pioneer18/garden_hub2.1/blob/master/src/images/Screenshot%20(48).png'>
+
+<img src='https://github.com/Pioneer18/garden_hub2.1/blob/master/src/images/Screenshot%20(49).png'>
+
+Manual and Auto mode control page
+<img src='https://github.com/Pioneer18/garden_hub2.1/blob/master/src/images/Screenshot%20(54).png'>
+
+
+
+
+
+
+
