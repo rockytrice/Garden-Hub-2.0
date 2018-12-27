@@ -1,29 +1,13 @@
 # Create React Express App
+GardenHub 2.0
 
-## About This Boilerplate
+System Summary:
+This application directly controls a user’s home lawn/garden  irrigation system and monitors the immediate soil and climate with wirelessly transmitted sensor data. The user must follow a simple set of instructions for attaching the GardenHub-Controller to their previous irrigation controller, and they must also place the soil sensors throughout the `zones` of their lawn/garden. After installing the hardware, the application will automatically switch the irrigation system on and off in response to measured soil moisture level of each zone. The user of course can select to manually switch their irrigation on/off or preset timers for their irrigation if they would like; however the core concept is that the automated mode relieves the chore of setting timers while also, most importantly, improves water use efficiency.
+	The application automates control of irrigation and it also provides real time data of each zone that can be viewed individually or as a summarized description of their garden’s ‘health index’. Due to time constraints of the deadline we will only be utilizing temperature and moisture sensors as well as doing a minified demo of the concept on a single potted plant. The fully developed project will utilize solar and battery powered sensors that can be remotely dispersed in a yard/garden/field. That design and schematic will be presented (and I intend to build one just as a demo, time permitting)
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+Automation Method & Benefits:
+The user sets a moisture max and minimum level to regulate the cycle of adding or allowing water to drain from the soil. When the minimum level of moisture is reached the water is turned on till the maximum level is reached. Then the water is shut off until the minimum permitted moisture level is achieved again. The cyclical nature of the watering will ensure the roots are provided with the water they need as well as the oxygen need. The oxygen is pulled down to the roots by the evacuating water. 
 
-## Starting the app locally
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
-
-```
-yarn install
-```
-
-This should install node modules within the server and the client folder.
-
-After both installations complete, run the following command in your terminal:
-
-```
-yarn start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+Web App Deployment Coming Soon:
